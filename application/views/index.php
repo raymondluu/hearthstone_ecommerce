@@ -9,7 +9,6 @@
 	<?php $this->load->view("/partials/nav.php") ?>
 	<div class="container-fluid">
 		<h1>Welcome to Hearthstone Ecommerce site!</h1>
-		<h1>asdf</h1>
 	</div>
 </body>
 </html>
