@@ -32,7 +32,6 @@
 	<?php $this->load->view("/partials/nav.php") ?>
 	<div class="container-fluid">
 		<h1>Welcome to Hearthstone Ecommerce site!</h1>
-
 	</div>
 >>>>>>> 8fa41851e3fac5ac27c5e6eb24b0ce961a3c59b1
 </body>
