@@ -1,6 +1,7 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
 class Admin extends CI_Model {
+<<<<<<< HEAD
 
 	public function login($post){
   			// var_dump($this->input->post());
@@ -40,3 +41,15 @@ class Admin extends CI_Model {
 		}
 
 	}
+=======
+	public function get_all_cards()
+	{
+		// $query
+	}
+
+	public function get_card($card_id)
+	{
+
+	}
+}
+>>>>>>> a0029e275408938a33417f93fe1a59b47fa3d2d1
