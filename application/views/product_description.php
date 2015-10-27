@@ -39,8 +39,12 @@
     )
   );
 
-  // var_dump($response5);
-  // var_dump($response4);
+  var_dump($response5);
+  var_dump($response4);
+  var_dump($response3);
+  var_dump($response2);
+  var_dump($response1);
+
 // $data = $response->body[0];
 // // $jsonStr = json_encode($data);
 // foreach ($data as $key => $value) {

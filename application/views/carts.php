@@ -162,11 +162,11 @@
 $(function() {
     $('input[name="same_shipping"]').on('change', copyShippingInfo);
 ​
-    function copyShippingInfo(e) {
-        var $target = $(e.target); // checkbox
-        var checked = $target.prop('checked'); // returns true or false based on checked state
+    function copyShippingInfo(event) {
+        var $target = $(event.target); // checkbox
+        var checked = $target.prop("checked"); // returns true or false based on checked state
 ​
-        if (checked) {
+        if ('checked') {
             $('[name="billing_first_name"]').val($('[name="shipping_first_name"]').val());
             $('[name="billing_last_name"]').val($('[name="shipping_last_name"]').val());
             $('[name="billing_address"]').val($('[name="shipping_address"]').val());

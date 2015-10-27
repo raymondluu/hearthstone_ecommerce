@@ -25,15 +25,15 @@
 
 <!-- the php echo'd here is how you get the img, change "img" to any atrribute in the object! -->
 <!-- <img src="<?= $response->body[0]->img; ?>" > -->
-<!-- <a href="/product_description">Link to Product Descriptions</a> -->
   </div>
-	<?php $this->load->view("/partials/nav.php") ?>
-	<div class="container-fluid">
+  <?php $this->load->view("/partials/nav.php") ?>
+  <div class="container-fluid">
 <<<<<<< HEAD
-		<h1>Welcome to Hearthstone Ecommerce site!</h1>
+    <h1>Welcome to Hearthstone Ecommerce site!</h1>
 =======
-		<div class="row">
-			<div class="col-md-2">
+<a href="/product_description">Link to Product Descriptions</a>
+    <div class="row">
+      <div class="col-md-2">
 				<form>
 					<input type="text" name="search" placeholder="product name">
 					<input type="submit" name="action" value="search">
