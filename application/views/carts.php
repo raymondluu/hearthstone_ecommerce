@@ -39,14 +39,24 @@
             </tbody>
         </table>
     </div>
+<<<<<<< HEAD
+
+=======
 ​
+>>>>>>> 1823e3cf9bce9ee9831c034d20b30368c4caa90a
     <div class="col-lg-12">
         <!-- This needs to be left aligned -->
         <p>Total: </p>
         <button type="button" class="btn btn-success"><a href="main/index">Continue Shopping</a></button>
+<<<<<<< HEAD
+    </div> 
+
+
+=======
     </div>
 ​
 ​
+>>>>>>> 1823e3cf9bce9ee9831c034d20b30368c4caa90a
     <div class="col-md-3">
         <h3>Shipping Information</h3>
         <form id="shipping-form"  action="controller/submit_address" method="post">
@@ -78,12 +88,21 @@
                 <label for="shipping_zipcode">Zipcode:</label>
                 <input type="text" class="form-control" name="shipping_zipcode">
             </div>
+<<<<<<< HEAD
+            <button type="submit" class="btn btn-primary">Submit</button>        
+        </form>
+
+
+            <h3>Billing Information</h3>
+
+=======
             <button type="submit" class="btn btn-primary">Submit</button>
         </form>
 ​
 ​
             <h3>Billing Information</h3>
 ​
+>>>>>>> 1823e3cf9bce9ee9831c034d20b30368c4caa90a
         <form id="billing-form" action="controller/submit_billing" method="post">
             <div class="checkbox">
                 <label><input type="checkbox" name="same_shipping"> Same as Shipping</label>
@@ -140,7 +159,11 @@
                     <option value='10'>October</option>
                     <option value='11'>November</option>
                     <option value='12'>December</option>
+<<<<<<< HEAD
+                </select> 
+=======
                 </select>
+>>>>>>> 1823e3cf9bce9ee9831c034d20b30368c4caa90a
                 <select class="form-control" name='expireYY'>
                     <option value=''>Year</option>
                     <option value='15'>2015</option>
@@ -149,6 +172,15 @@
                     <option value='18'>2018</option>
                     <option value='19'>2019</option>
                     <option value='20'>2020</option>
+<<<<<<< HEAD
+                </select> 
+            <input class="inputCard" type="hidden" name="expiry" id="expiry" maxlength="4"/>
+            </div>
+            <button type="submit" class="btn btn-primary">Pay</button>   
+        </form>    
+    </div>
+
+=======
                 </select>
             <input class="inputCard" type="hidden" name="expiry" id="expiry" maxlength="4"/>
             </div>
@@ -156,17 +188,30 @@
         </form>
     </div>
 ​
+>>>>>>> 1823e3cf9bce9ee9831c034d20b30368c4caa90a
 </body>
 <script src="assets/js/jquery.min.js" type="text/javascript"></script>
 <script type="text/javascript">
 $(function() {
     $('input[name="same_shipping"]').on('change', copyShippingInfo);
+<<<<<<< HEAD
+
+    function copyShippingInfo(e) {
+        var $target = $(e.target); // checkbox
+        var checked = $target.prop('checked'); // returns true or false based on checked state
+
+=======
 ​
     function copyShippingInfo(event) {
         var $target = $(event.target); // checkbox
         var checked = $target.prop("checked"); // returns true or false based on checked state
 ​
+<<<<<<< HEAD
         if ('checked') {
+=======
+>>>>>>> 1823e3cf9bce9ee9831c034d20b30368c4caa90a
+        if (checked) {
+>>>>>>> 66673c38f73591d32614f52afc915e8b71f74d70
             $('[name="billing_first_name"]').val($('[name="shipping_first_name"]').val());
             $('[name="billing_last_name"]').val($('[name="shipping_last_name"]').val());
             $('[name="billing_address"]').val($('[name="shipping_address"]').val());
