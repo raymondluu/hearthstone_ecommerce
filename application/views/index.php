@@ -37,16 +37,16 @@
         </form>
         <p>Categories</p>
         <ul>
-          <li><a href="#">Hero(25)</a></li>
-          <li><a href="#">Enchantment (35)</a></li>
-          <li><a href="#">Spells (5)</a></li>
-          <li><a href="#">Weapons (105)</a></li>
-          <li><a href="#">Minions (105)</a></li>
-          <li id="showall"><a href="#">Show all</a></li>
+          <li><a id="catheros" href="#"></a></li>
+          <li><a id="catenchants" href="#"></a></li>
+          <li><a id="catspells" href="#"></a></li>
+          <li><a id="catweapons" href="#"></a></li>
+          <li><a id="catminions" href="#"></a></li>
+          <li><a id="showall" href="#">Show all</a></li>
         </ul>
       </div>
       <div class="col-md-10">
-        <h1>Tshirts (page 2)</h1>
+        <h1 id="title">Tshirts (page 2)</h1>
         <div id="pictureFrame">
         </div>
         <nav>

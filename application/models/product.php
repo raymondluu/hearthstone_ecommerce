@@ -10,8 +10,8 @@ class Product extends CI_Model {
 		// }
 	}
 
-	public function get_card($card_id)
+	public function get_hero_cards($type)
 	{
-
+		return $this->db->query("SELECT * FROM cards WHERE type = ?", $type)->result_array();
 	}
 }
