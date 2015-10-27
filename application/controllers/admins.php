@@ -2,51 +2,43 @@
 
 class Admins extends CI_Controller {
 
-  public function admin_login()
-  {
+  public function index() {
     $this->load->view('admin_login');
   }
-  public function login()
-  {
-    // $email = $this->input->post('email');
-    // $password = $this->input->post('password');
-    // $user = $this->lg_model->login($email);
-    // if($user && $user['password'] == $password)
-    // {
-    //   $user = array(
-    //       'user_id' => $user['id'],
-    //       'user_firstname' => $user['first_name'],
-    //       'user_lastname' => $user['last_name'],
-    //       'user_email' => $user['email']
-    //     );
-    //   $this->session->set_userdata($user);
+
+  public function login($post) {
+    // var_dump($this->input->post());
+    // die();
+    if ($this->admin->login($this->input->post())){
+      // true: user found
       redirect("/admin_orders");
-    // }
-    // else
-    // {
-    //   $this->session->set_flashdata("login_error", "Invalid email or password.");
-    //   redirect("/");
-    // }
+    }
+    else{
+      // false: user not found
+      redirect("/admin_login");
+    }
   }
-  public function logout()
-  {
+
+  public function logout() {
     $this->session->sess_destroy();
     redirect("/");
   }
-  public function admin_orders()
-  {
+  
+  public function admin_orders() {
+    //NEED TO LOAD ALL ORDERS
+    $this->Admin->get_all_orders();
     $this->load->view('admin_orders');
   }
-  public function admin_orders_show()
-  {
+  
+  public function admin_orders_show() {
     $this->load->view('admin_orders_show');
   }
-  public function admin_products()
-  {
+  
+  public function admin_products() {
     $this->load->view('admin_products');
   }
-    public function carts()
-  {
+  
+  public function carts() {
     $this->load->view('carts');
   }
 
