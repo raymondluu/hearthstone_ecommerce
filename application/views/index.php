@@ -4,6 +4,7 @@
   <meta charset="utf-8">
   <title>Hearthstone Ecommerce Site</title>
   <?php $this->load->view("/partials/head.php") ?>
+  <script src="/assets/js/products.js"></script>
 </head>
 <body>
   <div class="container-fluid">
@@ -41,7 +42,7 @@
           <li>Spells (5)</li>
           <li>Weapons (105)</li>
           <li>Minions (105)</li>
-          <li>Show all</li>
+          <li id="showall">Show all</li>
         </ul>
       </div>
       <div class="col-md-10">
