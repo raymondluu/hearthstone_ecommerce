@@ -28,9 +28,7 @@
   </div>
   <?php $this->load->view("/partials/nav.php") ?>
   <div class="container-fluid">
-<<<<<<< HEAD
     <h1>Welcome to Hearthstone Ecommerce site!</h1>
-=======
 <a href="/product_description">Link to Product Descriptions</a>
     <div class="row">
       <div class="col-md-2">
@@ -70,7 +68,6 @@
 </nav>
 			</div>
 		</div>
->>>>>>> fff4aacb5465f819bc553796efe9b9fb8914ed4d
 	</div>
 </body>
 </html>
