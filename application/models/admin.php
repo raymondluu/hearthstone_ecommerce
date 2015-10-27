@@ -33,10 +33,10 @@ class Admin extends CI_Model {
 				return false;
 			}
 		}
+	}
 
 		public function get_all_orders() {
-			$query = "SELECT orders.id, CONCAT(customers.first_name, ' ', customers.last_name	) AS customer_name, orders.created_at AS purchase_date, CONCAT(customers.address, ' ', customers.address2, ' ', customers.state, ' ', customers.city, ' ', customers.zipcode) AS customer_address, orders.total FROM orders JOIN customer_orders ON orders.id=customer_orders.order_id JOIN customers ON customer_orders.customer_id=customers.id";
-			$values =
+			return $this->db->query("SELECT orders.id, CONCAT(customers.first_name, ' ', customers.last_name	) AS customer_name, orders.created_at AS purchase_date, CONCAT(customers.address, ' ', customers.address2, ' ', customers.state, ' ', customers.city, ' ', customers.zipcode) AS customer_address, orders.total FROM orders JOIN customer_orders ON orders.id=customer_orders.order_id JOIN customers ON customer_orders.customer_id=customers.id")->result_array();
 
 		}
 
