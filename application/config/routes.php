@@ -5,11 +5,9 @@ $route['product_description'] = "main/product_description";
 
 $route['admin_login'] = "admins/index";
 $route['admin_orders'] = "orders/admin_orders";
-// $route['admin_orders_show'] = "orders";
 $route['admin_orders_show/(:any)'] = "orders/show_order/$1";
-$route['admin_products'] = "admins/admin_products";
+$route['admin_products/(:any)'] = "admins/admin_products/$1";
 $route['carts'] = "admins/carts";
-
 $route['404_override'] = '';
 
 
