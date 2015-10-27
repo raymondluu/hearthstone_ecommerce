@@ -6,7 +6,7 @@ $(document).ready(function(){
 			for(var i = 0; i < card.length; i++)
 			{
 				// console.log('card[i].img');
-				img_str += " <img src=' "+ card[i].img +" '>";
+				img_str += " <img class='products' src=' "+ card[i].img +" '>";
 			}
 			$('#pictureFrame').html(img_str);
 		}, "json");
