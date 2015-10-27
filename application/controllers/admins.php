@@ -9,11 +9,10 @@ class Admins extends CI_Controller {
   public function login($post) {
     // var_dump($this->input->post());
     // die();
-    if ($this->admin->login($this->input->post())){
+    if($this->admin->login($this->input->post())) {
       // true: user found
       redirect("/admin_orders");
-    }
-    else{
+    } else {
       // false: user not found
       redirect("/admin_login");
     }
@@ -22,12 +21,6 @@ class Admins extends CI_Controller {
   public function logout() {
     $this->session->sess_destroy();
     redirect("/");
-  }
-  
-  public function admin_orders() {
-    //NEED TO LOAD ALL ORDERS
-    $this->Admin->get_all_orders();
-    $this->load->view('admin_orders');
   }
   
   public function admin_orders_show() {
