@@ -5,4 +5,8 @@ class Main extends CI_Controller {
 	{
 		$this->load->view('index');
 	}
+  public function product_description()
+  {
+    $this->load->view('product_description');
+  }
 }
