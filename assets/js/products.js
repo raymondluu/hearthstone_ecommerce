@@ -35,11 +35,10 @@ $(document).ready(function(){
 
 		$.get(url, function(data){
 			var img_str = "";
-			console.log(data);
 			for(var i = 0; i < data.cards.length; i++)
 			{
 				// console.log('card[i].img');
-				img_str += " <img class='products' src=' "+ data.cards[i].img +" '>";
+				img_str += " <a href='" + data.cards[i].api_id + "'><img class='products' src=' "+ data.cards[i].img +" '></a>";
 			}
 			$('#title').html(title_str);
 			$('#pictureFrame').html(img_str);
