@@ -38,15 +38,17 @@
         <p>Categories</p>
         <ul>
           <li><a href="#">Hero(25)</a></li>
-          <li>Enchantment (35)</li>
-          <li>Spells (5)</li>
-          <li>Weapons (105)</li>
-          <li>Minions (105)</li>
-          <li id="showall">Show all</li>
+          <li><a href="#">Enchantment (35)</a></li>
+          <li><a href="#">Spells (5)</a></li>
+          <li><a href="#">Weapons (105)</a></li>
+          <li><a href="#">Minions (105)</a></li>
+          <li id="showall"><a href="#">Show all</a></li>
         </ul>
       </div>
       <div class="col-md-10">
         <h1>Tshirts (page 2)</h1>
+        <div id="pictureFrame">
+        </div>
         <nav>
           <ul class="pagination">
             <li>
