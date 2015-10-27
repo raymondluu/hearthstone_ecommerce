@@ -9,7 +9,7 @@
   <?= $this->session->flashdata("errors") ?>
   <?= $this->session->flashdata("success") ?>
   <h1>Admin Login</h1>
-  <form action="/admin_orders" method="post">
+  <form action="admins/login" method="post">
     <?= $this->session->flashdata("login_error") ?>
     <p><input type="text" name="email" placeholder="Email"></p>
     <p><input type="password" name="password" placeholder="Password"></p>
