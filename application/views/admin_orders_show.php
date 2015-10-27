@@ -7,7 +7,11 @@
     <link rel="stylesheet" type="text/css" href="/assets/bootstrap-3.3.5-dist/css/bootstrap.css">
 </head>
 <body>
+<<<<<<< HEAD
 
+=======
+​
+>>>>>>> 1823e3cf9bce9ee9831c034d20b30368c4caa90a
     <div class="col-lg-4">
         <table class="table table-striped table-bordered table-condensed">
             <tr>
@@ -64,7 +68,11 @@
             </tr>
         </table>
     </div>
+<<<<<<< HEAD
 
+=======
+​
+>>>>>>> 1823e3cf9bce9ee9831c034d20b30368c4caa90a
     <div class="col-lg-8">
             <table class="table table-striped table-bordered table-condensed">
                 <thead>
@@ -101,16 +109,27 @@
                 </tbody>
             </table>
     </div>
+<<<<<<< HEAD
 
+=======
+​
+>>>>>>> 1823e3cf9bce9ee9831c034d20b30368c4caa90a
     <div class="col-lg-8">
         <h3>ECHO SHIPPING STATUS</h3>
         <div class="col-lg-4">
             <p>Subtotal: $</p>
             <p>Shipping: $</p>
             <p>Total: $</p>
+<<<<<<< HEAD
 
         </div>
     </div>    
 
+=======
+​
+        </div>
+    </div>
+​
+>>>>>>> 1823e3cf9bce9ee9831c034d20b30368c4caa90a
 </body>
 <html>

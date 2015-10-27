@@ -7,15 +7,24 @@
     <link rel="stylesheet" type="text/css" href="/assets/bootstrap-3.3.5-dist/css/bootstrap.css">
 </head>
 <body>
+<<<<<<< HEAD
 
+=======
+​
+>>>>>>> 1823e3cf9bce9ee9831c034d20b30368c4caa90a
     <form class="navbar-form navbar-left" role="search">
         <div class="form-group">
             <input type="text" class="form-control" placeholder="Search">
         </div>
         <button type="submit" class="btn btn-default">Submit</button>
     </form>
+<<<<<<< HEAD
 
 
+=======
+​
+​
+>>>>>>> 1823e3cf9bce9ee9831c034d20b30368c4caa90a
     <div class="col-lg-11">
         <table class="table table-striped table-bordered table-condensed">
             <thead>
@@ -68,7 +77,11 @@
             </tbody>
         </table>
     </div>
+<<<<<<< HEAD
 
+=======
+​
+>>>>>>> 1823e3cf9bce9ee9831c034d20b30368c4caa90a
     <!-- Page Navigation -->
 <div class="col-lg-12">
     <nav>
@@ -91,7 +104,11 @@
         </ul>
     </nav>
 </div>
+<<<<<<< HEAD
 
+=======
+​
+>>>>>>> 1823e3cf9bce9ee9831c034d20b30368c4caa90a
 <script src="assets/js/jquery.min.js" type="text/javascript">
 </script>
 </body>
