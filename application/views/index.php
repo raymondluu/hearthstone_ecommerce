@@ -6,6 +6,7 @@
   <?php $this->load->view("/partials/head.php") ?>
 </head>
 <body>
+<<<<<<< HEAD
   <div class="container-fluid">
   <h1>Welcome to Hearthstone Ecommerce site!</h1>
 <?php
@@ -27,5 +28,12 @@
 <img src="<?= $response->body[0]->img; ?>" >
 <a href="/product_description">Link to Product Descriptions</a>
   </div>
+=======
+	<?php $this->load->view("/partials/nav.php") ?>
+	<div class="container-fluid">
+		<h1>Welcome to Hearthstone Ecommerce site!</h1>
+
+	</div>
+>>>>>>> 8fa41851e3fac5ac27c5e6eb24b0ce961a3c59b1
 </body>
 </html>
