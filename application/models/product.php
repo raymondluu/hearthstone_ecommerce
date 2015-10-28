@@ -10,6 +10,15 @@ class Product extends CI_Model {
 		// }
 	}
 
+	public function get_all_cards_limit($start)// $pageNum
+	{
+		return $this->db->query("SELECT * FROM cards LIMIT ?, 2", $start)->result_array();
+
+		// if(pageNum == 1){
+		// 	return $this->db->query("SELECT * FROM cards LIMIT (0, 1)")->result_array();
+		// }
+	}
+
 	public function get_hero_cards($type)
 	{
 		return $this->db->query("SELECT * FROM cards WHERE type = ?", $type)->result_array();

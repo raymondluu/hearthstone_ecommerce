@@ -46,7 +46,7 @@
         </ul>
       </div>
       <div class="col-md-10">
-        <h1 id="title">Tshirts (page 2)</h1>
+        <h1 id="title">Show all</h1>
         <div id="pictureFrame">
         </div>
         <nav>

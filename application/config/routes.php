@@ -9,6 +9,9 @@ $route['admin_orders_show/(:any)'] = "orders/show_order/$1";
 $route['admin_products/(:any)'] = "admins/admin_products/$1";
 $route['product_description/(:any)'] = "main/product_description/$1";
 $route['carts'] = "admins/carts";
+
+$route['/products/get_cards_json/(:num)'] = "/products/get_cards_json/$1";
+
 $route['404_override'] = '';
 
 
