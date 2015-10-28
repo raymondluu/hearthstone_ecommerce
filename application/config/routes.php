@@ -11,7 +11,11 @@ $route['admin_products'] = "products/admin_products_view";
 $route['product_description/(:any)'] = "main/product_description/$1";
 
 $route['carts'] = "admins/carts";
+
+$route['/products/get_cards_json/(:num)'] = "/products/get_cards_json/$1";
+
 $route['api_stuff'] = "main/load_api_stuff";
+
 $route['404_override'] = '';
 
 
