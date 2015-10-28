@@ -13,4 +13,8 @@ class Main extends CI_Controller {
       'card_info' => $card_info,
       'related_cards' => $related_cards) );
   }
+  public function load_api_stuff()
+  {
+    $this->load->view('api_stuff');
+  }
 }

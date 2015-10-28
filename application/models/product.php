@@ -21,6 +21,5 @@ class Product extends CI_Model {
 	public function get_cards_set($cardSet, $card_api_id){
 		$values = array($cardSet, $card_api_id);
 		return $this->db->query("SELECT * FROM cards WHERE cardSet = ? AND api_id != ? LIMIT 5", $values) -> result_array();
-
 	}
 }
