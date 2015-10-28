@@ -6,7 +6,7 @@ class Admins extends CI_Controller {
     $this->load->view('admin_login');
   }
 
-  public function login($post) {
+  public function login() {
     // var_dump($this->input->post());
     // die();
     if($this->admin->login($this->input->post())) {

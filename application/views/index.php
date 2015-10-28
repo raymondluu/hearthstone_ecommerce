@@ -31,10 +31,6 @@
   <div class="container-fluid">
     <div class="row">
       <div class="col-md-2">
-        <form>
-          <input type="text" name="search" placeholder="product name">
-          <input type="submit" name="action" value="search">
-        </form>
         <p>Categories</p>
         <ul>
           <li><a id="catheros" href="#"></a></li>
@@ -44,7 +40,14 @@
           <li><a id="catminions" href="#"></a></li>
           <li><a id="showall" href="#">Show all</a></li>
         </ul>
+        <form class="navbar-form navbar-left" role="search">
+          <div class="form-group">
+            <input type="text" class="form-control" placeholder="Search">
+          </div>
+          <button type="submit" class="btn btn-default">Submit</button>
+        </form>
       </div>
+      
       <div class="col-md-10">
         <h1 id="title">Show all</h1>
         <div id="pictureFrame">

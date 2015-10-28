@@ -69,7 +69,12 @@
     </div>
 
 <script src="assets/js/jquery.min.js" type="text/javascript">
-// $(document).ready(function() {
+$(document).ready(function() {
+    $('[role="search"]').on('keyup', function(e) {
+        var searchValue = e.target.value;
+        if()
+        // do something every keystroke
+    })
 //     $('.delete_card_btn_link').on('click', function() {
 //         alert("Are you certain you want to delete this card?");
 //         // $this  = $(this);
@@ -80,7 +85,7 @@
 //         //             $this.closest("tr").remove();
 //         //         }
 //     })
-// })
+})
 </script>
 </body>
 </html>
