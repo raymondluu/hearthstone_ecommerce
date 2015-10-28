@@ -1,6 +1,6 @@
 $(document).ready(function(){
 	//when category links are clicked, populate page
-	$(document).on("click", "a", function(e){
+	$(document).on("click", "li a", function(e){
 		var id = $(this).attr("id");
 
 		var page = "0";
@@ -57,7 +57,7 @@ $(document).ready(function(){
 			//pagination_str += "<li><a href aria-label='Previous'><span aria-hidden='true'>&laquo;</span></a></li>";
 			for(var i = 0; i < pages; i++)
 			{
-				pagination_str += "<li><a href id='" + id + "' page='" + (i * 20) + "'>" + (i + 1) + "</a></li>";
+				pagination_str += "<li><a class='pag' href id='" + id + "' page='" + (i * 20) + "'>" + (i + 1) + "</a></li>";
 			}
 			//pagination_str += "<li><a href aria-label='Next'><span aria-hidden='true'>&raquo;</span></a></li>";
 			$('.pagination').html(pagination_str);
