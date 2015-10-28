@@ -11,7 +11,7 @@ class Product extends CI_Model {
 
 	public function get_all_cards_limit($start)// $pageNum
 	{
-		return $this->db->query("SELECT * FROM cards LIMIT ?, 2", $start)->result_array();
+		return $this->db->query("SELECT * FROM cards LIMIT ?, 20", $start)->result_array();
 
 		// if(pageNum == 1){
 		// 	return $this->db->query("SELECT * FROM cards LIMIT (0, 1)")->result_array();
