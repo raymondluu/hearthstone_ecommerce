@@ -76,7 +76,7 @@ $(document).ready(function(){
 			$('#pictureFrame').html(img_str);
 		}, "json");
 
-		// e.preventDefault();
+		e.preventDefault();
 		// return false;
 	});
 
