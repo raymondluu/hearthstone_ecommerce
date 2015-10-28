@@ -7,7 +7,7 @@
     <link rel="stylesheet" type="text/css" href="/assets/bootstrap-3.3.5-dist/css/bootstrap.css">
 </head>
 <body>
-
+    <?php $this->load->view("/partials/admin_partial.php"); ?>
     <form class="navbar-form navbar-left" role="search">
         <div class="form-group">
             <input type="text" class="form-control" placeholder="Search">

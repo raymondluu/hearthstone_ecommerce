@@ -7,7 +7,7 @@ $route['admin_orders']               = "orders/admin_orders";
 $route['admin_orders_show/(:any)']   = "orders/show_order/$1";
 $route['admin_products']             = "products/admin_products_view";
 // $route['admin_products_edit/(:any)'] = "products/edit/$1";
-
+$route['admin_login']				 = "admins/logout";
 // $route['admin_products/(:any)'] = "admins/admin_products/$1";
 $route['product_description/(:any)'] = "main/product_description/$1";
 

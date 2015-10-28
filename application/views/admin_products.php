@@ -3,12 +3,12 @@
 <head>
     <meta charset="utf-8">
     <title>Hearthstone Ecommerce Site</title>
-    <?php $this->load->view("/partials/admin_partial.php"); ?>
+    <?php $this->load->view("/partials/head.php"); ?>
     <link rel="stylesheet" type="text/css" href="/assets/bootstrap-3.3.5-dist/css/bootstrap.css">
     <link rel="stylesheet" type="text/css" href="/assets/style.css">
 </head>
 <body>
-
+ <?php $this->load->view("/partials/admin_partial.php"); ?>
     <form class="navbar-form navbar-left" role="search">
         <div class="form-group">
             <input type="text" class="form-control" placeholder="Search">

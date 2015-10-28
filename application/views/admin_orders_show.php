@@ -7,7 +7,7 @@
     <link rel="stylesheet" type="text/css" href="/assets/bootstrap-3.3.5-dist/css/bootstrap.css">
 </head>
 <body>
-
+    <?php $this->load->view("/partials/admin_partial.php"); ?>
     <div class="col-lg-4">
         <table class="table table-striped table-bordered table-condensed">
             <tr>

@@ -16,4 +16,12 @@
 	color: white;
 }
 
+.navbar-h1 {
+	color: #777;
+
+}
+
+.navbar-default .navbar-nav > li > a {
+	   margin-top: 10px;
+}
 
