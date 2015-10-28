@@ -122,6 +122,32 @@ INSERT INTO `cards` VALUES (1,'Power Overwhelming','EX1_316','Classic','Spell','
 UNLOCK TABLES;
 
 --
+-- Table structure for table `cart`
+--
+
+DROP TABLE IF EXISTS `cart`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `cart` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `session_id` varchar(50) DEFAULT NULL,
+  `card_id` varchar(45) DEFAULT NULL,
+  `card_quantity` int(11) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=24 DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `cart`
+--
+
+LOCK TABLES `cart` WRITE;
+/*!40000 ALTER TABLE `cart` DISABLE KEYS */;
+INSERT INTO `cart` VALUES (1,'20694f5c0d6235f6a27171cfc50d582e','1',2),(2,'20694f5c0d6235f6a27171cfc50d582e','2',3),(3,'3267888bac14c86ec75cd27937b94a6f','1',2),(4,'3267888bac14c86ec75cd27937b94a6f','2',1),(5,'3267888bac14c86ec75cd27937b94a6f','7',1),(6,'f3af9172c2d5e4067edd0ee888dfae0b','7',1),(7,'f3af9172c2d5e4067edd0ee888dfae0b','5',1),(8,'f3af9172c2d5e4067edd0ee888dfae0b','28',1),(9,'6c720790d153a91cd1abdba2278ec3a7','28',1),(10,'6c720790d153a91cd1abdba2278ec3a7','4',1),(11,'6c720790d153a91cd1abdba2278ec3a7','2',1),(12,'6c720790d153a91cd1abdba2278ec3a7','6',3),(13,'6c2cdb9cd58ca0c00981a87f36ef8003','6',1),(14,'6c2cdb9cd58ca0c00981a87f36ef8003','6',2),(15,'6c2cdb9cd58ca0c00981a87f36ef8003','6',1),(16,'6c2cdb9cd58ca0c00981a87f36ef8003','70',3),(17,'6c2cdb9cd58ca0c00981a87f36ef8003','1',2),(18,'6c2cdb9cd58ca0c00981a87f36ef8003','49',2),(19,'d0299ca8aba2d85773c979ed467dd81e','1',1),(20,'d0299ca8aba2d85773c979ed467dd81e','3',2),(21,'641de1b9d0d4bedfbbff509d6bc60cf4','1',1),(22,'80022ae2b01305d68eaed8d23351c7d2','1',1),(23,'80022ae2b01305d68eaed8d23351c7d2','5',3);
+/*!40000 ALTER TABLE `cart` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `customer_orders`
 --
 
@@ -281,4 +307,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2015-10-28 11:36:23
+-- Dump completed on 2015-10-28 15:25:00
