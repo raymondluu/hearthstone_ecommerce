@@ -51,11 +51,19 @@ class Products extends CI_Controller {
 	// 	$card =$this->product->delete_card($card_id);
 	// 	if(delete_card($card_id)) {
 	// 		return json_encode(array("success" => true));
-	// 	} 
+	// 	}
 	}
 
 	public function admin_edit_single_card($card_id) {
 		$cards = get_single_card_for_admin($card_id);
 		$this->load->view('admin_products_edit', array('cards' => $cards));
+	}
+	public function add_card_to_cart($api_id)
+	{
+		$session_id = $this->session->userdata['session_id'];
+		$post = $this->input->post();
+		$this->product->add_cart($post, $session_id);
+		$this->session->set_flashdata('added', 'Item added to cart.');
+		redirect("/product_description/".$api_id);
 	}
 }
