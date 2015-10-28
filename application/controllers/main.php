@@ -5,8 +5,16 @@ class Main extends CI_Controller {
 	{
 		$this->load->view('index');
 	}
-  public function product_description()
+  public function product_description($card_api_id)
   {
-    $this->load->view('product_description');
+    $card_info = $this->product->get_card_info($card_api_id);
+    $related_cards = $this->product->get_cards_set($card_info['cardSet'], $card_api_id);
+    $this->load->view('product_description', array(
+      'card_info' => $card_info,
+      'related_cards' => $related_cards) );
+  }
+  public function load_api_stuff()
+  {
+    $this->load->view('api_stuff');
   }
 }
