@@ -41,6 +41,10 @@ class Products extends CI_Controller {
 	    $this->load->view('admin_products', array('cards' => $cards));
 	}
 
+	public function admin_products() {
+		redirect('admin_products');
+	}
+
 	// NEEDS TESTING
 	public function delete_card($card_id) {
 		echo "done";

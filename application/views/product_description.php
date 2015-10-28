@@ -8,8 +8,12 @@
   <?php $this->load->view("/partials/head.php") ?>
 </head>
 <body>
+
   <?php $this->load->view("/partials/nav.php") ?>
-  <a href="/">Go Back</a>
+  <div class="col-lg-12 col-lg-offset-10">
+    <a href="/"><button type="button" class="btn btn-primary">Go Back</button></a>
+</div>
+
 <div class="container-fluid">
 
   <h1><?= $card_info['name']; ?></h1>
