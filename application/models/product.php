@@ -25,13 +25,18 @@ class Product extends CI_Model {
 	}
 
 
-	public function get_card_info($card_api_id)
-	{
+	public function get_card_info($card_api_id) {
 		return $this->db->query("SELECT * FROM cards WHERE api_id = ?", $card_api_id) -> row_array();
 	}
-	public function get_cards_set($cardSet, $card_api_id){
+	public function get_cards_set($cardSet, $card_api_id) {
 		$values = array($cardSet, $card_api_id);
 		return $this->db->query("SELECT * FROM cards WHERE cardSet = ? AND api_id != ? LIMIT 5", $values) -> result_array();
+	}
+
+	public function get_single_card_for_admin($card_id) {
+		$query  = "SELECT FROM cards WHERE id=?";
+		$values = $card_id;
+		return $this->db->query($query, $values);
 	}
 
 }
