@@ -40,4 +40,9 @@ class Products extends CI_Controller {
 	// 		return json_encode(array("success" => true));
 	// 	} 
 	}
+
+	public function admin_edit_single_card($card_id) {
+		$cards = get_single_card_for_admin($card_id);
+		$this->load->view('admin_products_edit', array('cards' => $cards));
+	}
 }
