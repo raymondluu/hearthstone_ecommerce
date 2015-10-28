@@ -18,7 +18,7 @@ $route['api_stuff'] 				 = "main/load_api_stuff";
 $route['404_override'] 				 = '';
 $route['products/get_cards_json/(:num)'] = "products/get_cards_json/$1";
 
-
+$route['submit_billing'] = "orders/submit_billing";
 $route['add_card_to_cart/(:any)'] = "products/add_card_to_cart/$1";
 
 

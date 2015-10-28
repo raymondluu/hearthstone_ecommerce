@@ -1,4 +1,3 @@
-<?php var_dump($this->session->userdata['session_id']); ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>

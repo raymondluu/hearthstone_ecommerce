@@ -83,7 +83,7 @@
 
     <div class="col-md-3 col-md-offset-2">
             <h3>Billing Information</h3>
-        <form id="billing-form" action="controller/submit_billing" method="post">
+        <form id="billing-form" action="submit_billing" method="post">
             <div class="checkbox">
                 <label><input type="checkbox" name="same_shipping"> Same as Shipping</label>
             </div>
