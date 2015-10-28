@@ -7,10 +7,33 @@ class Order extends CI_Model {
 	}
 
 	public function get_one_order_for_show($order_id) {
-		$query  = "SELECT orders.id, CONCAT(customers.first_name, ' ', customers.last_name) AS customer_name,  CONCAT(customers.address, ' ', customers.address2, ' ', customers.state, ' ', customers.city, ' ', customers.zipcode) AS customer_address, CONCAT(billings.first_name, ' ', billings.last_name) AS billing_name,  CONCAT(billings.address, ' ', billings.address2, ' ', billings.state, ' ', billings.city, ' ', billings.zipcode) AS billing_address FROM orders JOIN customer_orders ON orders.id=customer_orders.order_id JOIN customers ON customer_orders.customer_id=customers.id JOIN billings ON customers.id = billings.customer_id WHERE orders.id = ?";
+		$query  = "SELECT orders.id, CONCAT(customers.first_name, ' ', customers.last_name) AS customer_name,  CONCAT(customers.address, ' ', customers.address2, ' ', customers.state, ' ', customers.city, ' ', customers.zipcode) AS customer_address, CONCAT(billings.first_name, ' ', billings.last_name) AS billing_name,  CONCAT(billings.address, ' ', billings.address2, ' ', billings.state, ' ', billings.city, ' ', billings.zipcode) AS billing_address, orders.status FROM orders JOIN customer_orders ON orders.id=customer_orders.order_id JOIN customers ON customer_orders.customer_id=customers.id JOIN billings ON customers.id = billings.customer_id WHERE orders.id = ?";
 		$values = $order_id;
 		return $this->db->query($query, $values)->row_array();
-
 	}
+
+	// public function get_one_order($order_id){
+	// 	$query  = "SELECT orders.id FROM orders WHERE orders.id=?";
+	// 	$values = $order_id;
+	// 	return $this->db->query($query, $values)->row_array();
+	// }
+
+	public function set_status_shipped($order_id){
+  		$query  = "UPDATE orders SET status='Shipped' WHERE id=?";
+  		$values = $order_id;
+  		return $this->db->query($query, $values);
+  	}
+
+  	public function set_status_in_process($order_id){
+  		$query  = "UPDATE orders SET status='In Process' WHERE id=?";
+  		$values = $order_id;
+  		return $this->db->query($query, $values);
+  	} 
+
+  	public function set_status_cancelled($order_id){
+  		$query  = "UPDATE orders SET status='Cancelled' WHERE id=?";
+  		$values = $order_id;
+  		return $this->db->query($query, $values);
+  	}
 
 }

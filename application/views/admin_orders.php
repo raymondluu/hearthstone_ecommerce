@@ -29,7 +29,7 @@
             <tbody>
                 <?php foreach ($orders as $order) { ?>
                 <tr>
-                    <td><?=$order['id']?></td>
+                    <td><a href="orders/show_order/<?=$order['id']?>"><?=$order['id']?></a></td>
                     <td><?=$order['customer_name']?></td>
                     <td><?=$order['purchase_date']?></td>
                     <td><?=$order['customer_address']?></td>
@@ -40,9 +40,9 @@
                             <span class="caret"></span>
                             </button>
                             <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-                                <li><a href="orders/set_status_shipped">Shipped</a></li>
-                                <li><a href="orders/set_status_in_process">In Process</a></li>
-                                <li><a href="orders/set_status_cancelled">Cancelled</a></li>
+                                <li><a href="orders/set_status_shipped/<?=$order['id']?>">Shipped</a></li>
+                                <li><a href="orders/set_status_in_process/<?=$order['id']?>">In Process</a></li>
+                                <li><a href="orders/set_status_cancelled/<?=$order['id']?>">Cancelled</a></li>
                             </ul>
                         </div>
                     </td>
