@@ -47,7 +47,7 @@ $(document).ready(function(){
 
 
 	});
-	
+
 	//when page is loaded show all cards
 	$.get("/products/get_cards_json/0", function(data){
 		// console.log(data);
@@ -56,7 +56,7 @@ $(document).ready(function(){
 			for(var i = 0; i < data.cards.length; i++)
 			{
 				// console.log('card[i].img');
-				img_str += " <a href='" + data.cards[i].api_id + "'><img class='products' src=' "+ data.cards[i].img +" '></a>";
+				img_str += " <a href='/product_description/" + data.cards[i].api_id + "'><img class='products' src=' "+ data.cards[i].img +" '></a>";
 			}
 			$('#title').html(title_str);
 			$('#pictureFrame').html(img_str);
