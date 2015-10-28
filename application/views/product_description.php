@@ -6,39 +6,16 @@
   <meta charset="utf-8">
   <title>Hearthstone Ecommerce Site</title>
   <?php $this->load->view("/partials/head.php") ?>
-  <?php $this->load->view("/partials/nav.php") ?>
-  <style type="text/css">
-    img
-    {
-    margin: -48px 0px 10px 25px;
-    max-height: 400px;
-    overflow: hidden;
-    }
-    #card_description
-    {
-      margin-left: 50px;
-      display: inline-block;
-      vertical-align: top;
-    }
-    #image
-    {
-    display: inline-block;
-    }
-    #mini
-    {
-      margin: 20px;
-      width: 100px;
-    }
-  </style>
 </head>
 <body>
+  <?php $this->load->view("/partials/nav.php") ?>
   <a href="/">Go Back</a>
 <div class="container-fluid">
 
   <h1><?= $card_info['name']; ?></h1>
 
   <div id="image">
-    <img src="<?= $card_info['img']; ?>">
+    <img class="card-desc-main-img"src="<?= $card_info['img']; ?>">
   </div>
   <div id="card_description">
     <h2>Detailed Card Information</h2>

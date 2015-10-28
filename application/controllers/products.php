@@ -4,9 +4,17 @@ class Products extends CI_Controller {
 
 	public function get_cards_json()
 	{
-		// $int = intval($start);
-
 		$cards = $this->product->get_all_cards();
+		$count = count($cards);
+		$data = array("cards" => $cards, "count" => $count);
+		echo json_encode($data);
+	}
+
+	public function get_cards_limit_json($start)
+	{
+		$int = intval($start);
+
+		$cards = $this->product->get_all_cards_limit($int);
 		$count = count($cards);
 		$data = array("cards" => $cards, "count" => $count);
 		echo json_encode($data);
@@ -14,6 +22,15 @@ class Products extends CI_Controller {
 
 	public function get_cards_by_type_json($type) {
 		$cards = $this->product->get_hero_cards($type);
+		$count = count($cards);
+		$data  = array("cards" => $cards, "count" => $count);
+		echo json_encode($data);
+	}
+
+	public function get_cards_by_type_limit_json($type, $start) {
+		$int = intval($start);
+
+		$cards = $this->product->get_hero_cards_limit($type, $int);
 		$count = count($cards);
 		$data  = array("cards" => $cards, "count" => $count);
 		echo json_encode($data);

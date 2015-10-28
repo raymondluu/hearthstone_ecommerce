@@ -9,18 +9,19 @@ class Product extends CI_Model {
 		// }
 	}
 
-	public function get_all_cards_limit($start)// $pageNum
+	public function get_all_cards_limit($start)
 	{
-		return $this->db->query("SELECT * FROM cards LIMIT ?, 2", $start)->result_array();
-
-		// if(pageNum == 1){
-		// 	return $this->db->query("SELECT * FROM cards LIMIT (0, 1)")->result_array();
-		// }
+		return $this->db->query("SELECT * FROM cards LIMIT ?, 20", $start)->result_array();
 	}
 
 	public function get_hero_cards($type)
 	{
 		return $this->db->query("SELECT * FROM cards WHERE type = ?", $type)->result_array();
+	}
+
+	public function get_hero_cards_limit($type, $start)
+	{
+		return $this->db->query("SELECT * FROM cards WHERE type = ? LIMIT ?, 20", array($type, $start))->result_array();
 	}
 
 

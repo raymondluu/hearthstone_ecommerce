@@ -7,16 +7,18 @@
     <link rel="stylesheet" type="text/css" href="/assets/bootstrap-3.3.5-dist/css/bootstrap.css">
 </head>
 <body>
+    <?php $this->load->view("/partials/admin_partial.php"); ?>
 
-    <form class="navbar-form navbar-left" role="search">
+    <!-- <form class="navbar-form navbar-left" role="search">
         <div class="form-group">
             <input type="text" class="form-control" placeholder="Search">
         </div>
         <button type="submit" class="btn btn-default">Submit</button>
     </form>
+​ -->
 ​
-​
-    <div class="col-lg-11">
+    <div class="col-lg-10 col-lg-offset-1">
+        <h1>Orders</h1>
         <table class="table table-striped table-bordered table-condensed">
             <thead>
                 <th class="col-lg-1">Order ID</th>
@@ -24,7 +26,7 @@
                 <th class="col-lg-2">Date</th>
                 <th class="col-lg-3">Billing Address</th>
                 <th class="col-lg-1">Total</th>
-                <th class="col-lg-2">Status</th>
+                <th class="col-lg-1">Status</th>
             </thead>
             <tbody>
                 <?php foreach ($orders as $order) { ?>
@@ -53,7 +55,7 @@
     </div>
 
     <!-- Page Navigation -->
-<div class="col-lg-12">
+<div class="col-lg-11 col-lg-offset-1">
     <nav>
         <ul class="pagination">
             <li>

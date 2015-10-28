@@ -9,7 +9,9 @@
 </head>
 <body>
     <?php $this->load->view("/partials/nav.php"); ?>
-    <div class="col-lg-9">
+
+    <div class="col-lg-9 col-lg-offset-1">
+        <h1>Checkout:</h1>
         <table class="table table-striped table-bordered table-condensed">
             <thead>
                 <th class="col-lg-3">Item</th>
@@ -35,16 +37,16 @@
         </table>
     </div>
 
-    <div class="col-lg-12">
+    <div class="col-lg-10 col-lg-offset-8">
         <!-- This needs to be left aligned -->
         <p>Total: </p>
-        <button type="button" class="btn btn-success"><a href="main/index">Continue Shopping</a></button>
-
+        <button type="button" class="btn btn-success"><a href="main/index" id="continue-shopping-btn">Continue Shopping</a></button>
+        <br>
+        <br>
+        <br>
     </div>
 
-​
-​
-    <div class="col-md-3">
+    <div class="col-md-3 col-md-offset-1">
         <h3>Shipping Information</h3>
         <form id="shipping-form"  action="controller/submit_address" method="post">
             <div class="form-group">
@@ -77,8 +79,9 @@
             </div>
             <button type="submit" class="btn btn-primary">Submit</button>
         </form>
+    </div>
 
-
+    <div class="col-md-3 col-md-offset-2">
             <h3>Billing Information</h3>
         <form id="billing-form" action="controller/submit_billing" method="post">
             <div class="checkbox">
@@ -148,7 +151,7 @@
                 </select>
             <input class="inputCard" type="hidden" name="expiry" id="expiry" maxlength="4"/>
             </div>
-            <button type="submit" class="btn btn-primary">Pay</button>
+            <button type="submit" class="btn btn-primary"> CHECKOUT » </button>
         </form>
     </div>
 ​
