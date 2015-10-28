@@ -62,7 +62,7 @@
     </div>
 
     <div class="col-lg-8">
-        <h3>ECHO SHIPPING STATUS</h3>
+        <h3>Status: <?= $order_info['status']?></h3>
         <div class="col-lg-4">
             <p>Subtotal: $</p>
             <p>Shipping: $</p>

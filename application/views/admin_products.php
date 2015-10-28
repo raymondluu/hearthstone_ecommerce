@@ -5,6 +5,7 @@
     <title>Hearthstone Ecommerce Site</title>
     <?php $this->load->view("/partials/head.php"); ?>
     <link rel="stylesheet" type="text/css" href="/assets/bootstrap-3.3.5-dist/css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="/assets/style.css">
 </head>
 <body>
 
@@ -26,28 +27,19 @@
                 <th class="col-lg-2">Action</th>
             </thead>
             <tbody>
+                <?php foreach ($cards as $card) { ?>
                 <tr>
-                    <td>IMAGE HERE</td>
-                    <td>1</td>
-                    <td>Ysera Gold</td>
-                    <td>1</td>
-                    <td>2</td>
+                    <td><img src="<?= $card['imgGold']?>" class="admin_products_imgs"/></td>
+                    <td><?= $card['id'] ?></td>
+                    <td><?= $card['name'] ?></td>
+                    <td><?= $card['inventory_count'] ?></td>
+                    <td><?= $card['quantity_sold'] ?></td>
                     <td>
-                        <a href="products/edit">Edit</a>
-                        <a href="products/delete">Delete</a>
+                        <!-- <a href="products/edit">Edit</a> -->
+                        <button type="button" class="btn btn-primary"><a class="delete_card_btn_link" href="products/delete_card/<?= $card['id'] ?>">Delete</a></button>
                     </td>
-                </tr>
-                <tr>
-                    <td>IMAGE HERE</td>
-                    <td>1</td>
-                    <td>Ysera Normal</td>
-                    <td>15</td>
-                    <td>25</td>
-                    <td>
-                        <a href="products/edit">Edit</a>
-                        <a href="products/delete">Delete</a>
-                    </td>
-                </tr>
+                </tr> 
+                <?php } ?>
             </tbody>
         </table>
     </div>
@@ -77,6 +69,18 @@
     </div>
 
 <script src="assets/js/jquery.min.js" type="text/javascript">
+// $(document).ready(function() {
+//     $('.delete_card_btn_link').on('click', function() {
+//         alert("Are you certain you want to delete this card?");
+//         // $this  = $(this);
+//         //     e.preventDefault();
+//         //     var url = $(this).attr("href");
+//         //     $.get(url, function(r){
+//         //         if(r.success){
+//         //             $this.closest("tr").remove();
+//         //         }
+//     })
+// })
 </script>
 </body>
 </html>

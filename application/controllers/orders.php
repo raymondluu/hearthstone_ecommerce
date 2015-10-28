@@ -17,17 +17,24 @@ class Orders extends CI_Controller {
   		$order = $this->order->get_one_order_for_show($order_id);
   		$this->load->view('admin_orders_show', array("order_info" => $order));
   	}
-  	// public function set_status_shipped($order_id){
-  		
-  	// }
 
-  	// public function set_status_in_process($order_id){
+  	public function set_status_shipped($order_id){
+  		$this->order->set_status_shipped($order_id);
+  		$order = $this->order->get_one_order_for_show($order_id);
+  		$this->load->view('admin_orders_show', array("order_info" => $order));
+  	}
 
-  	// } 
+  	public function set_status_in_process($order_id){
+  		$this->order->set_status_in_process($order_id);
+  		$order = $this->order->get_one_order_for_show($order_id);
+  		$this->load->view('admin_orders_show', array("order_info" => $order));
+  	} 
 
-  	// public function set_status_cancelled($order_id){
-
-  	// }
+  	public function set_status_cancelled($order_id){
+  		$this->order->set_status_cancelled($order_id);
+  		$order = $this->order->get_one_order_for_show($order_id);
+  		$this->load->view('admin_orders_show', array("order_info" => $order));
+  	}
 
 
 }
