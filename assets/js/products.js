@@ -104,16 +104,36 @@ $(document).ready(function(){
 	}, "json");
 
 	//get category link names
-	$.get("/products/get_cards_by_type_json/hero", function(data){
-		$('#catheros').append("Heros (" + data.count + ")");
-	}, "json");
-	$.get("/products/get_cards_by_type_json/spell", function(data){
-		$('#catspells').append("Spells (" + data.count + ")");
-	}, "json");
-	$.get("/products/get_cards_by_type_json/weapon", function(data){
-		$('#catweapons').append("Weapons (" + data.count + ")");
-	}, "json");
-	$.get("/products/get_cards_by_type_json/minion", function(data){
-		$('#catminions').append("Minions (" + data.count + ")");
+	$.get("/products/get_cards_json", function(data){
+		var hero_count = 0;
+		var spell_count = 0;
+		var weapon_count = 0;
+		var minion_count = 0;
+		var hero_title;
+
+		for(var i = 0; i < data.count; i++)
+		{
+			if(data.cards[i].type == "Hero")
+			{
+				hero_count++;
+			}
+			else if(data.cards[i].type == "Spell")
+			{
+				spell_count++;
+			}
+			else if(data.cards[i].type == "Weapon")
+			{
+				weapon_count++;
+			}
+			else if(data.cards[i].type == "Minion")
+			{
+				minion_count++;
+			}
+		}
+
+		$('#catheros').append("Heroes (" + hero_count + ")");
+		$('#catspells').append("Spells (" + spell_count + ")");
+		$('#catweapons').append("Weapons (" + weapon_count + ")");
+		$('#catminions').append("Minions (" + minion_count + ")");
 	}, "json");
 });
