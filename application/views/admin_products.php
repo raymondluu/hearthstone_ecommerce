@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <title>Hearthstone Ecommerce Site</title>
-    <?php $this->load->view("/partials/head.php"); ?>
+    <?php $this->load->view("/partials/admin_partial.php"); ?>
     <link rel="stylesheet" type="text/css" href="/assets/bootstrap-3.3.5-dist/css/bootstrap.css">
     <link rel="stylesheet" type="text/css" href="/assets/style.css">
 </head>
@@ -35,8 +35,8 @@
                     <td><?= $card['inventory_count'] ?></td>
                     <td><?= $card['quantity_sold'] ?></td>
                     <td>
-                        <!-- <a href="products/edit">Edit</a> -->
-                        <button type="button" class="btn btn-primary"><a class="delete_card_btn_link" href="products/delete_card/<?= $card['id'] ?>">Delete</a></button>
+                        <a class="edit_btn_link" href="products/edit/<?= $card['id'] ?>"><button type="button" class="btn btn-primary">Edit</button></a>
+                        <a class="delete_card_btn_link" href="products/delete_card/<?= $card['id'] ?>"><button type="button" class="btn btn-primary">Delete</button></a>
                     </td>
                 </tr> 
                 <?php } ?>
