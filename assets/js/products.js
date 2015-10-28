@@ -1,7 +1,6 @@
 $(document).ready(function(){
 	//when category links are clicked, populate page
 	$(document).on("click", "a", function(e){
-		e.preventDefault();
 		var id = $(this).attr("id");
 
 		var page = "0";
@@ -15,31 +14,31 @@ $(document).ready(function(){
 		if(id == "catheros")
 		{
 			title_str = "Heros";
-			url = "/products/get_cards_by_type_json/hero";
+			url = "/products/get_cards_by_type_limit_json/hero/" + page;
 			pag_url = "/products/get_cards_by_type_json/hero";
 		}
 		else if(id == "catenchants")
 		{
 			title_str = "Enchantments";
-			url = "/products/get_cards_by_type_json/enchantment";
+			url = "/products/get_cards_by_type_limit_json/enchantment/" + page;
 			pag_url = "/products/get_cards_by_type_json/enchantment";
 		}
 		else if(id == "catspells")
 		{
 			title_str = "Spells";
-			url = "/products/get_cards_by_type_json/spell";
+			url = "/products/get_cards_by_type_limit_json/spell/" + page;
 			pag_url = "/products/get_cards_by_type_json/spell";
 		}
 		else if(id == "catweapons")
 		{
 			title_str = "Weapons";
-			url = "/products/get_cards_by_type_json/weapon";
+			url = "/products/get_cards_by_type_limit_json/weapon/" + page;
 			pag_url = "/products/get_cards_by_type_json/weapon";
 		}
 		else if(id == "catminions")
 		{
 			title_str = "Minions";
-			url = "/products/get_cards_by_type_json/minion";
+			url = "/products/get_cards_by_type_limit_json/minion/" + page;
 			pag_url = "/products/get_cards_by_type_json/minion";
 		}
 		else if(id == "showall")
@@ -55,12 +54,12 @@ $(document).ready(function(){
 
 			var pagination_str = "";
 
-			pagination_str += "<li><a href aria-label='Previous'><span aria-hidden='true'>&laquo;</span></a></li>";
+			//pagination_str += "<li><a href aria-label='Previous'><span aria-hidden='true'>&laquo;</span></a></li>";
 			for(var i = 0; i < pages; i++)
 			{
 				pagination_str += "<li><a href id='" + id + "' page='" + (i * 20) + "'>" + (i + 1) + "</a></li>";
 			}
-			pagination_str += "<li><a href aria-label='Next'><span aria-hidden='true'>&raquo;</span></a></li>";
+			//pagination_str += "<li><a href aria-label='Next'><span aria-hidden='true'>&raquo;</span></a></li>";
 			$('.pagination').html(pagination_str);
 		}, "json");
 
@@ -87,12 +86,12 @@ $(document).ready(function(){
 
 		var pagination_str = "";
 
-		pagination_str += "<li><a href aria-label='Previous'><span aria-hidden='true'>&laquo;</span></a></li>";
+		//pagination_str += "<li><a href aria-label='Previous'><span aria-hidden='true'>&laquo;</span></a></li>";
 		for(var i = 0; i < pages; i++)
 		{
-			pagination_str += "<li><a href id='" + id + "' page='" + (i * 20) + "'>" + (i + 1) + "</a></li>";
+			pagination_str += "<li><a href id='showall' page='" + (i * 20) + "'>" + (i + 1) + "</a></li>";
 		}
-		pagination_str += "<li><a href aria-label='Next'><span aria-hidden='true'>&raquo;</span></a></li>";
+		//pagination_str += "<li><a href aria-label='Next'><span aria-hidden='true'>&raquo;</span></a></li>";
 		$('.pagination').html(pagination_str);
 	}, "json");
 

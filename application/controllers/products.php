@@ -27,6 +27,15 @@ class Products extends CI_Controller {
 		echo json_encode($data);
 	}
 
+	public function get_cards_by_type_limit_json($type, $start) {
+		$int = intval($start);
+
+		$cards = $this->product->get_hero_cards_limit($type, $int);
+		$count = count($cards);
+		$data  = array("cards" => $cards, "count" => $count);
+		echo json_encode($data);
+	}
+
 	public function admin_products_view() {
 		$cards = $this->product->get_all_cards_for_admin();
 	    $this->load->view('admin_products', array('cards' => $cards));
