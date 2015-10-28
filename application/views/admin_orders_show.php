@@ -7,7 +7,7 @@
     <link rel="stylesheet" type="text/css" href="/assets/bootstrap-3.3.5-dist/css/bootstrap.css">
 </head>
 <body>
-
+    <?php $this->load->view("/partials/admin_partial.php"); ?>
     <div class="col-lg-4">
         <table class="table table-striped table-bordered table-condensed">
             <tr>
@@ -61,7 +61,13 @@
             </table>
     </div>
 
-    <div class="col-lg-8">
+    <div class="col-lg-3 col-lg-offset-1 <?php if ($order_info['status'] == 'Shipped'){ 
+                                    echo 'green';
+                                    } elseif ($order_info['status'] == 'In Process') {
+                                     echo 'yellow';
+                                    } else { echo 'red';}
+
+                                    ?>">
         <h3>Status: <?= $order_info['status']?></h3>
         <div class="col-lg-4">
             <p>Subtotal: $</p>
@@ -70,10 +76,6 @@
         </div>
     </div>    
 
-
-​
-        </div>
-    </div>
 ​
 </body>
 <html>

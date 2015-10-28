@@ -2,6 +2,27 @@
 	width: 170px;
 }
 
+.card-desc-main-img {
+    margin: -48px 0px 10px 25px;
+    max-height: 400px;
+    overflow: hidden;
+}
+
+#card_description {
+  margin-left: 50px;
+  display: inline-block;
+  vertical-align: top;
+}
+
+#image {
+display: inline-block;
+}
+
+#mini {
+  margin: 20px;
+  width: 100px;
+}
+
 .admin_products_imgs {
 	width:50%;
 }
@@ -16,4 +37,33 @@
 	color: white;
 }
 
+.navbar-h1 {
+	color: #777;
+
+}
+
+.navbar-default .navbar-nav > li > a {
+	   margin-top: 10px;
+}
+
+#continue-shopping-btn {
+	text-decoration: none;
+	color: white;
+}
+
+.green {
+	background-color: #4DFA90;
+	border-radius: 10px;
+	text-align: center;
+}
+.yellow{
+	background-color: #FABE4D;
+	border-radius: 10px;
+	text-align: center;
+}
+.red {
+	background-color: #FF5468;
+	border-radius: 10px;
+    text-align: center;
+}
 
