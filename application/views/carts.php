@@ -1,3 +1,4 @@
+<!-- <?php var_dump($this->session); ?> -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -18,25 +19,18 @@
             </thead>
             <tbody>
                 <tr>
-                    <td>Card Name</td>
-                    <td>Card Price</td>
-                    <td><a href="controller/update_quantity">update</a>
+<?php foreach ($cart_info as $cards_in_cart) { ?>
+                    <td><?=$cards_in_cart['name']?> </td>
+                    <td>$<?=$cards_in_cart['price']?></td>
+                    <td><?=$cards_in_cart['card_quantity']?>
+                        <a href="controller/update_quantity"></a>
                         <a href="controller/remove_item"><button type="button" class="btn btn-default" aria-label="Left Align">
                         <span class="glyphicon glyphicon glyphicon-trash" aria-hidden="true"></span>
                         </button></a>
                     </td>
-                    <td>$19.99</td>
+                    <td>$<?php echo $cards_in_cart['price'] * $cards_in_cart['card_quantity']?></td>
                 </tr>
-                <tr>
-                    <td>Card Name</td>
-                    <td>Card Price</td>
-                    <td>1 <a href="controller/update_quantity">update</a>
-                        <a href="controller/remove_item"><button type="button" class="btn btn-default" aria-label="Left Align">
-                        <span class="glyphicon glyphicon glyphicon-trash" aria-hidden="true"></span>
-                        </button></a>
-                    </td>
-                    <td>$19.99</td>
-                </tr>
+<?php } ?>
             </tbody>
         </table>
     </div>
@@ -46,7 +40,7 @@
         <p>Total: </p>
         <button type="button" class="btn btn-success"><a href="main/index">Continue Shopping</a></button>
 
-    </div> 
+    </div>
 
 ​
 ​
@@ -81,7 +75,7 @@
                 <label for="shipping_zipcode">Zipcode:</label>
                 <input type="text" class="form-control" name="shipping_zipcode">
             </div>
-            <button type="submit" class="btn btn-primary">Submit</button>        
+            <button type="submit" class="btn btn-primary">Submit</button>
         </form>
 
 
