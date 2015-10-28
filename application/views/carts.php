@@ -26,7 +26,7 @@
                     <td>$<?=$cards_in_cart['price']?></td>
                     <td><?=$cards_in_cart['card_quantity']?>
                         <a href="controller/update_quantity"></a>
-                        <a href="controller/remove_item"><button type="button" class="btn btn-default" aria-label="Left Align">
+                        <a href="controller/remove_item"><button id="trashGlyph" type="button" class="btn btn-default" aria-label="Left Align">
                         <span class="glyphicon glyphicon glyphicon-trash" aria-hidden="true"></span>
                         </button></a>
                     </td>
@@ -77,8 +77,7 @@
                 <label for="shipping_zipcode">Zipcode:</label>
                 <input type="text" class="form-control" name="shipping_zipcode">
             </div>
-            <button type="submit" class="btn btn-primary">Submit</button>
-        </form>
+            </form>
     </div>
 
     <div class="col-md-3 col-md-offset-2">
