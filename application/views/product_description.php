@@ -1,45 +1,4 @@
-<?php
-  $this->load->view('/unirest/src/Unirest.php');
-
-
-  $response1 = Unirest\Request::get("https://omgvamp-hearthstone-v1.p.mashape.com/cards/CS2_097",
-    array
-    (
-    "X-Mashape-Key" => "h1qylTCmitmshxurlWa9zZuVvvb5p10IB58jsnIYzfQeooEdLv",
-    "Accept" => "json"
-    )
-  );
-  $response2 = Unirest\Request::get("https://omgvamp-hearthstone-v1.p.mashape.com/cards/HERO_08",
-    array
-    (
-    "X-Mashape-Key" => "h1qylTCmitmshxurlWa9zZuVvvb5p10IB58jsnIYzfQeooEdLv",
-    "Accept" => "json"
-    )
-  );
-  $response3 = Unirest\Request::get("https://omgvamp-hearthstone-v1.p.mashape.com/cards/CS2_179",
-    array
-    (
-    "X-Mashape-Key" => "h1qylTCmitmshxurlWa9zZuVvvb5p10IB58jsnIYzfQeooEdLv",
-    "Accept" => "json"
-    )
-  );
-  $response4 = Unirest\Request::get("https://omgvamp-hearthstone-v1.p.mashape.com/cards/CS2_029",
-    array
-    (
-    "X-Mashape-Key" => "h1qylTCmitmshxurlWa9zZuVvvb5p10IB58jsnIYzfQeooEdLv",
-    "Accept" => "json"
-    )
-  );
-
-  $response5 = Unirest\Request::get('https://omgvamp-hearthstone-v1.p.mashape.com/cards/power%20overwhelming',
-    array
-    (
-    "X-Mashape-Key" => "h1qylTCmitmshxurlWa9zZuVvvb5p10IB58jsnIYzfQeooEdLv",
-    "Accept" => "json"
-    )
-  );
-
-?>
+<!-- <?php var_dump($related_cards) ?> -->
 
 <!DOCTYPE html>
 <html lang="en">
@@ -47,6 +6,7 @@
   <meta charset="utf-8">
   <title>Hearthstone Ecommerce Site</title>
   <?php $this->load->view("/partials/head.php") ?>
+  <?php $this->load->view("/partials/nav.php") ?>
   <style type="text/css">
     img
     {
@@ -73,43 +33,41 @@
 <body>
   <a href="/">Go Back</a>
 <div class="container-fluid">
-  <h1><?= $response1->body[0]->name; ?></h1>
+
+  <h1><?= $card_info['name']; ?></h1>
 
   <div id="image">
-    <img src="<?= $response1->body[0]->imgGold; ?>">
+    <img src="<?= $card_info['img']; ?>">
   </div>
 
   <div id="card_description">
     <h2>Detailed Card Information</h2>
     <ul>
-    <li><strong>Set:</strong> <?=$response1->body[0]->cardSet; ?></li>
-    <li><strong>Type:</strong> <?= $response1->body[0]->type; ?></li>
-    <li><strong>Faction:</strong> <?= $response1->body[0]->faction; ?></li>
-    <li><strong>Rarity:</strong> <?= $response1->body[0]->rarity; ?></li>
-    <li><strong>Cost to play:</strong> <?= $response1->body[0]->cost; ?></li>
-    <li><strong>Attack:</strong> <?= $response1->body[0]->attack ; ?></li>
-    <?php if(isset($response1->body[0]->health)){ ?>
-    <li><strong>Health:</strong> <?= $response1->body[0]->health ?></li>
+    <li><strong>Set:</strong> <?= $card_info['cardSet']; ?></li>
+    <li><strong>Type:</strong> <?= $card_info['type']; ?></li>
+    <li><strong>Faction:</strong> <?= $card_info['faction']; ?></li>
+    <li><strong>Rarity:</strong> <?= $card_info['rarity']; ?></li>
+
+
+
+ <?php if($card_info['text'] != null){ ?>
+        <li><strong>Text:</strong> <?= $card_info['text']; ?></li>
     <?php } ?>
-    <li><strong>Text:</strong> <?= $response1->body[0]->text; ?></li>
-    <li><strong>Flavor:</strong> <?= $response1->body[0]->flavor; ?></li>
-    <li><strong>Artist:</strong> <?= $response1->body[0]->artist; ?></li>
-    <li><strong>Collectible:</strong> <?php if($response1->body[0]->collectible == 1)
+ <?php if($card_info['artist'] != null){ ?>
+      <li><strong>Artist:</strong> <?= $card_info['artist']; ?></li>
+  <?php } ?>
+
+
+    <li><strong>Collectible:</strong> <?php if($card_info['collectible'] == 1)
         { echo "YES"; } else {echo "NO";}?>
     </li>
 
-    <?php if(isset($response1->body[0]->elite)){ ?>
+    <?php if(isset($card_info['elite'])){ ?>
     <li><strong>Elite:</strong> <?php if($response1->body[0]->elite == 1)
         { echo "YES"; } else {echo "NO";}?>
     <?php } ?>
-
     </li>
-    <li><strong>Locale:</strong> <?= $response1->body[0]->locale; ?></li>
-
-    <?php if(isset($response1->body[0]->heatlh)){ ?>
-    <li><strong>Health:</strong> <?= $response1->body[0]->health ?></li>
-    <?php } ?>
-
+    <li><strong>Locale:</strong> <?= $card_info['locale']; ?></li>
 
   </ul>
   <form action="add to cart" method="post">
@@ -121,13 +79,14 @@
     <input type="submit" name="buy" value="buy">
   </form>
   </div>
-  <div id="bottom_row_imgs">
-    <img id="mini" src="<?= $response2->body[0]->imgGold; ?>">
-    <img id="mini" src="<?= $response3->body[0]->imgGold; ?>">
-    <img id="mini" src="<?= $response4->body[0]->imgGold; ?>">
-    <img id="mini" src="<?= $response5->body[1]->imgGold; ?>">
-  </div>
 
+  <div id="bottom_row">
+<?php
+  for($i = 0; $i < count($related_cards); $i++){
+    echo '<a href="/product_description/'.$related_cards[$i]['api_id'].'"><img id="mini" src="'. $related_cards[$i]['img'] .'"></a>';
+   }
+   ?>
+  </div>
 </div>
 </body>
 </html>

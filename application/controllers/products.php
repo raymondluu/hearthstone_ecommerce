@@ -6,7 +6,7 @@ class Products extends CI_Controller {
 	{
 		$cards = $this->product->get_all_cards();
 		$count = count($cards);
-		$data = array("cards" => $cards, "count" => $count); 
+		$data = array("cards" => $cards, "count" => $count);
 		echo json_encode($data);
 	}
 
