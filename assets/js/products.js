@@ -1,6 +1,6 @@
 $(document).ready(function(){
 	//when category links are clicked, populate page
-	$(document).on("click", "a", function(e){
+	$(document).on("click", "li a", function(e){
 		var id = $(this).attr("id");
 
 		var page = "0";
@@ -16,12 +16,6 @@ $(document).ready(function(){
 			title_str = "Heros";
 			url = "/products/get_cards_by_type_limit_json/hero/" + page;
 			pag_url = "/products/get_cards_by_type_json/hero";
-		}
-		else if(id == "catenchants")
-		{
-			title_str = "Enchantments";
-			url = "/products/get_cards_by_type_limit_json/enchantment/" + page;
-			pag_url = "/products/get_cards_by_type_json/enchantment";
 		}
 		else if(id == "catspells")
 		{
@@ -57,7 +51,7 @@ $(document).ready(function(){
 			//pagination_str += "<li><a href aria-label='Previous'><span aria-hidden='true'>&laquo;</span></a></li>";
 			for(var i = 0; i < pages; i++)
 			{
-				pagination_str += "<li><a href id='" + id + "' page='" + (i * 20) + "'>" + (i + 1) + "</a></li>";
+				pagination_str += "<li><a class='pag' href id='" + id + "' page='" + (i * 20) + "'>" + (i + 1) + "</a></li>";
 			}
 			//pagination_str += "<li><a href aria-label='Next'><span aria-hidden='true'>&raquo;</span></a></li>";
 			$('.pagination').html(pagination_str);
@@ -76,7 +70,7 @@ $(document).ready(function(){
 			$('#pictureFrame').html(img_str);
 		}, "json");
 
-		// e.preventDefault();
+		e.preventDefault();
 		// return false;
 	});
 
@@ -112,9 +106,6 @@ $(document).ready(function(){
 	//get category link names
 	$.get("/products/get_cards_by_type_json/hero", function(data){
 		$('#catheros').append("Heros (" + data.count + ")");
-	}, "json");
-	$.get("/products/get_cards_by_type_json/enchantment", function(data){
-		$('#catenchants').append("Enchantments (" + data.count + ")");
 	}, "json");
 	$.get("/products/get_cards_by_type_json/spell", function(data){
 		$('#catspells').append("Spells (" + data.count + ")");

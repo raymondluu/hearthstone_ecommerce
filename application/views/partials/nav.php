@@ -5,7 +5,7 @@
 		</div>
 		<div class="navbar-collapse collapse">
 			<ul class="nav navbar-nav navbar-right">
-              <li><a href="/carts">Shopping Cart (PHP STUFF HERE)</a></li>
+              <ol><a href="/carts">Shopping Cart (PHP STUFF HERE)</a></ol>
             </ul>
 		</div>
 	</div>
