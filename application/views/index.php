@@ -34,7 +34,6 @@
         <p>Categories</p>
         <ul>
           <li><a id="catheros" href="#"></a></li>
-          <li><a id="catenchants" href="#"></a></li>
           <li><a id="catspells" href="#"></a></li>
           <li><a id="catweapons" href="#"></a></li>
           <li><a id="catminions" href="#"></a></li>

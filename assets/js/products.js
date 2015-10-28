@@ -17,12 +17,6 @@ $(document).ready(function(){
 			url = "/products/get_cards_by_type_limit_json/hero/" + page;
 			pag_url = "/products/get_cards_by_type_json/hero";
 		}
-		else if(id == "catenchants")
-		{
-			title_str = "Enchantments";
-			url = "/products/get_cards_by_type_limit_json/enchantment/" + page;
-			pag_url = "/products/get_cards_by_type_json/enchantment";
-		}
 		else if(id == "catspells")
 		{
 			title_str = "Spells";
@@ -112,9 +106,6 @@ $(document).ready(function(){
 	//get category link names
 	$.get("/products/get_cards_by_type_json/hero", function(data){
 		$('#catheros').append("Heros (" + data.count + ")");
-	}, "json");
-	$.get("/products/get_cards_by_type_json/enchantment", function(data){
-		$('#catenchants').append("Enchantments (" + data.count + ")");
 	}, "json");
 	$.get("/products/get_cards_by_type_json/spell", function(data){
 		$('#catspells').append("Spells (" + data.count + ")");
