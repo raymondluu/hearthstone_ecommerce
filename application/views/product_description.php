@@ -1,4 +1,4 @@
-<!-- <?php var_dump($related_cards) ?> -->
+
 
 <!DOCTYPE html>
 <html lang="en">
