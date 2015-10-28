@@ -1,5 +1,4 @@
-<!-- <?php var_dump($related_cards) ?> -->
-
+<?php var_dump($this->session->userdata['session_id']); ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,8 +7,12 @@
   <?php $this->load->view("/partials/head.php") ?>
 </head>
 <body>
+
   <?php $this->load->view("/partials/nav.php") ?>
-  <a href="/">Go Back</a>
+  <div class="col-lg-12 col-lg-offset-10">
+    <a href="/"><button type="button" class="btn btn-primary">Go Back</button></a>
+</div>
+
 <div class="container-fluid">
 
   <h1><?= $card_info['name']; ?></h1>
@@ -40,14 +43,17 @@
     </li>
     <li><strong>Locale:</strong> <?= $card_info['locale']; ?></li>
   </ul>
-  <form action="add to cart" method="post">
-    <select>
-      <option>1 ($5.99)</option>
-      <option>1 ($11.98)</option>
-      <option>1 ($17.97)</option>
+  <form action="/add_card_to_cart/<?=$card_info['api_id']?>" method="post">
+    <!-- <input type="number" name="quantity" min="1" max="5"> -->
+    <select name="card_count">
+      <option value = "1">1 ($<?= $card_info['price']; ?>)</option>
+      <option value = "2">2 ($<?= $card_info['price'] * 2 ?>)</option>
+      <option value = "3">3 ($<?= $card_info['price'] * 3 ?>)</option>
     </select>
-    <input type="submit" name="buy" value="buy">
+    <input type="submit" name="add_cart" value="Add to Cart">
+    <input type="hidden" name="card_id" value="<?=$card_info['id']?>">
   </form>
+  <?php echo $this->session->flashdata('added'); ?>
   </div>
   <div id="bottom_row">
 <?php

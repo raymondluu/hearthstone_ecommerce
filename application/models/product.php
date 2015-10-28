@@ -49,5 +49,21 @@ class Product extends CI_Model {
 		$values = $card_id;
 		return $this->db->query($query, $values);
 	}
+	public function add_cart($post, $session_id)
+	{
+		$query = "INSERT INTO cart (session_id, card_id, card_quantity)
+		VALUES(?, ?, ?)";
+		$values = array($session_id, $post['card_id'], $post['card_count']);
+		$this->db->query($query, $values);
+	}
+	public function get_cart($session_id)
+	{
+		$query = "SELECT cart.id AS Cart_ID, cards.id AS Card_ID, cart.card_quantity, cards.name, cards.price FROM cart
+							JOIN cards
+							ON cart.card_id = cards.id
+							WHERE cart.session_id = ?";
+		$value = $session_id;
+		return $this->db->query($query, $value)->result_array();
+	}
 
 }

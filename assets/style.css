@@ -67,3 +67,7 @@ display: inline-block;
     text-align: center;
 }
 
+#trashGlyph
+{
+  float: right;
+}
