@@ -10,8 +10,9 @@
   <style type="text/css">
     img
     {
-      border-radius: 15px;
-      background-color: rgba(211,211,211,1);
+    margin: -48px 0px 10px 25px;
+    max-height: 400px;
+    overflow: hidden;
     }
     #card_description
     {
@@ -39,7 +40,6 @@
   <div id="image">
     <img src="<?= $card_info['img']; ?>">
   </div>
-
   <div id="card_description">
     <h2>Detailed Card Information</h2>
     <ul>
@@ -47,28 +47,21 @@
     <li><strong>Type:</strong> <?= $card_info['type']; ?></li>
     <li><strong>Faction:</strong> <?= $card_info['faction']; ?></li>
     <li><strong>Rarity:</strong> <?= $card_info['rarity']; ?></li>
-
-
-
  <?php if($card_info['text'] != null){ ?>
         <li><strong>Text:</strong> <?= $card_info['text']; ?></li>
     <?php } ?>
  <?php if($card_info['artist'] != null){ ?>
       <li><strong>Artist:</strong> <?= $card_info['artist']; ?></li>
   <?php } ?>
-
-
     <li><strong>Collectible:</strong> <?php if($card_info['collectible'] == 1)
         { echo "YES"; } else {echo "NO";}?>
     </li>
-
     <?php if(isset($card_info['elite'])){ ?>
     <li><strong>Elite:</strong> <?php if($response1->body[0]->elite == 1)
         { echo "YES"; } else {echo "NO";}?>
     <?php } ?>
     </li>
     <li><strong>Locale:</strong> <?= $card_info['locale']; ?></li>
-
   </ul>
   <form action="add to cart" method="post">
     <select>
@@ -79,7 +72,6 @@
     <input type="submit" name="buy" value="buy">
   </form>
   </div>
-
   <div id="bottom_row">
 <?php
   for($i = 0; $i < count($related_cards); $i++){
