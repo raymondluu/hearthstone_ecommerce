@@ -22,7 +22,7 @@ $(document).ready(function(){
 		var tbl_str = "";
 			for(var i = 0; i < data.cards.length; i++){
 				// console.log(data.cards[i].imgGold);
-				tbl_str += "<tr><td><img src='" 
+				tbl_str += "<tr class='text-center'><td><img src='" 
 						+ data.cards[i].img + 
 						"' class='admin_products_imgs'/></td><td>" 
 						+ data.cards[i].id + "</td><td>" 

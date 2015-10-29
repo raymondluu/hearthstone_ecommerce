@@ -37,7 +37,7 @@ $(document).ready(function(){
 		}
 		else if(id == "showall")
 		{
-			title_str = "Show all";
+			title_str = "All Available Cards";
 			url = "/products/get_cards_limit_json/" + page;
 			pag_url = "/products/get_cards_json";
 		}
@@ -92,7 +92,7 @@ $(document).ready(function(){
 	//when page is loaded show all cards
 	$.get("/products/get_cards_limit_json/0", function(data){
 		// console.log(data);
-		title_str = "Show all";
+		title_str = "All Available Cards";
 		var img_str = "";
 			for(var i = 0; i < data.cards.length; i++)
 			{

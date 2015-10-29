@@ -8,32 +8,32 @@
 </head>
 <body>
     <?php $this->load->view("/partials/admin_partial.php"); ?>
-    <div class="col-lg-4">
+    <div class="col-lg-4 text-center">
         <table class="table table-striped table-bordered table-condensed">
             <tr>
-                <th>Order ID:</th>
+                <th class="text-center">Order ID:</th>
                 <td><?= $order_info['id']?></td>
             </tr>
             <tr>
                 <th colspan="2">Customer Shipping Info:</th>
             </tr>
             <tr>
-                <th>Name:</th>
+                <th class="text-center">Name:</th>
                 <td><?= $order_info['customer_name']?></td>
             </tr>
             <tr>
-                <th>Address:</th>
+                <th class="text-center">Address:</th>
                 <td><?= $order_info['customer_address']?></td>
             </tr>
             <tr>
                 <th colspan="2">Customer Billing Info:</th>
             </tr>
             <tr>
-                <th>Name:</th>
+                <th class="text-center">Name:</th>
                 <td><?= $order_info['billing_name']?></td>
             </tr>
             <tr>
-                <th>Address:</th>
+                <th class="text-center">Address:</th>
                 <td><?= $order_info['billing_address']?></td>
             </tr>
         </table>
@@ -42,15 +42,15 @@
     <div class="col-lg-8">
             <table class="table table-striped table-bordered table-condensed">
                 <thead>
-                    <th class="col-lg-1">ID</th>
-                    <th class="col-lg-2">Item</th>
-                    <th class="col-lg-1">Price</th>
-                    <th class="col-lg-1">Quantity</th>
-                    <th class="col-lg-2">Total</th>
+                    <th class="col-lg-1 text-center">ID</th>
+                    <th class="col-lg-2 text-center">Item</th>
+                    <th class="col-lg-1 text-center">Price</th>
+                    <th class="col-lg-1 text-center">Quantity</th>
+                    <th class="col-lg-2 text-center">Total</th>
                 </thead>
                 <tbody>
                    <!--  NEED TO ADD PRODUCTS -->
-                    <tr>
+                    <tr class="text-center">
                         <td>PRODUCT ID</td>
                         <td>ITEM</td>
                         <td>PRICE</td>

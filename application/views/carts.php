@@ -1,5 +1,3 @@
-<?= var_dump($cart_info) ?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
