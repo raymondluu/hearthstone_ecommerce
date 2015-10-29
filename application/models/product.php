@@ -57,7 +57,7 @@ class Product extends CI_Model {
 		$values = $session_id;
 		return $this->db->query($query2, $values)->row_array();
 	}
-	
+
 	public function get_cart($session_id) {
 
 		$query = "SELECT session_id, cart.id AS Cart_ID, cards.id AS Card_ID, SUM(card_quantity) AS card_quantity, cards.name, cards.price FROM cart
