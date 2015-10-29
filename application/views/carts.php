@@ -148,7 +148,7 @@
                 </select>
             <input class="inputCard" type="hidden" name="expiry" id="expiry" maxlength="4"/>
             </div>
-            <button type="submit" class="btn btn-primary"> CHECKOUT » </button>
+            <button type="submit" class="btn btn-primary"> CHECKOUT </button>
         </form>
     </div>
 </body>
