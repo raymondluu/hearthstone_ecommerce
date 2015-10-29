@@ -1,3 +1,5 @@
+<?= var_dump($cart_info) ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -25,7 +27,7 @@
                     <td><?=$cards_in_cart['name']?> </td>
                     <td>$<?=$cards_in_cart['price']?></td>
                     <td><?=$cards_in_cart['card_quantity']?>
-                        <a href="/remove_item/<?= $cards_in_cart['Cart_ID']?>"><button id="trashGlyph" type="button" class="btn btn-default" aria-label="Left Align">
+                        <a href="/remove_item/<?= $cards_in_cart['Card_ID']?>"><button id="trashGlyph" type="button" class="btn btn-default" aria-label="Left Align">
                         <span class="glyphicon glyphicon glyphicon-trash" aria-hidden="true"></span></button></a>
                     </td>
                     <td>$<?php $price = $cards_in_cart['price'] * $cards_in_cart['card_quantity'];

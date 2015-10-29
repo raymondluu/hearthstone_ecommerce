@@ -38,13 +38,11 @@
                         <a class="edit_btn_link" href="products/edit/<?= $card['id'] ?>"><button type="button" class="btn btn-primary">Edit</button></a>
                         <a class="delete_card_btn_link" href="products/delete_card/<?= $card['id'] ?>"><button type="button" class="btn btn-primary">Delete</button></a>
                     </td>
-                </tr> 
+                </tr>
                 <?php } ?>
             </tbody>
         </table>
     </div>
-
-
     <!-- Page Navigation -->
     <div class="col-lg-12">
         <nav>
@@ -53,8 +51,30 @@
             </ul>
         </nav>
     </div>
+<<<<<<< HEAD
 
 <!-- <script src="assets/js/jquery.min.js" type="text/javascript"></script>
 <script src="assets/js/admin-pagination.js" type="text/javascript"></script> -->
+=======
+<script src="assets/js/jquery.min.js" type="text/javascript">
+$(document).ready(function() {
+    $('[role="search"]').on('keyup', function(e) {
+        var searchValue = e.target.value;
+        if()
+        // do something every keystroke
+    })
+//     $('.delete_card_btn_link').on('click', function() {
+//         alert("Are you certain you want to delete this card?");
+//         // $this  = $(this);
+//         //     e.preventDefault();
+//         //     var url = $(this).attr("href");
+//         //     $.get(url, function(r){
+//         //         if(r.success){
+//         //             $this.closest("tr").remove();
+//         //         }
+//     })
+})
+</script>
+>>>>>>> 8925690a6e8df6236e18a44f4ecf1bcb50ff473c
 </body>
 </html>
