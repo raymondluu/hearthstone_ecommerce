@@ -1,3 +1,11 @@
+<?php
+// $this->session->sess_destroy();
+if($this->session->userdata['count'] == null){
+  $array = array('count' => 0);
+  $this->session->set_userdata($array);
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>

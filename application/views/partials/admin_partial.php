@@ -10,11 +10,11 @@
 		</div>
 	</a>
 		<div class="navbar-collapse collapse">
-			<ul class="nav navbar-nav navbar-right">
-              <li><a href="/orders/admin_orders">Orders</a></li>
+			<ol class="nav navbar-nav navbar-right">
+        <li><a href="/admin_orders">Orders</a></li>
 				<li><a href="/products/admin_products">Products</a></li>
 				<li><a href="/admins/logout">Log off</a></li>
-            </ul>
+            </ol>
 		</div>
 	</div>
 </nav>

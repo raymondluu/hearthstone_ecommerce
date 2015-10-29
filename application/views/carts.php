@@ -1,3 +1,10 @@
+<?php
+// $this->session->sess_destroy();
+// if($this->session->userdata['count'] == null){
+//   echo 0;
+// }
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,6 +17,7 @@
 <body>
     <?php $this->load->view("/partials/nav.php"); ?>
     <div class="col-lg-9 col-lg-offset-1">
+        <?= $this->session->flashdata('order_good'); ?>
         <h1>Checkout:</h1>
         <table class="table table-striped table-bordered table-condensed">
             <thead>
@@ -45,7 +53,7 @@
     </div>
     <div class="col-md-3 col-md-offset-1">
         <h3>Shipping Information</h3>
-        <form id="shipping-form"  action="controller/submit_address" method="post">
+        <form id="shipping-form"  action="submit_billing" method="post">
             <div class="form-group">
                 <label for="shipping_first_name">First Name:</label>
                 <input type="text" class="form-control" name="shipping_first_name">
@@ -74,11 +82,11 @@
                 <label for="shipping_zipcode">Zipcode:</label>
                 <input type="text" class="form-control" name="shipping_zipcode">
             </div>
-            </form>
+            <!-- </form> -->
     </div>
     <div class="col-md-3 col-md-offset-2">
             <h3>Billing Information</h3>
-        <form id="billing-form" action="submit_billing" method="post">
+        <!-- <form id="billing-form" action="submit_billing" method="post"> -->
             <div class="checkbox">
                 <label><input type="checkbox" name="same_shipping"> Same as Shipping</label>
             </div>
@@ -145,8 +153,9 @@
                     <option value='20'>2020</option>
                 </select>
             <input class="inputCard" type="hidden" name="expiry" id="expiry" maxlength="4"/>
+            <input type="hidden" name="total_price" value = "<?=$total_price?>" />
             </div>
-            <button type="submit" class="btn btn-primary"> CHECKOUT » </button>
+            <button type="submit" class="btn btn-primary"> CHECKOUT </button>
         </form>
     </div>
 </body>

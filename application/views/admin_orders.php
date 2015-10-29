@@ -35,7 +35,7 @@
                     <td><?=$order['customer_name']?></td>
                     <td><?=$order['purchase_date']?></td>
                     <td><?=$order['customer_address']?></td>
-                    <td>$<?=$order['total']?></td>
+                    <td>$<?=$order['total_price']?></td>
                     <td>
                         <div class="dropdown">
                             <button class="btn btn-default dropdown-toggle" type="button" id="dropdownStatus" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true"> Status
