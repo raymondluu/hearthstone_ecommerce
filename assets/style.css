@@ -57,9 +57,7 @@ display: inline-block;
 	text-decoration: none;
 	color: white;
 }
-.navbar-h1 {
-	color: #777;
-}
+
 .navbar-default .navbar-nav > li > a {
 	   margin-top: 10px;
 }
@@ -106,4 +104,9 @@ body {
  .cart-head {
  	background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),url("/assets/cloth_alike.png");
 	background-repeat: repeat;
- }
+}
+
+.tbl-head {
+ 	background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),url("/assets/cloth_alike.png");
+	background-repeat: repeat;
+}
