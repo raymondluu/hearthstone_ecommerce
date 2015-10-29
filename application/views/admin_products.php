@@ -38,13 +38,11 @@
                         <a class="edit_btn_link" href="products/edit/<?= $card['id'] ?>"><button type="button" class="btn btn-primary">Edit</button></a>
                         <a class="delete_card_btn_link" href="products/delete_card/<?= $card['id'] ?>"><button type="button" class="btn btn-primary">Delete</button></a>
                     </td>
-                </tr> 
+                </tr>
                 <?php } ?>
             </tbody>
         </table>
     </div>
-
-
     <!-- Page Navigation -->
     <div class="col-lg-12">
         <nav>
@@ -67,7 +65,6 @@
             </ul>
         </nav>
     </div>
-
 <script src="assets/js/jquery.min.js" type="text/javascript">
 $(document).ready(function() {
     $('[role="search"]').on('keyup', function(e) {

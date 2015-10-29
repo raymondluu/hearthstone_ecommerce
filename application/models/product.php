@@ -52,17 +52,21 @@ class Product extends CI_Model {
 	}
 	public function get_cart($session_id)
 	{
-		$query = "SELECT cart.id AS Cart_ID, cards.id AS Card_ID, cart.card_quantity, cards.name, cards.price FROM cart
+
+
+		$query = "SELECT session_id, cart.id AS Cart_ID, cards.id AS Card_ID, SUM(card_quantity) AS card_quantity, cards.name, cards.price FROM cart
 							JOIN cards
 							ON cart.card_id = cards.id
-							WHERE cart.session_id = ?";
+							WHERE cart.session_id = ?
+							GROUP BY cart.card_id";
+
 		$value = $session_id;
 		return $this->db->query($query, $value)->result_array();
 	}
-	public function remove_from_cart($session_id, $cart_id)
+	public function remove_from_cart($session_id, $card_id)
 	{
-		$query = "DELETE FROM cart WHERE cart.id = ? AND session_id = ?";
-		$values = array($cart_id, $session_id);
+		$query = "DELETE FROM cart WHERE card_id = ? AND session_id = ?";
+		$values = array($card_id, $session_id);
 		$this->db->query($query, $values);
 
 		$query2 = "SELECT SUM(cart.card_quantity) AS Cart_Total from cart

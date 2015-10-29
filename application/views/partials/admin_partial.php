@@ -5,9 +5,9 @@
 		</div>
 		<div class="navbar-collapse collapse">
 			<ul class="nav navbar-nav navbar-right">
-              <li><a href="orders/admin_orders">Orders</a></li>
-				<li><a href="products/admin_products">Products</a></li>
-				<li><a href="admins/logout">Log off</a></li>
+              <li><a href="/orders/admin_orders">Orders</a></li>
+				<li><a href="/products/admin_products">Products</a></li>
+				<li><a href="/admins/logout">Log off</a></li>
             </ul>
 		</div>
 	</div>
