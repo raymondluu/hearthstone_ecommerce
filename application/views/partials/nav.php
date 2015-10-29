@@ -5,7 +5,15 @@
 		</div>
 		<div class="navbar-collapse collapse">
 			<ul class="nav navbar-nav navbar-right">
-              <ol><a href="/carts">Shopping Cart (<?=$this->session->userdata['count']?>)</a></ol>
+              <ol><a href="/carts">Shopping Cart (
+              	<?php if($this->session->userdata['count'] == null){
+              		echo 0;
+              	}
+              	else
+              	{
+              		echo $this->session->userdata['count'];
+              	}?>
+              	)</a></ol>
             </ul>
 		</div>
 	</div>

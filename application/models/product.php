@@ -71,5 +71,16 @@ class Product extends CI_Model {
 		$value = $session_id;
 		return $this->db->query($query, $value)->result_array();
 	}
+	public function remove_from_cart($session_id, $cart_id)
+	{
+		$query = "DELETE FROM cart WHERE cart.id = ? AND session_id = ?";
+		$values = array($cart_id, $session_id);
+		$this->db->query($query, $values);
+
+		$query2 = "SELECT SUM(cart.card_quantity) AS Cart_Total from cart
+							WHERE session_id = ?";
+		$values = $session_id;
+		return $this->db->query($query2, $values)->row_array();
+	}
 
 }

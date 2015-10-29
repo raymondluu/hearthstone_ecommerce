@@ -47,9 +47,9 @@
   <form action="/add_card_to_cart/<?=$card_info['api_id']?>" method="post">
     <!-- <input type="number" name="quantity" min="1" max="5"> -->
     <select name="card_count">
-      <option value = 1>1 ($<?= $card_info['price']; ?>)</option>
-      <option value = 2>2 ($<?= $card_info['price'] * 2 ?>)</option>
-      <option value = 3>3 ($<?= $card_info['price'] * 3 ?>)</option>
+      <option value = "1">1 ($<?= $card_info['price']; ?>)</option>
+      <option value = "2">2 ($<?= $card_info['price'] * 2 ?>)</option>
+      <option value = "3">3 ($<?= $card_info['price'] * 3 ?>)</option>
     </select>
     <input type="submit" name="add_cart" value="Add to Cart">
     <input type="hidden" name="card_id" value="<?=$card_info['id']?>">

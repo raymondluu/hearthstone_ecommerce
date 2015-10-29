@@ -29,8 +29,8 @@ foreach ($cart_info as $cards_in_cart) {
                     <td><?=$cards_in_cart['name']?> </td>
                     <td>$<?=$cards_in_cart['price']?></td>
                     <td><?=$cards_in_cart['card_quantity']?>
-                        <a href="controller/update_quantity"></a>
-                        <a href="controller/remove_item"><button id="trashGlyph" type="button" class="btn btn-default" aria-label="Left Align">
+                        <!-- <a href="controller/update_quantity"></a> -->
+                        <a href="/remove_item/<?= $cards_in_cart['Cart_ID']?>"><button id="trashGlyph" type="button" class="btn btn-default" aria-label="Left Align">
                         <span class="glyphicon glyphicon glyphicon-trash" aria-hidden="true"></span>
                         </button></a>
                     </td>

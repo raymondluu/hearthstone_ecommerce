@@ -66,7 +66,15 @@ class Products extends CI_Controller {
 		$this->session->set_flashdata('added', 'Item added to cart.');
 		$array = array('count' => $cart_total['Cart_Total']);
  	 	$this->session->set_userdata($array);
-
 		redirect("/product_description/".$api_id);
+	}
+
+	public function remove_item($cart_id)
+	{
+		$session_id = $this->session->userdata['session_id'];
+		$cart_total = $this->product->remove_from_cart($session_id, $cart_id);
+		$array = array('count' => $cart_total['Cart_Total']);
+ 	 	$this->session->set_userdata($array);
+ 	 	redirect("/carts");
 	}
 }
