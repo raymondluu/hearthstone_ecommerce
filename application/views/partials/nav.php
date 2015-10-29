@@ -1,4 +1,4 @@
-<nav class="navbar navbar-default">
+<nav class="navbar navbar-default style-header">
 	<div class="container-fluid">
 		<div class="navbar-header">
 			<h1 class="navbar-h1">Hearthstone Ecommerce</h1>

@@ -13,11 +13,11 @@
       <div class="col-md-2">
         <h4 class="text-center">Categories</h4>
         <ul class="list-group">
-          <li class="list-group-item text-center"><a id="catheros" href="#"></a></li>
-          <li class="list-group-item text-center"><a id="catspells" href="#"></a></li>
-          <li class="list-group-item text-center"><a id="catweapons" href="#"></a></li>
-          <li class="list-group-item text-center"><a id="catminions" href="#"></a></li>
-          <li class="list-group-item text-center"><a id="showall" href="#">Show all</a></li>
+          <li class="list-group-item text-center side-nav"><a id="catheros" href="#"></a></li>
+          <li class="list-group-item text-center side-nav"><a id="catspells" href="#"></a></li>
+          <li class="list-group-item text-center side-nav"><a id="catweapons" href="#"></a></li>
+          <li class="list-group-item text-center side-nav"><a id="catminions" href="#"></a></li>
+          <li class="list-group-item text-center side-nav"><a id="showall" href="#">Show all</a></li>
         </ul>
   
       </div>

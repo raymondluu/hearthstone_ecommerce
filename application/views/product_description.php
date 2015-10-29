@@ -5,19 +5,27 @@
   <title>Hearthstone Ecommerce Site</title>
   <?php $this->load->view("/partials/head.php") ?>
 </head>
+<script src="/assets/js/product_description.js"></script>
 <body>
 
   <?php $this->load->view("/partials/nav.php") ?>
-  <div class="col-lg-12 col-lg-offset-10">
-    <a href="/"><button type="button" class="btn btn-primary">Go Back</button></a>
-</div>
+ 
 <div class="container-fluid">
-  <h1><?= $card_info['name']; ?></h1>
+  <div class="container-fluid">
+    <div class="row">
+    <div class="col-md-2">
+      <h4 class="text-center">Home</h4>
+        <ul class="list-group">
+          <li class="list-group-item text-center side-nav"><a id="showall" href="/">View All Cards</a></li>
+        </ul>
+    </div>
+
+  <h1 class="text-center"><?= $card_info['name']; ?></h1>
   <div id="image">
     <img class="card-desc-main-img"src="<?= $card_info['img']; ?>">
   </div>
   <div id="card_description">
-    <h2>Detailed Card Information</h2>
+    <h3>Detailed Card Information</h3>
     <ul>
     <li><strong>Set:</strong> <?= $card_info['cardSet']; ?></li>
     <li><strong>Type:</strong> <?= $card_info['type']; ?></li>
@@ -50,11 +58,12 @@
   </form>
   <?php echo $this->session->flashdata('added'); ?>
   </div>
-  <div id="bottom_row">
+  <div id="bottom_row" class="col-md-10 col-md-offset-2">
 <?php for($i = 0; $i < count($related_cards); $i++){
     echo '<a href="/product_description/'.$related_cards[$i]['api_id'].'"><img id="mini" src="'. $related_cards[$i]['img'] .'"></a>';
    } ?>
   </div>
 </div>
+
 </body>
 </html>
