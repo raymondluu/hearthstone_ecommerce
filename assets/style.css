@@ -18,6 +18,34 @@ display: inline-block;
   margin: 20px;
   width: 100px;
 }
+.mini_logo {
+  width: 50px;
+  display: inline-block;
+}
+.padding_left{
+	padding-left: 40px;
+}
+.top {
+  position: absolute;
+  top: 0;
+  z-index: 1;
+  transform: rotate(-20deg);
+}
+.middle {
+  position: absolute;
+  top: 0;
+  z-index: 1;
+}
+.bottom {
+  position: absolute;
+  top: 0;
+  z-index: 1;
+  transform: rotate(20deg);
+}
+.nav_header_text{
+	display: inline-block;
+	font-size: 3em;
+}
 .admin_products_imgs {
 	width:50%;
 }
