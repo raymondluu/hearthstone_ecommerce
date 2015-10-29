@@ -22,33 +22,33 @@ $(document).ready(function(){
 		var tbl_str = "";
 			for(var i = 0; i < data.cards.length; i++){
 				// console.log(data.cards[i].imgGold);
-				tbl_str += "<tr class='text-center'><td><img src='" 
-						+ data.cards[i].img + 
-						"' class='admin_products_imgs'/></td><td>" 
-						+ data.cards[i].id + "</td><td>" 
-						+ data.cards[i].name + "</td><td>" 
-						+ data.cards[i].inventory_count + "</td><td>" 
-						+ data.cards[i].quantity_sold + "</td><td><a class='edit_btn_link' href='products/edit/" 
+				tbl_str += "<tr class='text-center'><td><img src='"
+						+ data.cards[i].img +
+						"' class='admin_products_imgs'/></td><td>"
+						+ data.cards[i].id + "</td><td>"
+						+ data.cards[i].name + "</td><td>"
+						+ data.cards[i].inventory_count + "</td><td>"
+						+ data.cards[i].quantity_sold + "</td><td><a class='edit_btn_link' href='products/edit/"
 						+ data.cards[i].id + "'><button type='button' class='btn btn-primary'>Edit</button></a><a class='delete_card_btn_link' href='products/delete_card/" + data.cards[i].id + "'><button type='button' class='btn btn-primary'>Delete</button></a></td></tr>";
 			}
 		$('#admin-products-table').html(tbl_str);
 	}, "json");
 
 //allow user to click pages :)
-$(document).on('click', 'li a', function() {
+$('.pagination').on('click', 'li a', function() {
 	// console.log('Im working');
 	$.get("/products/products_table_limit_json/"+$(this).attr("id"), function(data){
 		// console.log(data);
 		var tbl_str = "";
 			for(var i = 0; i < data.cards.length; i++){
 				// console.log(data.cards[i].imgGold);
-				tbl_str += "<tr><td><img src='" 
-						+ data.cards[i].img + 
-						"' class='admin_products_imgs'/></td><td>" 
-						+ data.cards[i].id + "</td><td>" 
-						+ data.cards[i].name + "</td><td>" 
-						+ data.cards[i].inventory_count + "</td><td>" 
-						+ data.cards[i].quantity_sold + "</td><td><a class='edit_btn_link' href='products/edit/" 
+				tbl_str += "<tr><td><img src='"
+						+ data.cards[i].img +
+						"' class='admin_products_imgs'/></td><td>"
+						+ data.cards[i].id + "</td><td>"
+						+ data.cards[i].name + "</td><td>"
+						+ data.cards[i].inventory_count + "</td><td>"
+						+ data.cards[i].quantity_sold + "</td><td><a class='edit_btn_link' href='products/edit/"
 						+ data.cards[i].id + "'><button type='button' class='btn btn-primary'>Edit</button></a><a class='delete_card_btn_link' href='products/delete_card/" + data.cards[i].id + "'><button type='button' class='btn btn-primary'>Delete</button></a></td></tr>";
 			}
 		$('#admin-products-table').html(tbl_str);
