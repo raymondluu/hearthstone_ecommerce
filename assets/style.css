@@ -18,6 +18,34 @@ display: inline-block;
   margin: 20px;
   width: 100px;
 }
+.mini_logo {
+  width: 50px;
+  display: inline-block;
+}
+.padding_left{
+	padding-left: 40px;
+}
+.top {
+  position: absolute;
+  top: 0;
+  z-index: 1;
+  transform: rotate(-20deg);
+}
+.middle {
+  position: absolute;
+  top: 0;
+  z-index: 1;
+}
+.bottom {
+  position: absolute;
+  top: 0;
+  z-index: 1;
+  transform: rotate(20deg);
+}
+.nav_header_text{
+	display: inline-block;
+	font-size: 3em;
+}
 .admin_products_imgs {
 	width:50%;
 }
@@ -60,3 +88,22 @@ display: inline-block;
 #trashGlyph {
   float: right;
 }
+
+body {
+	background-image: url("/assets/cloth_alike.png");
+	background-repeat: repeat;
+}
+
+.style-header {
+	background: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)),url("/assets/cloth_alike.png");
+	background-repeat: repeat;
+}
+
+.side-nav {
+	background: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)),url("/assets/cloth_alike.png");
+	background-repeat: repeat;
+}
+ .cart-head {
+ 	background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),url("/assets/cloth_alike.png");
+	background-repeat: repeat;
+ }
