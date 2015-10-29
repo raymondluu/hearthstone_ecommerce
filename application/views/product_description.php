@@ -1,3 +1,5 @@
+<!-- <?php var_dump($this->session->userdata); ?> -->
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -52,7 +54,9 @@
     <input type="submit" name="add_cart" value="Add to Cart">
     <input type="hidden" name="card_id" value="<?=$card_info['id']?>">
   </form>
-  <?php echo $this->session->flashdata('added'); ?>
+  <?php
+  echo $this->session->flashdata('added');
+  ?>
   </div>
   <div id="bottom_row">
 <?php
