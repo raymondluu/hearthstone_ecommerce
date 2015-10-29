@@ -1,4 +1,4 @@
-<nav class="navbar navbar-default">
+<nav class="navbar navbar-default style-header">
 	<div class="container-fluid">
     <div class="navbar-brand">
        <img class="mini_logo top" src="/assets/Card_Back_Esports.gif"></img>

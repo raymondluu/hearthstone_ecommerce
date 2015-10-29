@@ -88,3 +88,22 @@ display: inline-block;
 #trashGlyph {
   float: right;
 }
+
+body {
+	background-image: url("/assets/cloth_alike.png");
+	background-repeat: repeat;
+}
+
+.style-header {
+	background: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)),url("/assets/cloth_alike.png");
+	background-repeat: repeat;
+}
+
+.side-nav {
+	background: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)),url("/assets/cloth_alike.png");
+	background-repeat: repeat;
+}
+ .cart-head {
+ 	background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),url("/assets/cloth_alike.png");
+	background-repeat: repeat;
+ }
