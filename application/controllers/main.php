@@ -24,8 +24,8 @@ class Main extends CI_Controller {
   }
   public function show_cart()
   {
-  $session_id = $this->session->userdata['session_id'];
-  $cart_info = $this->product->get_cart($session_id);
-  $this->load->view('carts', array('cart_info' => $cart_info));
+    $session_id = $this->session->userdata['session_id'];
+    $cart_info = $this->product->get_cart($session_id);
+    $this->load->view('carts', array('cart_info' => $cart_info));
   }
 }

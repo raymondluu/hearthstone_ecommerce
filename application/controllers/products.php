@@ -9,7 +9,6 @@ class Products extends CI_Controller {
 		$data = array("cards" => $cards, "count" => $count);
 		echo json_encode($data);
 	}
-
 	public function get_cards_limit_json($start)
 	{
 		$int = intval($start);
@@ -19,14 +18,12 @@ class Products extends CI_Controller {
 		$data = array("cards" => $cards, "count" => $count);
 		echo json_encode($data);
 	}
-
 	public function get_cards_by_type_json($type) {
 		$cards = $this->product->get_hero_cards($type);
 		$count = count($cards);
 		$data  = array("cards" => $cards, "count" => $count);
 		echo json_encode($data);
 	}
-
 	public function get_cards_by_type_limit_json($type, $start) {
 		$int = intval($start);
 
@@ -35,25 +32,13 @@ class Products extends CI_Controller {
 		$data  = array("cards" => $cards, "count" => $count);
 		echo json_encode($data);
 	}
-
 	public function admin_products_view() {
 		$cards = $this->product->get_all_cards_for_admin();
 	    $this->load->view('admin_products', array('cards' => $cards));
 	}
-
 	public function admin_products() {
 		redirect('admin_products');
 	}
-
-	// NEEDS TESTING
-	public function delete_card($card_id) {
-		echo "done";
-	// 	$card =$this->product->delete_card($card_id);
-	// 	if(delete_card($card_id)) {
-	// 		return json_encode(array("success" => true));
-	// 	}
-	}
-
 	public function admin_edit_single_card($card_id) {
 		$cards = get_single_card_for_admin($card_id);
 		$this->load->view('admin_products_edit', array('cards' => $cards));
@@ -68,7 +53,6 @@ class Products extends CI_Controller {
  	 	$this->session->set_userdata($array);
 		redirect("/product_description/".$api_id);
 	}
-
 	public function remove_item($cart_id)
 	{
 		$session_id = $this->session->userdata['session_id'];
