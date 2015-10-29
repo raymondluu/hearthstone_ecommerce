@@ -40,13 +40,14 @@
     </div>
 
     <div class="col-lg-8">
+        <h1 class="text-center">Order: <?= $order_info['id']?>, Customer: <?= $order_info['customer_name']?></h1>
             <table class="table table-striped table-bordered table-condensed">
                 <thead>
-                    <th class="col-lg-1 text-center">ID</th>
-                    <th class="col-lg-2 text-center">Item</th>
-                    <th class="col-lg-1 text-center">Price</th>
-                    <th class="col-lg-1 text-center">Quantity</th>
-                    <th class="col-lg-2 text-center">Total</th>
+                    <th class="col-lg-1 text-center tbl-head">ID</th>
+                    <th class="col-lg-2 text-center tbl-head">Item</th>
+                    <th class="col-lg-1 text-center tbl-head">Price</th>
+                    <th class="col-lg-1 text-center tbl-head">Quantity</th>
+                    <th class="col-lg-2 text-center tbl-head">Total</th>
                 </thead>
                 <tbody>
                    <!--  NEED TO ADD PRODUCTS -->

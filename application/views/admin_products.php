@@ -15,12 +15,12 @@
         <h1 class="text-center">Admin View of All Products</h1>
         <table class="table table-striped table-bordered table-condensed">
             <thead>
-                <th class="col-lg-2 text-center">Picture</th>
-                <th class="col-lg-1 text-center">ID</th>
-                <th class="col-lg-2 text-center">Name</th>
-                <th class="col-lg-1 text-center">Inventory Count</th>
-                <th class="col-lg-1 text-center">Quantity Sold</th>
-                <th class="col-lg-1 text-center">Action</th>
+                <th class="col-lg-2 text-center tbl-head">Picture</th>
+                <th class="col-lg-1 text-center tbl-head">ID</th>
+                <th class="col-lg-2 text-center tbl-head">Name</th>
+                <th class="col-lg-1 text-center tbl-head">Inventory Count</th>
+                <th class="col-lg-1 text-center tbl-head">Quantity Sold</th>
+                <th class="col-lg-1 text-center tbl-head">Action</th>
             </thead>
             <tbody id="admin-products-table">
                 <!-- Cards loading here -->

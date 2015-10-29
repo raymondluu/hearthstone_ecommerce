@@ -21,12 +21,12 @@
         <h1 class="text-center">Orders</h1>
         <table class="table table-striped table-bordered table-condensed text-center">
             <thead>
-                <th class="col-lg-1 text-center">Order ID</th>
-                <th class="col-lg-2 text-center">Name</th>
-                <th class="col-lg-2 text-center">Date</th>
-                <th class="col-lg-3 text-center">Billing Address</th>
-                <th class="col-lg-1 text-center">Total</th>
-                <th class="col-lg-1 text-center">Status</th>
+                <th class="col-lg-1 text-center tbl-head">Order ID</th>
+                <th class="col-lg-2 text-center tbl-head">Name</th>
+                <th class="col-lg-2 text-center tbl-head">Date</th>
+                <th class="col-lg-3 text-center tbl-head">Billing Address</th>
+                <th class="col-lg-1 text-center tbl-head">Total</th>
+                <th class="col-lg-1 text-center tbl-head">Status</th>
             </thead>
             <tbody>
                 <?php foreach ($orders as $order) { ?>
