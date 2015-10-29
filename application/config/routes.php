@@ -12,6 +12,7 @@ $route['carts'] = "main/show_cart";
 $route['api_stuff'] = "main/load_api_stuff";
 $route['404_override'] = '';
 $route['products/get_cards_json/(:num)'] = "products/get_cards_json/$1";
+$route['products/products_table_limit_json/(:num)'] = "products/products_table_limit_json/$1";
 $route['remove_item/(:any)'] = "products/remove_item/$1";
 $route['submit_billing'] = "orders/submit_billing";
 $route['add_card_to_cart/(:any)'] = "products/add_card_to_cart/$1";

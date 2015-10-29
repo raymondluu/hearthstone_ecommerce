@@ -6,6 +6,7 @@
     <?php $this->load->view("/partials/head.php"); ?>
     <link rel="stylesheet" type="text/css" href="/assets/bootstrap-3.3.5-dist/css/bootstrap.css">
     <link rel="stylesheet" type="text/css" href="/assets/style.css">
+    <script src="/assets/js/admin-pagination.js"></script>
 </head>
 <body>
  <?php $this->load->view("/partials/admin_partial.php"); ?>
@@ -26,20 +27,8 @@
                 <th class="col-lg-1">Quantity Sold</th>
                 <th class="col-lg-2">Action</th>
             </thead>
-            <tbody>
-                <?php foreach ($cards as $card) { ?>
-                <tr>
-                    <td><img src="<?= $card['imgGold']?>" class="admin_products_imgs"/></td>
-                    <td><?= $card['id'] ?></td>
-                    <td><?= $card['name'] ?></td>
-                    <td><?= $card['inventory_count'] ?></td>
-                    <td><?= $card['quantity_sold'] ?></td>
-                    <td>
-                        <a class="edit_btn_link" href="products/edit/<?= $card['id'] ?>"><button type="button" class="btn btn-primary">Edit</button></a>
-                        <a class="delete_card_btn_link" href="products/delete_card/<?= $card['id'] ?>"><button type="button" class="btn btn-primary">Delete</button></a>
-                    </td>
-                </tr>
-                <?php } ?>
+            <tbody id="admin-products-table">
+                <!-- Cards loading here -->
             </tbody>
         </table>
     </div>
@@ -47,34 +36,9 @@
     <div class="col-lg-12">
         <nav>
             <ul class="pagination pagination-admin">
-             <li></li>
+             
             </ul>
         </nav>
     </div>
-<<<<<<< HEAD
-
-<!-- <script src="assets/js/jquery.min.js" type="text/javascript"></script>
-<script src="assets/js/admin-pagination.js" type="text/javascript"></script> -->
-=======
-<script src="assets/js/jquery.min.js" type="text/javascript">
-$(document).ready(function() {
-    $('[role="search"]').on('keyup', function(e) {
-        var searchValue = e.target.value;
-        if()
-        // do something every keystroke
-    })
-//     $('.delete_card_btn_link').on('click', function() {
-//         alert("Are you certain you want to delete this card?");
-//         // $this  = $(this);
-//         //     e.preventDefault();
-//         //     var url = $(this).attr("href");
-//         //     $.get(url, function(r){
-//         //         if(r.success){
-//         //             $this.closest("tr").remove();
-//         //         }
-//     })
-})
-</script>
->>>>>>> 8925690a6e8df6236e18a44f4ecf1bcb50ff473c
 </body>
 </html>
