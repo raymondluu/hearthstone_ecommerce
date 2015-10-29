@@ -102,7 +102,7 @@ body {
 	background-repeat: repeat;
 }`
 
-.tbl-head {
+.tbl-head-bg {
  	background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),url("/assets/cloth_alike.png");
 	background-repeat: repeat;
 }

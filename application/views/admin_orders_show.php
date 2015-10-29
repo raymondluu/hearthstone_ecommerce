@@ -11,7 +11,7 @@
     <div class="col-lg-4 text-center">
         <table class="table table-striped table-bordered table-condensed">
             <tr>
-                <th class="text-center">Order ID:</th>
+                <th class="text-center tbl-head-bg">Order ID:</th>
                 <td><?= $order_info['id']?></td>
             </tr>
             <tr>
@@ -43,11 +43,11 @@
         <h1 class="text-center">Order: <?= $order_info['id']?>, Customer: <?= $order_info['customer_name']?></h1>
             <table class="table table-striped table-bordered table-condensed">
                 <thead>
-                    <th class="col-lg-1 text-center tbl-head">ID</th>
-                    <th class="col-lg-2 text-center tbl-head">Item</th>
-                    <th class="col-lg-1 text-center tbl-head">Price</th>
-                    <th class="col-lg-1 text-center tbl-head">Quantity</th>
-                    <th class="col-lg-2 text-center tbl-head">Total</th>
+                    <th class="col-lg-1 text-center tbl-head-bg">ID</th>
+                    <th class="col-lg-2 text-center tbl-head-bg">Item</th>
+                    <th class="col-lg-1 text-center tbl-head-bg">Price</th>
+                    <th class="col-lg-1 text-center tbl-head-bg">Quantity</th>
+                    <th class="col-lg-2 text-center tbl-head-bg">Total</th>
                 </thead>
                 <tbody>
                    <!--  NEED TO ADD PRODUCTS -->
