@@ -24,8 +24,8 @@
             <tbody>
                 <tr>
 <?php
-foreach ($cart_info as $cards_in_cart) {
-    ?>
+$total_price = 0.0;
+foreach ($cart_info as $cards_in_cart) { ?>
                     <td><?=$cards_in_cart['name']?> </td>
                     <td>$<?=$cards_in_cart['price']?></td>
                     <td><?=$cards_in_cart['card_quantity']?>
@@ -34,16 +34,18 @@ foreach ($cart_info as $cards_in_cart) {
                         <span class="glyphicon glyphicon glyphicon-trash" aria-hidden="true"></span>
                         </button></a>
                     </td>
-                    <td>$<?php echo $cards_in_cart['price'] * $cards_in_cart['card_quantity']?></td>
+                    <td>$<?php
+                    $price = $cards_in_cart['price'] * $cards_in_cart['card_quantity'];
+                    echo $cards_in_cart['price'] * $cards_in_cart['card_quantity']?></td>
                 </tr>
-<?php } ?>
+<?php $total_price += $price; } ?>
             </tbody>
         </table>
     </div>
 
     <div class="col-lg-10 col-lg-offset-8">
         <!-- This needs to be left aligned -->
-        <p>Total: </p>
+        <p>Total: $ <?= $total_price ?></p>
         <button type="button" class="btn btn-success"><a href="main/index" id="continue-shopping-btn">Continue Shopping</a></button>
         <br>
         <br>
