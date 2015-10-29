@@ -5,7 +5,7 @@
 		</div>
 		<div class="navbar-collapse collapse">
 			<ul class="nav navbar-nav navbar-right">
-              <ol><a href="/carts">Shopping Cart (
+              <ol id="cart-ol"><a href="/carts">Shopping Cart (
               	<?php if($this->session->userdata['count'] == null){
               		echo 0;
               	}

@@ -36,4 +36,5 @@ class Order extends CI_Model {
   		return $this->db->query($query, $values);
   	}
 
+
 }

@@ -37,7 +37,7 @@ $(document).ready(function(){
 		}
 		else if(id == "showall")
 		{
-			title_str = "Show all";
+			title_str = "All Available Cards";
 			url = "/products/get_cards_limit_json/" + page;
 			pag_url = "/products/get_cards_json";
 		}
@@ -92,7 +92,7 @@ $(document).ready(function(){
 	//when page is loaded show all cards
 	$.get("/products/get_cards_limit_json/0", function(data){
 		// console.log(data);
-		title_str = "Show all";
+		title_str = "All Available Cards";
 		var img_str = "";
 			for(var i = 0; i < data.cards.length; i++)
 			{
@@ -136,4 +136,28 @@ $(document).ready(function(){
 		$('#catweapons').append("Weapons (" + weapon_count + ")");
 		$('#catminions').append("Minions (" + minion_count + ")");
 	}, "json");
+
+	//autofill for carts page
+    $('input[name="same_shipping"]').on('change', copyShippingInfo);
+    function copyShippingInfo(event) {
+        var $target = $(event.target); // checkbox
+        var checked = $target.prop("checked"); // returns true or false based on checked state
+        if (checked) {
+            $('[name="billing_first_name"]').val($('[name="shipping_first_name"]').val());
+            $('[name="billing_last_name"]').val($('[name="shipping_last_name"]').val());
+            $('[name="billing_address"]').val($('[name="shipping_address"]').val());
+            $('[name="billing_address2"]').val($('[name="shipping_address2"]').val());
+            $('[name="billing_city"]').val($('[name="shipping_city"]').val());
+            $('[name="billing_state"]').val($('[name="shipping_state"]').val());
+            $('[name="billing_zipcode"]').val($('[name="shipping_zipcode"]').val());
+        } else {
+            $('[name="billing_first_name"]').val('');
+            $('[name="billing_last_name"]').val('');
+            $('[name="billing_address"]').val('');
+            $('[name="billing_address2"]').val('');
+            $('[name="billing_city"]').val('');
+            $('[name="billing_state"]').val('');
+            $('[name="billing_zipcode"]').val('');
+        }
+    }
 });

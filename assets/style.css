@@ -35,6 +35,9 @@ display: inline-block;
 .navbar-default .navbar-nav > li > a {
 	   margin-top: 10px;
 }
+#cart-ol {
+	   line-height: 69px;
+}
 #continue-shopping-btn {
 	text-decoration: none;
 	color: white;

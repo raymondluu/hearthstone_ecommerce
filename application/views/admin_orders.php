@@ -18,15 +18,15 @@
 ​ -->
 ​
     <div class="col-lg-10 col-lg-offset-1">
-        <h1>Orders</h1>
-        <table class="table table-striped table-bordered table-condensed">
+        <h1 class="text-center">Orders</h1>
+        <table class="table table-striped table-bordered table-condensed text-center">
             <thead>
-                <th class="col-lg-1">Order ID</th>
-                <th class="col-lg-2">Name</th>
-                <th class="col-lg-2">Date</th>
-                <th class="col-lg-3">Billing Address</th>
-                <th class="col-lg-1">Total</th>
-                <th class="col-lg-1">Status</th>
+                <th class="col-lg-1 text-center">Order ID</th>
+                <th class="col-lg-2 text-center">Name</th>
+                <th class="col-lg-2 text-center">Date</th>
+                <th class="col-lg-3 text-center">Billing Address</th>
+                <th class="col-lg-1 text-center">Total</th>
+                <th class="col-lg-1 text-center">Status</th>
             </thead>
             <tbody>
                 <?php foreach ($orders as $order) { ?>
@@ -55,7 +55,7 @@
     </div>
 
     <!-- Page Navigation -->
-<div class="col-lg-11 col-lg-offset-1">
+<!-- <div class="col-lg-11 col-lg-offset-1">
     <nav>
         <ul class="pagination">
             <li>
@@ -75,7 +75,7 @@
             </li>
         </ul>
     </nav>
-</div>
+</div> -->
 
 <script src="assets/js/jquery.min.js" type="text/javascript">
 </script>
