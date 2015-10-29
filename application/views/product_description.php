@@ -1,5 +1,3 @@
-<!-- <?php var_dump($this->session->userdata); ?> -->
-
 <!DOCTYPE html>
 <html lang="en">
 <head>

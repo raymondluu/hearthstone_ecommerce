@@ -1,11 +1,6 @@
 <?php
 // $this->session->sess_destroy();
-if( empty($this->session->userdata['count']) )
-{
-  $array = array('count' => 0);
-  $this->session->set_userdata($array);
-}
-// var_dump($this->session->userdata['count']);
+
 ?>
 
 <!DOCTYPE html>

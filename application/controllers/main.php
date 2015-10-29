@@ -3,6 +3,11 @@
 class Main extends CI_Controller {
 	public function index()
 	{
+    if( empty($this->session->userdata['count']) )
+    {
+      $array = array('count' => 0);
+      $this->session->set_userdata($array);
+    }
 		$this->load->view('index');
 	}
   public function product_description($card_api_id)
