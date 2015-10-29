@@ -55,6 +55,12 @@ class Product extends CI_Model {
 		VALUES(?, ?, ?)";
 		$values = array($session_id, $post['card_id'], $post['card_count']);
 		$this->db->query($query, $values);
+
+		$query2 = "SELECT SUM(cart.card_quantity) AS Cart_Total from cart
+							WHERE session_id = ?";
+		$values = $session_id;
+		return $this->db->query($query2, $values)->row_array();
+
 	}
 	public function get_cart($session_id)
 	{

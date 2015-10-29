@@ -62,8 +62,11 @@ class Products extends CI_Controller {
 	{
 		$session_id = $this->session->userdata['session_id'];
 		$post = $this->input->post();
-		$this->product->add_cart($post, $session_id);
+		$cart_total = $this->product->add_cart($post, $session_id);
 		$this->session->set_flashdata('added', 'Item added to cart.');
+		$array = array('count' => $cart_total['Cart_Total']);
+ 	 	$this->session->set_userdata($array);
+
 		redirect("/product_description/".$api_id);
 	}
 }

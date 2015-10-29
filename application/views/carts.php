@@ -1,4 +1,4 @@
-<?php var_dump($this->session->userdata['session_id']); ?>
+<!-- <?php var_dump($this->session->userdata); ?> -->
 
 <!DOCTYPE html>
 <html lang="en">
@@ -7,6 +7,7 @@
     <title>Hearthstone Ecommerce Site</title>
     <?php $this->load->view("/partials/head.php"); ?>
     <link rel="stylesheet" type="text/css" href="/assets/bootstrap-3.3.5-dist/css/bootstrap.css">
+    <script src="/assets/js/carts.js"></script>
 </head>
 <body>
     <?php $this->load->view("/partials/nav.php"); ?>
@@ -22,7 +23,9 @@
             </thead>
             <tbody>
                 <tr>
-<?php foreach ($cart_info as $cards_in_cart) { ?>
+<?php
+foreach ($cart_info as $cards_in_cart) {
+    ?>
                     <td><?=$cards_in_cart['name']?> </td>
                     <td>$<?=$cards_in_cart['price']?></td>
                     <td><?=$cards_in_cart['card_quantity']?>

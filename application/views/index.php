@@ -1,3 +1,13 @@
+<?php
+// $this->session->sess_destroy();
+if( empty($this->session->userdata['count']) )
+{
+  $array = array('count' => 0);
+  $this->session->set_userdata($array);
+}
+// var_dump($this->session->userdata['count']);
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -46,14 +56,14 @@
           <button type="submit" class="btn btn-default">Submit</button>
         </form>
       </div>
-      
+
       <div class="col-md-10">
         <h1 id="title">Show all</h1>
         <div id="pictureFrame">
         </div>
         <nav>
           <ul class="pagination">
-            
+
           </ul>
         </nav>
       </div>
