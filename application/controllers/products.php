@@ -39,6 +39,7 @@ class Products extends CI_Controller {
 	public function admin_products_view() {
 		$cards = $this->product->get_all_cards_for_admin();
 	    $this->load->view('admin_products', array('cards' => $cards));
+	    // echo json_encode($cards);
 	}
 
 	public function admin_products() {

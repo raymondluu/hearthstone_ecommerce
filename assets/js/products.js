@@ -116,4 +116,28 @@ $(document).ready(function(){
 	$.get("/products/get_cards_by_type_json/minion", function(data){
 		$('#catminions').append("Minions (" + data.count + ")");
 	}, "json");
+
+	//autofill for carts page
+    $('input[name="same_shipping"]').on('change', copyShippingInfo);
+    function copyShippingInfo(event) {
+        var $target = $(event.target); // checkbox
+        var checked = $target.prop("checked"); // returns true or false based on checked state
+        if (checked) {
+            $('[name="billing_first_name"]').val($('[name="shipping_first_name"]').val());
+            $('[name="billing_last_name"]').val($('[name="shipping_last_name"]').val());
+            $('[name="billing_address"]').val($('[name="shipping_address"]').val());
+            $('[name="billing_address2"]').val($('[name="shipping_address2"]').val());
+            $('[name="billing_city"]').val($('[name="shipping_city"]').val());
+            $('[name="billing_state"]').val($('[name="shipping_state"]').val());
+            $('[name="billing_zipcode"]').val($('[name="shipping_zipcode"]').val());
+        } else {
+            $('[name="billing_first_name"]').val('');
+            $('[name="billing_last_name"]').val('');
+            $('[name="billing_address"]').val('');
+            $('[name="billing_address2"]').val('');
+            $('[name="billing_city"]').val('');
+            $('[name="billing_state"]').val('');
+            $('[name="billing_zipcode"]').val('');
+        }
+    }
 });

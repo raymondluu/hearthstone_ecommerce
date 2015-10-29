@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>Hearthstone Ecommerce Site</title>
+    <title>All Products for Hearthstone ECommerce</title>
     <?php $this->load->view("/partials/head.php"); ?>
     <link rel="stylesheet" type="text/css" href="/assets/bootstrap-3.3.5-dist/css/bootstrap.css">
     <link rel="stylesheet" type="text/css" href="/assets/style.css">
@@ -48,44 +48,13 @@
     <!-- Page Navigation -->
     <div class="col-lg-12">
         <nav>
-            <ul class="pagination">
-                <li>
-                <a href="#" aria-label="Previous">
-                <span aria-hidden="true">&laquo;</span>
-                </a>
-                </li>
-                <li><a href="#">1</a></li>
-                <li><a href="#">2</a></li>
-                <li><a href="#">3</a></li>
-                <li><a href="#">4</a></li>
-                <li><a href="#">5</a></li>
-                <li>
-                <a href="#" aria-label="Next">
-                <span aria-hidden="true">&raquo;</span>
-                </a>
-                </li>
+            <ul class="pagination pagination-admin">
+             <li></li>
             </ul>
         </nav>
     </div>
 
-<script src="assets/js/jquery.min.js" type="text/javascript">
-$(document).ready(function() {
-    $('[role="search"]').on('keyup', function(e) {
-        var searchValue = e.target.value;
-        if()
-        // do something every keystroke
-    })
-//     $('.delete_card_btn_link').on('click', function() {
-//         alert("Are you certain you want to delete this card?");
-//         // $this  = $(this);
-//         //     e.preventDefault();
-//         //     var url = $(this).attr("href");
-//         //     $.get(url, function(r){
-//         //         if(r.success){
-//         //             $this.closest("tr").remove();
-//         //         }
-//     })
-})
-</script>
+<!-- <script src="assets/js/jquery.min.js" type="text/javascript"></script>
+<script src="assets/js/admin-pagination.js" type="text/javascript"></script> -->
 </body>
 </html>
