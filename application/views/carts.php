@@ -13,10 +13,10 @@
         <h1>Checkout:</h1>
         <table class="table table-striped table-bordered table-condensed">
             <thead>
-                <th class="col-lg-3 cart-head">Item</th>
-                <th class="col-lg-2 cart-head">Price</th>
-                <th class="col-lg-2 cart-head">Quantity</th>
-                <th class="col-lg-2 cart-head">Total</th>
+                <th class="col-lg-3 tbl-head">Item</th>
+                <th class="col-lg-2 tbl-head">Price</th>
+                <th class="col-lg-2 tbl-head">Quantity</th>
+                <th class="col-lg-2 tbl-head">Total</th>
             </thead>
             <tbody>
                 <tr>
