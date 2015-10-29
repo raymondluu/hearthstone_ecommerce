@@ -69,7 +69,7 @@ CREATE TABLE `billings` (
   PRIMARY KEY (`id`,`customer_id`),
   KEY `fk_billings_customers1_idx` (`customer_id`),
   CONSTRAINT `fk_billings_customers1` FOREIGN KEY (`customer_id`) REFERENCES `customers` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -78,7 +78,7 @@ CREATE TABLE `billings` (
 
 LOCK TABLES `billings` WRITE;
 /*!40000 ALTER TABLE `billings` DISABLE KEYS */;
-INSERT INTO `billings` VALUES (1,1,'Tim','Chen','123 ABC st.','Apt. 105','Seattel','WA','98122','123456789011','234','11.17',NULL,NULL);
+INSERT INTO `billings` VALUES (1,1,'Tim','Chen','123 ABC st.','Apt. 105','Seattel','WA','98122','123456789011','234','11.17',NULL,NULL),(2,4,'Tom','Chang','123 Abc St.','Apt. 100','Seattle','Washington','98122','123123123123123123','123','0101','2015-10-29 15:11:39','2015-10-29 15:11:39'),(3,5,'Tom','Chang','123 Abc St.','Apt. 100','Seattle','Washington','98122','123123123123123123','123','0101','2015-10-29 15:12:25','2015-10-29 15:12:25'),(4,6,'Tom','Chang','123 Abc St.','Apt. 100','Seattle','Washington','98122','123123123123123123','123','0101','2015-10-29 15:22:16','2015-10-29 15:22:16'),(5,7,'Ray','Ray','Ray St.','Apt. Ray','Ray-Town','Rayshington','rayrayray','123123123123123123','123','0202','2015-10-29 15:37:35','2015-10-29 15:37:35'),(6,8,'Tom','Chang','123 Abc St.','Apt. 100','Seattle','Washington','98122','123123123123123123','123','0101','2015-10-29 15:38:27','2015-10-29 15:38:27'),(7,9,'','','','','','','','','','','2015-10-29 15:41:33','2015-10-29 15:41:33'),(8,10,'','','','','','','','','','','2015-10-29 15:44:29','2015-10-29 15:44:29'),(9,11,'','','','','','','','','','','2015-10-29 15:44:39','2015-10-29 15:44:39'),(10,12,'','','','','','','','','','','2015-10-29 15:45:36','2015-10-29 15:45:36'),(11,13,'','','','','','','','','','','2015-10-29 15:46:24','2015-10-29 15:46:24'),(12,14,'','','','','','','','','','','2015-10-29 15:51:29','2015-10-29 15:51:29'),(13,15,'','','','','','','','','','','2015-10-29 15:51:46','2015-10-29 15:51:46');
 /*!40000 ALTER TABLE `billings` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -134,7 +134,7 @@ CREATE TABLE `cart` (
   `card_id` varchar(45) DEFAULT NULL,
   `card_quantity` int(11) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=24 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=113 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -143,7 +143,7 @@ CREATE TABLE `cart` (
 
 LOCK TABLES `cart` WRITE;
 /*!40000 ALTER TABLE `cart` DISABLE KEYS */;
-INSERT INTO `cart` VALUES (1,'20694f5c0d6235f6a27171cfc50d582e','1',2),(2,'20694f5c0d6235f6a27171cfc50d582e','2',3),(3,'3267888bac14c86ec75cd27937b94a6f','1',2),(4,'3267888bac14c86ec75cd27937b94a6f','2',1),(5,'3267888bac14c86ec75cd27937b94a6f','7',1),(6,'f3af9172c2d5e4067edd0ee888dfae0b','7',1),(7,'f3af9172c2d5e4067edd0ee888dfae0b','5',1),(8,'f3af9172c2d5e4067edd0ee888dfae0b','28',1),(9,'6c720790d153a91cd1abdba2278ec3a7','28',1),(10,'6c720790d153a91cd1abdba2278ec3a7','4',1),(11,'6c720790d153a91cd1abdba2278ec3a7','2',1),(12,'6c720790d153a91cd1abdba2278ec3a7','6',3),(13,'6c2cdb9cd58ca0c00981a87f36ef8003','6',1),(14,'6c2cdb9cd58ca0c00981a87f36ef8003','6',2),(15,'6c2cdb9cd58ca0c00981a87f36ef8003','6',1),(16,'6c2cdb9cd58ca0c00981a87f36ef8003','70',3),(17,'6c2cdb9cd58ca0c00981a87f36ef8003','1',2),(18,'6c2cdb9cd58ca0c00981a87f36ef8003','49',2),(19,'d0299ca8aba2d85773c979ed467dd81e','1',1),(20,'d0299ca8aba2d85773c979ed467dd81e','3',2),(21,'641de1b9d0d4bedfbbff509d6bc60cf4','1',1),(22,'80022ae2b01305d68eaed8d23351c7d2','1',1),(23,'80022ae2b01305d68eaed8d23351c7d2','5',3);
+INSERT INTO `cart` VALUES (80,'d5008d8ed06f11edd36535e255266b06','1',3),(81,'d5008d8ed06f11edd36535e255266b06','1',3),(82,'d5008d8ed06f11edd36535e255266b06','1',3),(83,'d5008d8ed06f11edd36535e255266b06','1',3),(84,'d5008d8ed06f11edd36535e255266b06','3',3),(99,'ab625f0f5ccea4b6cb7de2fbfdcbe329','1',1),(100,'ab625f0f5ccea4b6cb7de2fbfdcbe329','1',3),(101,'ab625f0f5ccea4b6cb7de2fbfdcbe329','3',3),(102,'ab625f0f5ccea4b6cb7de2fbfdcbe329','3',2),(103,'ab625f0f5ccea4b6cb7de2fbfdcbe329','7',1),(104,'620ed673e1763f775eae405827e641e9','1',1),(105,'20f967d06132d492543988ae88dbd519','1',1),(106,'4121774ddf14a0744b47874d3f330545','1',2),(107,'4121774ddf14a0744b47874d3f330545','2',1),(108,'686f4b6be3504a727100124cc2aa9da4','1',2),(109,'686f4b6be3504a727100124cc2aa9da4','4',1),(110,'9cc10dedcb141ae3667ff2890c55a26b','1',1),(111,'9cc10dedcb141ae3667ff2890c55a26b','4',1);
 /*!40000 ALTER TABLE `cart` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -165,7 +165,7 @@ CREATE TABLE `customer_orders` (
   KEY `fk_customers_has_orders_customers_idx` (`customer_id`),
   CONSTRAINT `fk_customers_has_orders_customers` FOREIGN KEY (`customer_id`) REFERENCES `customers` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   CONSTRAINT `fk_customers_has_orders_orders1` FOREIGN KEY (`order_id`) REFERENCES `orders` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -174,7 +174,7 @@ CREATE TABLE `customer_orders` (
 
 LOCK TABLES `customer_orders` WRITE;
 /*!40000 ALTER TABLE `customer_orders` DISABLE KEYS */;
-INSERT INTO `customer_orders` VALUES (1,1,1,NULL,NULL);
+INSERT INTO `customer_orders` VALUES (4,7,5,'2015-10-29 15:37:35','2015-10-29 15:37:35'),(5,7,6,'2015-10-29 15:37:35','2015-10-29 15:37:35'),(6,8,7,'2015-10-29 15:38:27','2015-10-29 15:38:27'),(7,8,8,'2015-10-29 15:38:27','2015-10-29 15:38:27'),(8,9,9,'2015-10-29 15:41:33','2015-10-29 15:41:33'),(9,10,10,'2015-10-29 15:44:29','2015-10-29 15:44:29'),(10,11,11,'2015-10-29 15:44:39','2015-10-29 15:44:39'),(11,12,12,'2015-10-29 15:45:36','2015-10-29 15:45:36'),(12,13,13,'2015-10-29 15:46:24','2015-10-29 15:46:24'),(13,14,14,'2015-10-29 15:51:29','2015-10-29 15:51:29'),(14,15,15,'2015-10-29 15:51:46','2015-10-29 15:51:46');
 /*!40000 ALTER TABLE `customer_orders` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -197,7 +197,7 @@ CREATE TABLE `customers` (
   `created_at` datetime DEFAULT NULL,
   `updated_at` datetime DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -206,7 +206,7 @@ CREATE TABLE `customers` (
 
 LOCK TABLES `customers` WRITE;
 /*!40000 ALTER TABLE `customers` DISABLE KEYS */;
-INSERT INTO `customers` VALUES (1,'Tim','Chen','123 ABC St.','Apt. 105','Seattle','WA','98122',NULL,NULL);
+INSERT INTO `customers` VALUES (1,'Tim','Chen','123 ABC St.','Apt. 105','Seattle','WA','98122',NULL,NULL),(2,'Tom','Chang','123 Abc St.','Apt. 100','Seattle','Washington','98122','2015-10-29 15:10:59','2015-10-29 15:10:59'),(3,'Tom','Chang','123 Abc St.','Apt. 100','Seattle','Washington','98122','2015-10-29 15:11:13','2015-10-29 15:11:13'),(4,'Tom','Chang','123 Abc St.','Apt. 100','Seattle','Washington','98122','2015-10-29 15:11:39','2015-10-29 15:11:39'),(5,'Tom','Chang','123 Abc St.','Apt. 100','Seattle','Washington','98122','2015-10-29 15:12:25','2015-10-29 15:12:25'),(6,'Tom','Chang','123 Abc St.','Apt. 100','Seattle','Washington','98122','2015-10-29 15:22:16','2015-10-29 15:22:16'),(7,'Ray','Ray','Ray St.','Apt. Ray','Ray-Town','Rayshington','rayrayray','2015-10-29 15:37:35','2015-10-29 15:37:35'),(8,'Tom','Chang','123 Abc St.','Apt. 100','Seattle','Washington','98122','2015-10-29 15:38:27','2015-10-29 15:38:27'),(9,'','','','','','','','2015-10-29 15:41:33','2015-10-29 15:41:33'),(10,'','','','','','','','2015-10-29 15:44:29','2015-10-29 15:44:29'),(11,'','','','','','','','2015-10-29 15:44:39','2015-10-29 15:44:39'),(12,'','','','','','','','2015-10-29 15:45:36','2015-10-29 15:45:36'),(13,'','','','','','','','2015-10-29 15:46:24','2015-10-29 15:46:24'),(14,'','','','','','','','2015-10-29 15:51:29','2015-10-29 15:51:29'),(15,'','','','','','','','2015-10-29 15:51:46','2015-10-29 15:51:46');
 /*!40000 ALTER TABLE `customers` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -219,13 +219,14 @@ DROP TABLE IF EXISTS `orders`;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `orders` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `quantity` varchar(45) DEFAULT NULL,
-  `total` varchar(45) DEFAULT NULL,
+  `card_id` int(11) DEFAULT NULL,
+  `quantity` int(11) DEFAULT NULL,
+  `total_price` float DEFAULT NULL,
   `status` varchar(45) DEFAULT NULL,
   `created_at` datetime DEFAULT NULL,
   `updated_at` datetime DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -234,7 +235,7 @@ CREATE TABLE `orders` (
 
 LOCK TABLES `orders` WRITE;
 /*!40000 ALTER TABLE `orders` DISABLE KEYS */;
-INSERT INTO `orders` VALUES (1,'10','10','In Process','0000-00-00 00:00:00','0000-00-00 00:00:00');
+INSERT INTO `orders` VALUES (1,1,10,10,'In Process','0000-00-00 00:00:00','0000-00-00 00:00:00'),(2,1,1,4.99,NULL,'2015-10-29 15:12:25','2015-10-29 15:12:25'),(3,1,2,4.99,NULL,'2015-10-29 15:22:16','2015-10-29 15:22:16'),(4,2,1,0,NULL,'2015-10-29 15:22:16','2015-10-29 15:22:16'),(5,1,2,4.99,NULL,'2015-10-29 15:37:35','2015-10-29 15:37:35'),(6,4,1,0,NULL,'2015-10-29 15:37:35','2015-10-29 15:37:35'),(7,1,1,4.99,NULL,'2015-10-29 15:38:27','2015-10-29 15:38:27'),(8,4,1,0,NULL,'2015-10-29 15:38:27','2015-10-29 15:38:27'),(9,9,1,0.99,NULL,'2015-10-29 15:41:33','2015-10-29 15:41:33'),(10,9,1,0.99,NULL,'2015-10-29 15:44:29','2015-10-29 15:44:29'),(11,9,1,0.99,NULL,'2015-10-29 15:44:39','2015-10-29 15:44:39'),(12,9,1,0.99,NULL,'2015-10-29 15:45:36','2015-10-29 15:45:36'),(13,9,1,0.99,NULL,'2015-10-29 15:46:24','2015-10-29 15:46:24'),(14,9,1,0.99,NULL,'2015-10-29 15:51:29','2015-10-29 15:51:29'),(15,9,1,0.99,NULL,'2015-10-29 15:51:46','2015-10-29 15:51:46');
 /*!40000 ALTER TABLE `orders` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -247,16 +248,16 @@ DROP TABLE IF EXISTS `product_orders`;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `product_orders` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
-  `product_id` int(11) NOT NULL,
   `order_id` int(11) NOT NULL,
+  `card_id` int(11) NOT NULL,
   `created_at` datetime DEFAULT NULL,
   `updated_at` datetime DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `fk_products_has_orders_orders1_idx` (`order_id`),
-  KEY `fk_products_has_orders_products1_idx` (`product_id`),
-  CONSTRAINT `fk_products_has_orders_products1` FOREIGN KEY (`product_id`) REFERENCES `products` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  CONSTRAINT `fk_products_has_orders_orders1` FOREIGN KEY (`order_id`) REFERENCES `orders` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+  KEY `fk_cards_idx` (`card_id`),
+  CONSTRAINT `fk_orders` FOREIGN KEY (`order_id`) REFERENCES `orders` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  CONSTRAINT `fk_cards` FOREIGN KEY (`card_id`) REFERENCES `cards` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -265,37 +266,8 @@ CREATE TABLE `product_orders` (
 
 LOCK TABLES `product_orders` WRITE;
 /*!40000 ALTER TABLE `product_orders` DISABLE KEYS */;
+INSERT INTO `product_orders` VALUES (1,1,1,'2015-10-29 13:54:25','2015-10-29 13:54:25');
 /*!40000 ALTER TABLE `product_orders` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
--- Table structure for table `products`
---
-
-DROP TABLE IF EXISTS `products`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `products` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
-  `card_id` int(11) NOT NULL,
-  `name` varchar(45) DEFAULT NULL,
-  `inventory_count` varchar(45) DEFAULT NULL,
-  `quantity_sold` varchar(45) DEFAULT NULL,
-  `created_at` datetime DEFAULT NULL,
-  `updated_at` datetime DEFAULT NULL,
-  PRIMARY KEY (`id`),
-  KEY `fk_products_cards1_idx` (`card_id`),
-  CONSTRAINT `fk_products_cards1` FOREIGN KEY (`card_id`) REFERENCES `cards` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `products`
---
-
-LOCK TABLES `products` WRITE;
-/*!40000 ALTER TABLE `products` DISABLE KEYS */;
-/*!40000 ALTER TABLE `products` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
@@ -307,4 +279,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2015-10-28 15:25:00
+-- Dump completed on 2015-10-29 16:07:43
