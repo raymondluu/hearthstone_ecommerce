@@ -3,12 +3,7 @@
 class Product extends CI_Model {
 	public function get_all_cards() {
 		return $this->db->query("SELECT * FROM cards")->result_array();
-
-		// if(pageNum == 1){
-		// 	return $this->db->query("SELECT * FROM cards LIMIT (0, 1)")->result_array();
-		// }
 	}
-
 	public function get_all_cards_limit($start)
 	{
 		return $this->db->query("SELECT * FROM cards LIMIT ?, 20", $start)->result_array();
@@ -23,19 +18,14 @@ class Product extends CI_Model {
 	{
 		return $this->db->query("SELECT * FROM cards WHERE type = ? LIMIT ?, 20", array($type, $start))->result_array();
 	}
-
-
 	public function get_all_cards_for_admin(){
 		return $this->db->query("SELECT imgGold, id, name, inventory_count, quantity_sold FROM cards")->result_array();
 	}
-
 	public function delete_card($card_id) {
 		$query  = "DELETE FROM cards WHERE id=?";
 		$values = $card_id;
 		return $this->db->query($query, $values);
 	}
-
-
 	public function get_card_info($card_api_id) {
 		return $this->db->query("SELECT * FROM cards WHERE api_id = ?", $card_api_id) -> row_array();
 	}
@@ -43,7 +33,6 @@ class Product extends CI_Model {
 		$values = array($cardSet, $card_api_id);
 		return $this->db->query("SELECT * FROM cards WHERE cardSet = ? AND api_id != ? LIMIT 5", $values) -> result_array();
 	}
-
 	public function get_single_card_for_admin($card_id) {
 		$query  = "SELECT FROM cards WHERE id=?";
 		$values = $card_id;
@@ -60,7 +49,6 @@ class Product extends CI_Model {
 							WHERE session_id = ?";
 		$values = $session_id;
 		return $this->db->query($query2, $values)->row_array();
-
 	}
 	public function get_cart($session_id)
 	{

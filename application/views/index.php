@@ -1,13 +1,3 @@
-<?php
-// $this->session->sess_destroy();
-if( empty($this->session->userdata['count']) )
-{
-  $array = array('count' => 0);
-  $this->session->set_userdata($array);
-}
-// var_dump($this->session->userdata['count']);
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -17,26 +7,6 @@ if( empty($this->session->userdata['count']) )
   <script src="/assets/js/products.js"></script>
 </head>
 <body>
-  <div class="container-fluid">
-  <!-- <h1>Welcome to Hearthstone Ecommerce site!</h1> -->
-<?php
-  // The unirest library is in the views folder already!
-  //$this->load->view('/unirest/src/Unirest.php');
-
-  //$response = Unirest\Request::get("https://omgvamp-hearthstone-v1.p.mashape.com/cards/EX1_572",
-    //array
-    //(
-    //THIS KEY IS PRIVATE USE UR OWNNNN!!!!
-    //"X-Mashape-Key" => "h1qylTCmitmshxurlWa9zZuVvvb5p10IB58jsnIYzfQeooEdLv",
-    //"Accept" => "json"
-    //)
-  //);
-  //var_dump($response);
-?>
-
-<!-- the php echo'd here is how you get the img, change "img" to any atrribute in the object! -->
-<!-- <img src="<?= $response->body[0]->img; ?>" > -->
-  </div>
   <?php $this->load->view("/partials/nav.php") ?>
   <div class="container-fluid">
     <div class="row">
@@ -56,14 +26,12 @@ if( empty($this->session->userdata['count']) )
           <button type="submit" class="btn btn-default">Submit</button>
         </form>
       </div>
-
       <div class="col-md-10">
         <h1 id="title">Show all</h1>
         <div id="pictureFrame">
         </div>
         <nav>
           <ul class="pagination">
-
           </ul>
         </nav>
       </div>

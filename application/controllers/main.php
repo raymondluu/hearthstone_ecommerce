@@ -3,6 +3,11 @@
 class Main extends CI_Controller {
 	public function index()
 	{
+    if( empty($this->session->userdata['count']) )
+    {
+      $array = array('count' => 0);
+      $this->session->set_userdata($array);
+    }
 		$this->load->view('index');
 	}
   public function product_description($card_api_id)
@@ -19,8 +24,8 @@ class Main extends CI_Controller {
   }
   public function show_cart()
   {
-  $session_id = $this->session->userdata['session_id'];
-  $cart_info = $this->product->get_cart($session_id);
-  $this->load->view('carts', array('cart_info' => $cart_info));
+    $session_id = $this->session->userdata['session_id'];
+    $cart_info = $this->product->get_cart($session_id);
+    $this->load->view('carts', array('cart_info' => $cart_info));
   }
 }

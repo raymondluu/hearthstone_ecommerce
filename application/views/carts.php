@@ -1,5 +1,3 @@
-<!-- <?php var_dump($this->session->userdata); ?> -->
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -11,7 +9,6 @@
 </head>
 <body>
     <?php $this->load->view("/partials/nav.php"); ?>
-
     <div class="col-lg-9 col-lg-offset-1">
         <h1>Checkout:</h1>
         <table class="table table-striped table-bordered table-condensed">
@@ -23,33 +20,29 @@
             </thead>
             <tbody>
                 <tr>
-<?php
-foreach ($cart_info as $cards_in_cart) {
-    ?>
+                    <?php $total_price = 0.0;
+                    foreach ($cart_info as $cards_in_cart) { ?>
                     <td><?=$cards_in_cart['name']?> </td>
                     <td>$<?=$cards_in_cart['price']?></td>
                     <td><?=$cards_in_cart['card_quantity']?>
-                        <!-- <a href="controller/update_quantity"></a> -->
                         <a href="/remove_item/<?= $cards_in_cart['Cart_ID']?>"><button id="trashGlyph" type="button" class="btn btn-default" aria-label="Left Align">
-                        <span class="glyphicon glyphicon glyphicon-trash" aria-hidden="true"></span>
-                        </button></a>
+                        <span class="glyphicon glyphicon glyphicon-trash" aria-hidden="true"></span></button></a>
                     </td>
-                    <td>$<?php echo $cards_in_cart['price'] * $cards_in_cart['card_quantity']?></td>
+                    <td>$<?php $price = $cards_in_cart['price'] * $cards_in_cart['card_quantity'];
+                    echo $cards_in_cart['price'] * $cards_in_cart['card_quantity']?></td>
                 </tr>
-<?php } ?>
+                <?php $total_price += $price; } ?>
             </tbody>
         </table>
     </div>
-
     <div class="col-lg-10 col-lg-offset-8">
         <!-- This needs to be left aligned -->
-        <p>Total: </p>
+        <p>Total: $ <?= $total_price ?></p>
         <button type="button" class="btn btn-success"><a href="main/index" id="continue-shopping-btn">Continue Shopping</a></button>
         <br>
         <br>
         <br>
     </div>
-
     <div class="col-md-3 col-md-offset-1">
         <h3>Shipping Information</h3>
         <form id="shipping-form"  action="controller/submit_address" method="post">
@@ -83,7 +76,6 @@ foreach ($cart_info as $cards_in_cart) {
             </div>
             </form>
     </div>
-
     <div class="col-md-3 col-md-offset-2">
             <h3>Billing Information</h3>
         <form id="billing-form" action="submit_billing" method="post">
@@ -157,7 +149,6 @@ foreach ($cart_info as $cards_in_cart) {
             <button type="submit" class="btn btn-primary"> CHECKOUT » </button>
         </form>
     </div>
-​
 </body>
 <script src="assets/js/jquery.min.js" type="text/javascript"></script>
 <script src="assets/js/products.js" type="text/javascript"></script>
