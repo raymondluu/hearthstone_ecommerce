@@ -1,6 +1,6 @@
 $(document).ready(function(){
 	//when category links are clicked, populate page
-	$(document).on("click", "li a", function(e){
+	$('.page_links').on("click", "li a", function(e){
 		var id = $(this).attr("id");
 
 		var page = "0";

@@ -10,6 +10,8 @@ class Orders extends CI_Controller {
     else
     {
 	   $orders = $this->order->get_all_orders();
+     // var_dump($orders);
+     // die();
 	   $this->load->view('admin_orders', array('orders' => $orders));
     }
   }

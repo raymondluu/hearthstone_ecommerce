@@ -43,7 +43,7 @@
     </div>
 
     <div class="col-lg-8">
-        <h1 class="text-center">Order: <?= $order_info[0]['session_id']?>, Customer: <?= $order_info[0]['customer_name']?></h1>
+        <h1 class="text-center">Order: <?= substr($order_info[0]['session_id'], 0, 5) ?>, Customer: <?= $order_info[0]['customer_name']?></h1>
             <table class="table table-striped table-bordered table-condensed">
                 <thead>
                     <th class="col-lg-1 text-center tbl-head">ID</th>
@@ -76,8 +76,11 @@
 
                                     ?>">
         <h3>Status: <?= $order_info[0]['status']?></h3>
-            <p class="text-center">Subtotal: <?="$".$Subtotal?></p>
-            <p class="text-center">Total: $<?=$Subtotal?></p>
+           
+                <p class="text-center">Subtotal: <?="$".$Subtotal?></p>
+                <p class="text-center">Total: $<?=$Subtotal?></p>
+
+    
     </div>
 
 ​
