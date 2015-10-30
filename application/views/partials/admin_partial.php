@@ -1,4 +1,4 @@
-<nav class="navbar navbar-default style-header">
+<nav class="navbar navbar-default tbl-head">
 	<a href="/">
 		<div class="navbar-brand">
 	       <img class="mini_logo top" src="http://wow.zamimg.com/images/hearthstone/backs/animated/Card_Back_Esports.gif"></img>
