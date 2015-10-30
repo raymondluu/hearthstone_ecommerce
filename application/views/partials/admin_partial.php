@@ -10,7 +10,7 @@
 		</div>
 	</a>
 		<div class="navbar-collapse collapse">
-			<ol class="nav navbar-nav nav_margin_right navbar-right">
+			<ol class="nav navbar-nav navbar-right nav_margin_right">
         <li><a href="/admin_orders">Orders</a></li>
 				<li><a href="/products/admin_products">Products</a></li>
 				<li><a href="/admins/logout">Log off</a></li>

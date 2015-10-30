@@ -11,7 +11,6 @@
     <meta charset="utf-8">
     <title>Hearthstone Ecommerce Site</title>
     <?php $this->load->view("/partials/head.php"); ?>
-    <link rel="stylesheet" type="text/css" href="/assets/bootstrap-3.3.5-dist/css/bootstrap.css">
     <script src="/assets/js/carts.js"></script>
 </head>
 <body>

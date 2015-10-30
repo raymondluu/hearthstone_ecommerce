@@ -11,8 +11,8 @@
   		</div>
     </a>
 		<div class="navbar-collapse collapse">
-			<ul class="nav navbar-nav navbar-right">
-              <ol id="cart-ol"><a href="/carts">Shopping Cart (
+			<ol class="nav navbar-nav navbar-right nav_margin_right">
+              <li><a href="/carts">Shopping Cart (
               	<?php if($this->session->userdata['count'] == null){
               		echo 0;
               	}
@@ -20,20 +20,16 @@
               	{
               		echo $this->session->userdata['count'];
               	}?>
-              	)</a>
-                <!-- I'm sorry about nbsp's :( -->
-                &nbsp;&nbsp;&nbsp;&nbsp;
+              	)</a></li>
                 <?php if($this->session->userdata['user_data'] == 'admin'){
-                  echo "<a href='/admin_orders'>Admin Orders</a>";
-                  echo "&nbsp;&nbsp;&nbsp;&nbsp;";
-                  echo "<a href='/admins/logout'>Log off</a>";
+                  echo "<li><a href='/admin_orders'>Admin Orders</a></li>";
+                  echo "<li><a href='/admins/logout'>Log off</a></li>";
                 }
                 else
                 {
-                echo "<a href='/login'>Admin Login</a>";
+                echo "<li><a href='/login'>Admin Login</a></li>";
                 }; ?>
-              </ol>
-            </ul>
+            </ol>
 		</div>
 	</div>
 </nav>
