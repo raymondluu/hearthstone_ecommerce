@@ -20,7 +20,12 @@
               	{
               		echo $this->session->userdata['count'];
               	}?>
-              	)</a></li>
+              	)</a>
+                <!-- I'm sorry about nbsp's :( -->
+                &nbsp;&nbsp;&nbsp;&nbsp;
+                <a href="/login">Admin Login</a>
+                &nbsp;&nbsp;&nbsp;&nbsp;
+              </ol>
             </ul>
 		</div>
 	</div>

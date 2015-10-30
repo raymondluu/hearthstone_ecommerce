@@ -35,7 +35,14 @@ class Products extends CI_Controller {
 	}
 
 	public function admin_products_view() {
+    if($this->session->userdata['user_data'] != 'admin'){
+    	$this->session->set_flashdata('admin', 'You must be an logged in admin to access that page.');
+      redirect("/");
+    }
+    else
+    {
 	    $this->load->view('admin_products');
+	  }
 	}
 
 	//get all cards for the admin products table as json obj
@@ -57,7 +64,15 @@ class Products extends CI_Controller {
 
 
 	public function admin_products() {
+		if($this->session->userdata['user_data'] != 'admin')
+		{
+    	$this->session->set_flashdata('admin', 'You must be an logged in admin to access that page.');
+      redirect("/");
+    }
+    else
+    {
 		redirect('admin_products');
+    }
 	}
 
 	public function admin_edit_single_card($card_id) {

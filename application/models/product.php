@@ -35,9 +35,9 @@ class Product extends CI_Model {
 		return $this->db->query("SELECT * FROM cards WHERE api_id = ?", $card_api_id) -> row_array();
 	}
 
-	public function get_cards_set($cardSet, $card_api_id) {
-		$values = array($cardSet, $card_api_id);
-		return $this->db->query("SELECT * FROM cards WHERE cardSet = ? AND api_id != ? LIMIT 5", $values) -> result_array();
+	public function get_cards_set($cardType, $card_api_id) {
+		$values = array($cardType, $card_api_id);
+		return $this->db->query("SELECT * FROM cards WHERE type = ? AND api_id != ? LIMIT 9", $values) -> result_array();
 	}
 
 	public function get_single_card_for_admin($card_id) {
