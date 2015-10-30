@@ -5,7 +5,9 @@ $route['product_description'] = "main/product_description";
 $route['admin_login'] = "admins";
 $route['login'] = "admins/login";
 $route['admin_orders'] = "orders/admin_orders";
-$route['admin_orders_show/(:any)'] = "orders/show_order/$1";
+
+$route['show_order/(:any)'] = "orders/show_order/$1";
+
 $route['admin_products'] = "products/admin_products_view";
 $route['product_description/(:any)'] = "main/product_description/$1";
 $route['carts'] = "main/show_cart";

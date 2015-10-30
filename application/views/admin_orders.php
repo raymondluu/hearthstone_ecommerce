@@ -36,7 +36,7 @@
             <tbody>
                 <?php foreach ($orders as $order) { ?>
                 <tr>
-                    <td><a href="orders/show_order/<?=$order['id']?>"><?=$order['id']?></a></td>
+                    <td><a href="show_order/<?=$order['session_id']?>"><?=$order['session_id']?></a></td>
                     <td><?=$order['customer_name']?></td>
                     <td><?=$order['purchase_date']?></td>
                     <td><?=$order['customer_address']?></td>

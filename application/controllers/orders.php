@@ -13,14 +13,14 @@ class Orders extends CI_Controller {
 	   $this->load->view('admin_orders', array('orders' => $orders));
     }
   }
-  public function show_order($order_id) {
+  public function show_order($session_id) {
     if($this->session->userdata['user_data'] != 'admin'){
       $this->session->set_flashdata('admin', 'You must be an logged in admin to access that page.');
       redirect("/");
     }
     else
     {
-  	$order = $this->order->get_one_order_for_show($order_id);
+  	$order = $this->order->get_one_order_for_show($session_id);
   	$this->load->view('admin_orders_show', array("order_info" => $order));
     }
   }
@@ -61,16 +61,9 @@ class Orders extends CI_Controller {
     }
   }
   public function submit_billing() {
-    if($this->session->userdata['user_data'] != 'admin'){
-      $this->session->set_flashdata('admin', 'You must be an logged in admin to access that page.');
-      redirect("/");
-    }
-    else
-    {
     $session_id = $this->session->userdata['session_id'];
     $post = $this->input->post();
     $cust_cart = $this->product->get_cart($session_id);
     $this->order->add_order($post, $cust_cart);
-    }
   }
 }

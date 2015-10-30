@@ -1,3 +1,6 @@
+<!-- <?php var_dump($order_info); ?> -->
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -12,35 +15,35 @@
         <table class="table table-striped table-bordered table-condensed">
             <tr>
                 <th class="text-center">Order ID:</th>
-                <td><?= $order_info['id']?></td>
+                <td><?= $order_info[0]['session_id']?></td>
             </tr>
             <tr>
                 <th colspan="2">Customer Shipping Info:</th>
             </tr>
             <tr>
                 <th class="text-center">Name:</th>
-                <td><?= $order_info['customer_name']?></td>
+                <td><?= $order_info[0]['customer_name']?></td>
             </tr>
             <tr>
                 <th class="text-center">Address:</th>
-                <td><?= $order_info['customer_address']?></td>
+                <td><?= $order_info[0]['customer_address']?></td>
             </tr>
             <tr>
                 <th colspan="2">Customer Billing Info:</th>
             </tr>
             <tr>
                 <th class="text-center">Name:</th>
-                <td><?= $order_info['billing_name']?></td>
+                <td><?= $order_info[0]['billing_name']?></td>
             </tr>
             <tr>
                 <th class="text-center">Address:</th>
-                <td><?= $order_info['billing_address']?></td>
+                <td><?= $order_info[0]['billing_address']?></td>
             </tr>
         </table>
     </div>
 
     <div class="col-lg-8">
-        <h1 class="text-center">Order: <?= $order_info['id']?>, Customer: <?= $order_info['customer_name']?></h1>
+        <h1 class="text-center">Order: <?= $order_info[0]['session_id']?>, Customer: <?= $order_info[0]['customer_name']?></h1>
             <table class="table table-striped table-bordered table-condensed">
                 <thead>
                     <th class="col-lg-1 text-center tbl-head">ID</th>
@@ -51,31 +54,35 @@
                 </thead>
                 <tbody>
                    <!--  NEED TO ADD PRODUCTS -->
+                   <?php $Subtotal = 0;
+                   foreach ($order_info as $order) { ?>
                     <tr class="text-center">
-                        <td>PRODUCT ID</td>
-                        <td>ITEM</td>
-                        <td>PRICE</td>
-                        <td>QUANTITy</td>
-                        <td>TOTAL</td>
+                        <td><?=$order['session_id']?></td>
+                        <td><a href="/product_description/<?=$order['api_id']?>"><?=$order['name']?></a></td>
+                        <td><?=$order['price']?></td>
+                        <td><?=$order['quantity']?></td>
+                        <td>$<?=$order['price'] * $order['quantity']?></td>
+                        <?php $Subtotal += $order['price'] * $order['quantity']; ?>
                     </tr>
+                    <?php } ?>
                 </tbody>
             </table>
     </div>
 
-    <div class="col-lg-3 col-lg-offset-1 <?php if ($order_info['status'] == 'Shipped'){ 
+    <div class="col-lg-3 col-lg-offset-1 <?php if ($order_info[0]['status'] == 'Shipped'){
                                     echo 'green';
-                                    } elseif ($order_info['status'] == 'In Process') {
+                                    } elseif ($order_info[0]['status'] == 'In Process') {
                                      echo 'yellow';
                                     } else { echo 'red';}
 
                                     ?>">
-        <h3>Status: <?= $order_info['status']?></h3>
+        <h3>Status: <?= $order_info[0]['status']?></h3>
         <div class="col-lg-4">
-            <p>Subtotal: $</p>
-            <p>Shipping: $</p>
-            <p>Total: $</p>
+            <p>Subtotal: <?="$".$Subtotal?></p>
+            <p>Shipping: FREE!</p>
+            <p>Total: $<?=$Subtotal?></p>
         </div>
-    </div>    
+    </div>
 
 ​
 </body>

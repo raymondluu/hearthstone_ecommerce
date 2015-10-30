@@ -46,6 +46,6 @@
       </div>
     </div>
   </div>
-  <a href="/product_description">Link to Product Descriptions</a>
+  <!-- <a href="/product_description">Link to Product Descriptions</a> -->
 </body>
 </html>
