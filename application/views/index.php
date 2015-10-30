@@ -16,7 +16,7 @@
 </head>
 <body>
   <?php $this->load->view("/partials/nav.php") ?>
-  <div class="container-fluid">
+  <div class="container-fluid index_margin_top">
     <?= $this->session->flashdata('admin'); ?>
     <div class="row">
       <div class="col-md-2">

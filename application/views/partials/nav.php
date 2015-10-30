@@ -1,4 +1,4 @@
-<nav class="navbar navbar-default style-header">
+<nav class="navbar navbar-default style-header navbar-fixed-top">
 	<div class="container-fluid">
     <a href="/">
       <div class="navbar-brand">
