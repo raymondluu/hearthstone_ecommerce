@@ -66,7 +66,9 @@ if($this->session->userdata['count'] == null){
     <input type="submit" name="add_cart" value="Add to Cart">
     <input type="hidden" name="card_id" value="<?=$card_info['id']?>">
   </form>
-  <?php echo $this->session->flashdata('added'); ?>
+  <?php
+  echo $this->session->flashdata('no_stock');
+  echo $this->session->flashdata('added'); ?>
   </div>
   <hr>
   <div id="bottom_row" class="col-md-10 col-md-offset-2">
