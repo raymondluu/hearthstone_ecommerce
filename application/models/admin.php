@@ -2,8 +2,6 @@
 
 class Admin extends CI_Model
 {
-
-
 	public function login($post)
 	{
   			// var_dump($this->input->post());

@@ -17,6 +17,7 @@
 <body>
   <?php $this->load->view("/partials/nav.php") ?>
   <div class="container-fluid">
+    <?= $this->session->flashdata('admin'); ?>
     <div class="row">
       <div class="col-md-2">
         <h4 class="text-center">Categories</h4>

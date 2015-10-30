@@ -2,11 +2,9 @@
 
 class Orders extends CI_Controller {
 
-	public function index() {
-    $this->load->view('admin_orders_show');
-  }
 	public function admin_orders() {
     if($this->session->userdata['user_data'] != 'admin'){
+      $this->session->set_flashdata('admin', 'You must be an logged in admin to access that page.');
       redirect("/");
     }
     else
