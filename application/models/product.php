@@ -81,4 +81,11 @@ class Product extends CI_Model {
 		return $this->db->query($query2, $values)->row_array();
 	}
 
+	public function add_like($api_id) {
+	$query ="UPDATE cards SET likes = likes+1 WHERE api_id = ?";
+	$values = $api_id;
+	return $this->db->query($query, $values);
+	}
+
+
 }

@@ -69,18 +69,16 @@ class Products extends CI_Controller {
     	$this->session->set_flashdata('admin', 'You must be an logged in admin to access that page.');
       redirect("/");
     }
-    else
-    {
+    else {
 		redirect('admin_products');
     }
 	}
 
-	public function admin_edit_single_card($card_id) {
-		$cards = get_single_card_for_admin($card_id);
-		$this->load->view('admin_products_edit', array('cards' => $cards));
-	}
-	public function add_card_to_cart($api_id)
-	{
+	// public function admin_edit_single_card($card_id) {
+	// 	$cards = get_single_card_for_admin($card_id);
+	// 	$this->load->view('admin_products_edit', array('cards' => $cards));
+	// }
+	public function add_card_to_cart($api_id) {
 		$session_id = $this->session->userdata['session_id'];
 		$post = $this->input->post();
 		$cart_total = $this->product->add_cart($post, $session_id);
@@ -89,12 +87,18 @@ class Products extends CI_Controller {
  	 	$this->session->set_userdata($array);
 		redirect("/product_description/".$api_id);
 	}
-	public function remove_item($Card_ID)
-	{
+	public function remove_item($Card_ID) {
 		$session_id = $this->session->userdata['session_id'];
 		$cart_total = $this->product->remove_from_cart($session_id, $Card_ID);
 		$array = array('count' => $cart_total['Cart_Total']);
  	 	$this->session->set_userdata($array);
  	 	redirect("/carts");
 	}
+
+	public function like($api_id) {
+		$this->product->add_like($api_id);
+		
+	}
+
+
 }
