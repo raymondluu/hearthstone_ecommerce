@@ -15,6 +15,7 @@ class Orders extends CI_Controller {
   }
   public function show_order($order_id) {
     if($this->session->userdata['user_data'] != 'admin'){
+      $this->session->set_flashdata('admin', 'You must be an logged in admin to access that page.');
       redirect("/");
     }
     else
@@ -25,6 +26,7 @@ class Orders extends CI_Controller {
   }
   public function set_status_shipped($order_id){
     if($this->session->userdata['user_data'] != 'admin'){
+      $this->session->set_flashdata('admin', 'You must be an logged in admin to access that page.');
       redirect("/");
     }
     else
@@ -36,6 +38,7 @@ class Orders extends CI_Controller {
   }
   public function set_status_in_process($order_id){
     if($this->session->userdata['user_data'] != 'admin'){
+      $this->session->set_flashdata('admin', 'You must be an logged in admin to access that page.');
       redirect("/");
     }
     else
@@ -47,6 +50,7 @@ class Orders extends CI_Controller {
   }
   public function set_status_cancelled($order_id){
     if($this->session->userdata['user_data'] != 'admin'){
+      $this->session->set_flashdata('admin', 'You must be an logged in admin to access that page.');
       redirect("/");
     }
     else
@@ -58,6 +62,7 @@ class Orders extends CI_Controller {
   }
   public function submit_billing() {
     if($this->session->userdata['user_data'] != 'admin'){
+      $this->session->set_flashdata('admin', 'You must be an logged in admin to access that page.');
       redirect("/");
     }
     else

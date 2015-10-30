@@ -17,7 +17,7 @@ if($this->session->userdata['count'] == null){
 <body>
 
   <?php $this->load->view("/partials/nav.php") ?>
- 
+
 <div class="container-fluid">
   <div class="container-fluid">
     <div class="row">
