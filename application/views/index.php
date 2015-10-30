@@ -2,7 +2,7 @@
 // $this->session->sess_destroy();
 // $userdata = array('user_data' => 'admin');
 // $this->session->set_userdata($userdata);
-// var_dump($this->session->userdata);
+// var_dump($this->session->userdata);r
 ?>
 
 
