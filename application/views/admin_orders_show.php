@@ -11,7 +11,7 @@
 </head>
 <body>
     <?php $this->load->view("/partials/admin_partial.php"); ?>
-    <div class="col-lg-4 text-center">
+    <div class="col-lg-4 text-center index_margin_top1">
         <table class="table table-striped table-bordered table-condensed">
             <tr>
                 <th class="text-center">Order ID:</th>
@@ -42,7 +42,7 @@
         </table>
     </div>
 
-    <div class="col-lg-8">
+    <div class="col-lg-8 index_margin_top">
         <h1 class="text-center">Order: <?= substr($order_info[0]['session_id'], 0, 5) ?>, Customer: <?= $order_info[0]['customer_name']?></h1>
             <table class="table table-striped table-bordered table-condensed">
                 <thead>

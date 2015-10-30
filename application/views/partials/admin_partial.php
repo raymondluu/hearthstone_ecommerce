@@ -1,4 +1,4 @@
-<nav class="navbar navbar-default tbl-head">
+<nav class="navbar navbar-default tbl-head navbar-fixed-top">
 	<a href="/">
 		<div class="navbar-brand">
 	       <img class="mini_logo top" src="http://wow.zamimg.com/images/hearthstone/backs/animated/Card_Back_Esports.gif"></img>
@@ -10,7 +10,7 @@
 		</div>
 	</a>
 		<div class="navbar-collapse collapse">
-			<ol class="nav navbar-nav navbar-right">
+			<ol class="nav navbar-nav nav_margin_right navbar-right">
         <li><a href="/admin_orders">Orders</a></li>
 				<li><a href="/products/admin_products">Products</a></li>
 				<li><a href="/admins/logout">Log off</a></li>

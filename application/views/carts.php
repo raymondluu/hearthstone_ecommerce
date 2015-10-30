@@ -16,7 +16,7 @@
 </head>
 <body>
     <?php $this->load->view("/partials/nav.php"); ?>
-    <div class="col-lg-9 col-lg-offset-1">
+    <div class="col-lg-9 col-lg-offset-1 index_margin_top">
         <?= $this->session->flashdata('order_good'); ?>
         <h1>Checkout:</h1>
         <table class="table table-striped table-bordered table-condensed">

@@ -17,6 +17,12 @@
 .index_margin_top{
 	margin-top: 100px;
 }
+.index_margin_top1{
+	margin-top: 170px;
+}
+.nav_margin_right{
+	margin-right: 50px;
+}
 #image {
 display: inline-block;
 }
