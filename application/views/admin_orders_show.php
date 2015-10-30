@@ -77,7 +77,7 @@
                                     ?>">
         <h3>Status: <?= $order_info[0]['status']?></h3>
         <div class="col-lg-4 text-center">
-            <p>Subtotal: <?="$".$Subtotal?></p>
+            <p>Subtotal: $<?=$Subtotal?></p>
             <p>Shipping: FREE!</p>
             <p>Total: $<?=$Subtotal?></p>
         </div>

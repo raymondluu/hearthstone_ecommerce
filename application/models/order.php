@@ -3,7 +3,7 @@
 class Order extends CI_Model {
 
 	public function get_all_orders() {
-		return $this->db->query("SELECT orders.session_id, orders.id, CONCAT(customers.first_name, ' ', customers.last_name) AS customer_name, orders.created_at AS purchase_date, CONCAT(customers.address, ' ', customers.address2, ' ', customers.state, ' ', customers.city, ' ', customers.zipcode) AS customer_address, SUM(orders.total_price) AS total_price FROM orders
+		return $this->db->query("SELECT orders.session_id, orders.id, CONCAT(customers.first_name, ' ', customers.last_name) AS customer_name, orders.created_at AS purchase_date, CONCAT(customers.address, ' ', customers.address2, ' ', customers.state, ' ', customers.city, ' ', customers.zipcode) AS customer_address, orders.total_price AS total_price FROM orders
       JOIN customer_orders
       ON orders.id=customer_orders.order_id
       JOIN customers
