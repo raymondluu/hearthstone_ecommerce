@@ -53,11 +53,8 @@
     </div>
     <div class="col-md-3 col-md-offset-1">
         <h3>Shipping Information</h3>
-<<<<<<< HEAD
-        <form id="shipping-form"  action="#" method="post">
-=======
         <form id="shipping-form"  action="submit_billing" method="post">
->>>>>>> development
+
             <div class="form-group">
                 <label for="shipping_first_name">First Name:</label>
                 <input type="text" class="form-control" name="shipping_first_name">
@@ -90,11 +87,9 @@
     </div>
     <div class="col-md-3 col-md-offset-2">
             <h3>Billing Information</h3>
-<<<<<<< HEAD
-        <form id="billing-form" action="/submit_billing" method="post">
-=======
+
         <!-- <form id="billing-form" action="submit_billing" method="post"> -->
->>>>>>> development
+
             <div class="checkbox">
                 <label><input type="checkbox" name="same_shipping"> Same as Shipping</label>
             </div>
