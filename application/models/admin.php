@@ -2,8 +2,6 @@
 
 class Admin extends CI_Model
 {
-
-
 	public function login($post)
 	{
   			// var_dump($this->input->post());
@@ -24,7 +22,9 @@ class Admin extends CI_Model
 			$admin = $this->db->query($query,$values)->row_array();
 			if(!empty($admin)) {
 				// admin found - set userdata
-				$this->session->set_userdata($admin["email"], $admin["id"]);
+				$userdata = array('user_data' => 'admin');
+				$this->session->set_userdata($userdata);
+				// $this->session->set_userdata($admin["email"], $admin["id"]);
 				return true;
 			} else {
 				// no admin found

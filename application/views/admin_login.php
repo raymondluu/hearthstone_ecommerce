@@ -1,3 +1,7 @@
+<?php
+// var_dump($this->session->userdata);
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,8 +10,6 @@
   <title>Admin Login Page</title>
 </head>
 <body>
-  
-
   <div class="col-md-3 col-md-offset-3">
 
     <h1>Admin Login</h1>
@@ -25,7 +27,7 @@
     </form>
 
 <?= $this->session->flashdata("login_errors") ?>
-   </div> 
-   
+   </div>
+
 </body>
 </html>

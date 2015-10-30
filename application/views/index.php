@@ -1,3 +1,11 @@
+<?php
+// $this->session->sess_destroy();
+// $userdata = array('user_data' => 'admin');
+// $this->session->set_userdata($userdata);
+// var_dump($this->session->userdata);
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,58 +15,37 @@
   <script src="/assets/js/products.js"></script>
 </head>
 <body>
-  <div class="container-fluid">
-  <!-- <h1>Welcome to Hearthstone Ecommerce site!</h1> -->
-<?php
-  // The unirest library is in the views folder already!
-  //$this->load->view('/unirest/src/Unirest.php');
-
-  //$response = Unirest\Request::get("https://omgvamp-hearthstone-v1.p.mashape.com/cards/EX1_572",
-    //array
-    //(
-    //THIS KEY IS PRIVATE USE UR OWNNNN!!!!
-    //"X-Mashape-Key" => "h1qylTCmitmshxurlWa9zZuVvvb5p10IB58jsnIYzfQeooEdLv",
-    //"Accept" => "json"
-    //)
-  //);
-  //var_dump($response);
-?>
-
-<!-- the php echo'd here is how you get the img, change "img" to any atrribute in the object! -->
-<!-- <img src="<?= $response->body[0]->img; ?>" > -->
-  </div>
   <?php $this->load->view("/partials/nav.php") ?>
   <div class="container-fluid">
+    <?= $this->session->flashdata('admin'); ?>
     <div class="row">
       <div class="col-md-2">
-        <p>Categories</p>
-        <ul>
-          <li><a id="catheros" href="#"></a></li>
-          <li><a id="catspells" href="#"></a></li>
-          <li><a id="catweapons" href="#"></a></li>
-          <li><a id="catminions" href="#"></a></li>
-          <li><a id="showall" href="#">Show all</a></li>
+        <h4 class="text-center">Categories</h4>
+        <ul class="list-group page_links">
+          <li class="list-group-item text-center side-nav"><a id="catheros" href="#"></a></li>
+          <li class="list-group-item text-center side-nav"><a id="catspells" href="#"></a></li>
+          <li class="list-group-item text-center side-nav"><a id="catweapons" href="#"></a></li>
+          <li class="list-group-item text-center side-nav"><a id="catminions" href="#"></a></li>
+          <li class="list-group-item text-center side-nav"><a id="showall" href="#">Show all</a></li>
         </ul>
-        <form class="navbar-form navbar-left" role="search">
-          <div class="form-group">
-            <input type="text" class="form-control" placeholder="Search">
-          </div>
-          <button type="submit" class="btn btn-default">Submit</button>
-        </form>
+
       </div>
-      
       <div class="col-md-10">
-        <h1 id="title">Show all</h1>
+        <h1 id="title" class="col-md-offset-4">All Available Cards</h1>
         <div id="pictureFrame">
         </div>
-        <nav>
-          <ul class="pagination">
-            
-          </ul>
-        </nav>
+
+        <!-- Pagination -->
+        <div class="col-md-10 text-center">
+          <nav>
+            <ul class="pagination page_links">
+            </ul>
+          </nav>
+        </div>
+
       </div>
     </div>
   </div>
-  <a href="/product_description">Link to Product Descriptions</a>
+  <!-- <a href="/product_description">Link to Product Descriptions</a> -->
 </body>
 </html>

@@ -22,12 +22,12 @@ class Admins extends CI_Controller {
     $this->session->sess_destroy();
     redirect("/");
   }
-  
+
   public function admin_orders_show() {
     $this->load->view('admin_orders_show');
   }
-  
-  
+
+
   public function carts() {
     $this->load->view('carts');
   }

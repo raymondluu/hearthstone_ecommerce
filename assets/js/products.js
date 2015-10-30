@@ -1,6 +1,6 @@
 $(document).ready(function(){
 	//when category links are clicked, populate page
-	$(document).on("click", "li a", function(e){
+	$('.page_links').on("click", "li a", function(e){
 		var id = $(this).attr("id");
 
 		var page = "0";
@@ -37,7 +37,7 @@ $(document).ready(function(){
 		}
 		else if(id == "showall")
 		{
-			title_str = "Show all";
+			title_str = "All Available Cards";
 			url = "/products/get_cards_limit_json/" + page;
 			pag_url = "/products/get_cards_json";
 		}
@@ -92,7 +92,7 @@ $(document).ready(function(){
 	//when page is loaded show all cards
 	$.get("/products/get_cards_limit_json/0", function(data){
 		// console.log(data);
-		title_str = "Show all";
+		title_str = "All Available Cards";
 		var img_str = "";
 			for(var i = 0; i < data.cards.length; i++)
 			{
@@ -104,16 +104,60 @@ $(document).ready(function(){
 	}, "json");
 
 	//get category link names
-	$.get("/products/get_cards_by_type_json/hero", function(data){
-		$('#catheros').append("Heros (" + data.count + ")");
+	$.get("/products/get_cards_json", function(data){
+		var hero_count = 0;
+		var spell_count = 0;
+		var weapon_count = 0;
+		var minion_count = 0;
+		var hero_title;
+
+		for(var i = 0; i < data.count; i++)
+		{
+			if(data.cards[i].type == "Hero")
+			{
+				hero_count++;
+			}
+			else if(data.cards[i].type == "Spell")
+			{
+				spell_count++;
+			}
+			else if(data.cards[i].type == "Weapon")
+			{
+				weapon_count++;
+			}
+			else if(data.cards[i].type == "Minion")
+			{
+				minion_count++;
+			}
+		}
+
+		$('#catheros').append("Heroes (" + hero_count + ")");
+		$('#catspells').append("Spells (" + spell_count + ")");
+		$('#catweapons').append("Weapons (" + weapon_count + ")");
+		$('#catminions').append("Minions (" + minion_count + ")");
 	}, "json");
-	$.get("/products/get_cards_by_type_json/spell", function(data){
-		$('#catspells').append("Spells (" + data.count + ")");
-	}, "json");
-	$.get("/products/get_cards_by_type_json/weapon", function(data){
-		$('#catweapons').append("Weapons (" + data.count + ")");
-	}, "json");
-	$.get("/products/get_cards_by_type_json/minion", function(data){
-		$('#catminions').append("Minions (" + data.count + ")");
-	}, "json");
+
+	//autofill for carts page
+    $('input[name="same_shipping"]').on('change', copyShippingInfo);
+    function copyShippingInfo(event) {
+        var $target = $(event.target); // checkbox
+        var checked = $target.prop("checked"); // returns true or false based on checked state
+        if (checked) {
+            $('[name="billing_first_name"]').val($('[name="shipping_first_name"]').val());
+            $('[name="billing_last_name"]').val($('[name="shipping_last_name"]').val());
+            $('[name="billing_address"]').val($('[name="shipping_address"]').val());
+            $('[name="billing_address2"]').val($('[name="shipping_address2"]').val());
+            $('[name="billing_city"]').val($('[name="shipping_city"]').val());
+            $('[name="billing_state"]').val($('[name="shipping_state"]').val());
+            $('[name="billing_zipcode"]').val($('[name="shipping_zipcode"]').val());
+        } else {
+            $('[name="billing_first_name"]').val('');
+            $('[name="billing_last_name"]').val('');
+            $('[name="billing_address"]').val('');
+            $('[name="billing_address2"]').val('');
+            $('[name="billing_city"]').val('');
+            $('[name="billing_state"]').val('');
+            $('[name="billing_zipcode"]').val('');
+        }
+    }
 });

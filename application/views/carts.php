@@ -1,4 +1,9 @@
-<?php var_dump($this->session->userdata['session_id']); ?>
+<?php
+// $this->session->sess_destroy();
+// if($this->session->userdata['count'] == null){
+//   echo 0;
+// }
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -7,49 +12,52 @@
     <title>Hearthstone Ecommerce Site</title>
     <?php $this->load->view("/partials/head.php"); ?>
     <link rel="stylesheet" type="text/css" href="/assets/bootstrap-3.3.5-dist/css/bootstrap.css">
+    <script src="/assets/js/carts.js"></script>
 </head>
 <body>
     <?php $this->load->view("/partials/nav.php"); ?>
-
     <div class="col-lg-9 col-lg-offset-1">
+        <?= $this->session->flashdata('order_good'); ?>
         <h1>Checkout:</h1>
         <table class="table table-striped table-bordered table-condensed">
             <thead>
-                <th class="col-lg-3">Item</th>
-                <th class="col-lg-2">Price</th>
-                <th class="col-lg-2">Quantity</th>
-                <th class="col-lg-2">Total</th>
+                <th class="col-lg-3 cart-head">Item</th>
+                <th class="col-lg-2 cart-head">Price</th>
+                <th class="col-lg-2 cart-head">Quantity</th>
+                <th class="col-lg-2 cart-head">Total</th>
             </thead>
             <tbody>
                 <tr>
-<?php foreach ($cart_info as $cards_in_cart) { ?>
+                    <?php $total_price = 0.0;
+                    foreach ($cart_info as $cards_in_cart) { ?>
                     <td><?=$cards_in_cart['name']?> </td>
                     <td>$<?=$cards_in_cart['price']?></td>
                     <td><?=$cards_in_cart['card_quantity']?>
-                        <a href="controller/update_quantity"></a>
-                        <a href="controller/remove_item"><button id="trashGlyph" type="button" class="btn btn-default" aria-label="Left Align">
-                        <span class="glyphicon glyphicon glyphicon-trash" aria-hidden="true"></span>
-                        </button></a>
+                        <a href="/remove_item/<?= $cards_in_cart['Card_ID']?>"><button id="trashGlyph" type="button" class="btn btn-default" aria-label="Left Align">
+                        <span class="glyphicon glyphicon glyphicon-trash" aria-hidden="true"></span></button></a>
                     </td>
-                    <td>$<?php echo $cards_in_cart['price'] * $cards_in_cart['card_quantity']?></td>
+                    <td>$<?php $price = $cards_in_cart['price'] * $cards_in_cart['card_quantity'];
+                    echo $cards_in_cart['price'] * $cards_in_cart['card_quantity']?></td>
                 </tr>
-<?php } ?>
+                <?php $total_price += $price; } ?>
             </tbody>
         </table>
     </div>
-
     <div class="col-lg-10 col-lg-offset-8">
         <!-- This needs to be left aligned -->
-        <p>Total: </p>
+        <p>Total: $ <?= $total_price ?></p>
         <button type="button" class="btn btn-success"><a href="main/index" id="continue-shopping-btn">Continue Shopping</a></button>
         <br>
         <br>
         <br>
     </div>
-
     <div class="col-md-3 col-md-offset-1">
         <h3>Shipping Information</h3>
+<<<<<<< HEAD
         <form id="shipping-form"  action="#" method="post">
+=======
+        <form id="shipping-form"  action="submit_billing" method="post">
+>>>>>>> development
             <div class="form-group">
                 <label for="shipping_first_name">First Name:</label>
                 <input type="text" class="form-control" name="shipping_first_name">
@@ -78,12 +86,15 @@
                 <label for="shipping_zipcode">Zipcode:</label>
                 <input type="text" class="form-control" name="shipping_zipcode">
             </div>
-            </form>
+            <!-- </form> -->
     </div>
-
     <div class="col-md-3 col-md-offset-2">
             <h3>Billing Information</h3>
+<<<<<<< HEAD
         <form id="billing-form" action="/submit_billing" method="post">
+=======
+        <!-- <form id="billing-form" action="submit_billing" method="post"> -->
+>>>>>>> development
             <div class="checkbox">
                 <label><input type="checkbox" name="same_shipping"> Same as Shipping</label>
             </div>
@@ -150,37 +161,12 @@
                     <option value='20'>2020</option>
                 </select>
             <input class="inputCard" type="hidden" name="expiry" id="expiry" maxlength="4"/>
+            <input type="hidden" name="total_price" value = "<?=$total_price?>" />
             </div>
-            <button type="submit" class="btn btn-primary"> CHECKOUT » </button>
+            <button type="submit" class="btn btn-primary"> CHECKOUT </button>
         </form>
     </div>
-​
 </body>
 <script src="assets/js/jquery.min.js" type="text/javascript"></script>
-<script type="text/javascript">
-$(function() {
-    $('input[name="same_shipping"]').on('change', copyShippingInfo);
-    function copyShippingInfo(event) {
-        var $target = $(event.target); // checkbox
-        var checked = $target.prop("checked"); // returns true or false based on checked state
-        if (checked) {
-            $('[name="billing_first_name"]').val($('[name="shipping_first_name"]').val());
-            $('[name="billing_last_name"]').val($('[name="shipping_last_name"]').val());
-            $('[name="billing_address"]').val($('[name="shipping_address"]').val());
-            $('[name="billing_address2"]').val($('[name="shipping_address2"]').val());
-            $('[name="billing_city"]').val($('[name="shipping_city"]').val());
-            $('[name="billing_state"]').val($('[name="shipping_state"]').val());
-            $('[name="billing_zipcode"]').val($('[name="shipping_zipcode"]').val());
-        } else {
-            $('[name="billing_first_name"]').val('');
-            $('[name="billing_last_name"]').val('');
-            $('[name="billing_address"]').val('');
-            $('[name="billing_address2"]').val('');
-            $('[name="billing_city"]').val('');
-            $('[name="billing_state"]').val('');
-            $('[name="billing_zipcode"]').val('');
-        }
-    }
-});
-</script>
+<script src="assets/js/products.js" type="text/javascript"></script>
 </html>
