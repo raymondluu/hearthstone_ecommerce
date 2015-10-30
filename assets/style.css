@@ -11,6 +11,9 @@
   display: inline-block;
   vertical-align: top;
 }
+.margin_top_title{
+	margin-top: 10px;
+}
 #image {
 display: inline-block;
 }

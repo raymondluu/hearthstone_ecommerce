@@ -5,7 +5,7 @@
 	       <img class="mini_logo middle" src="http://wow.zamimg.com/images/hearthstone/backs/animated/Card_Back_Esports.gif"></img>
 	       <img class="mini_logo bottom" src="http://wow.zamimg.com/images/hearthstone/backs/animated/Card_Back_Esports.gif"></img>
 	    </div>
-		<div class="navbar-header padding_left">
+		<div class="navbar-header padding_left margin_top_title">
 				 <p class="nav_header_text">Hearthstone Ecommerce</p>
 		</div>
 	</a>
