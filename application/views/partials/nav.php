@@ -25,12 +25,13 @@
                 &nbsp;&nbsp;&nbsp;&nbsp;
                 <?php if($this->session->userdata['user_data'] == 'admin'){
                   echo "<a href='/admin_orders'>Admin Orders</a>";
+                  echo "&nbsp;&nbsp;&nbsp;&nbsp;";
+                  echo "<a href='/admins/logout'>Log off</a>";
                 }
                 else
                 {
                 echo "<a href='/login'>Admin Login</a>";
                 }; ?>
-                &nbsp;&nbsp;&nbsp;&nbsp;
               </ol>
             </ul>
 		</div>
