@@ -12,7 +12,7 @@
     <div class="row">
       <div class="col-md-2">
         <h4 class="text-center">Categories</h4>
-        <ul class="list-group">
+        <ul class="list-group page_links">
           <li class="list-group-item text-center side-nav"><a id="catheros" href="#"></a></li>
           <li class="list-group-item text-center side-nav"><a id="catspells" href="#"></a></li>
           <li class="list-group-item text-center side-nav"><a id="catweapons" href="#"></a></li>
@@ -29,7 +29,7 @@
         <!-- Pagination -->
         <div class="text-center">
           <nav>
-            <ul class="pagination">
+            <ul class="pagination page_links">
             </ul>
           </nav>
         </div>  

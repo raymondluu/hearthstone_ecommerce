@@ -12,7 +12,7 @@
     </a>
 		<div class="navbar-collapse collapse">
 			<ul class="nav navbar-nav navbar-right">
-              <ol id="cart-ol"><a href="/carts">Shopping Cart (
+              <li id="cart-ol"><a href="/carts">Shopping Cart (
               	<?php if($this->session->userdata['count'] == null){
               		echo 0;
               	}
@@ -20,7 +20,7 @@
               	{
               		echo $this->session->userdata['count'];
               	}?>
-              	)</a></ol>
+              	)</a></li>
             </ul>
 		</div>
 	</div>
