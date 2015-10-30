@@ -60,6 +60,7 @@ class Products extends CI_Controller {
 		$count = count($cards);
 	    $data = array('cards' => $cards, 'count' => $count);
 	    echo json_encode($data);
+
 	}
 
 

@@ -22,7 +22,7 @@ class Product extends CI_Model {
 	}
 
 	public function get_all_cards_admin_limit($start) {
-		return $this->db->query("SELECT img, id, name, inventory_count, quantity_sold FROM cards LIMIT ?, 20", $start)->result_array();
+		return $this->db->query("SELECT img, id, name, inventory_count, quantity_sold, api_id FROM cards LIMIT ?, 20", $start)->result_array();
 	}
 
 	public function delete_card($card_id) {

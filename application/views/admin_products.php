@@ -20,7 +20,7 @@
                 <th class="col-lg-2 text-center tbl-head">Name</th>
                 <th class="col-lg-1 text-center tbl-head">Inventory Count</th>
                 <th class="col-lg-1 text-center tbl-head">Quantity Sold</th>
-                <th class="col-lg-1 text-center tbl-head">Action</th>
+                <!-- <th class="col-lg-1 text-center tbl-head">Action</th> -->
             </thead>
             <tbody id="admin-products-table">
                 <!-- Cards loading here -->
