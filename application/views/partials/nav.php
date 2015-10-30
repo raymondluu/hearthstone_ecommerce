@@ -26,8 +26,6 @@
                 <a href="/login">Admin Login</a>
                 &nbsp;&nbsp;&nbsp;&nbsp;
               </ol>
-
-
             </ul>
 		</div>
 	</div>
