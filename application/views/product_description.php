@@ -28,12 +28,13 @@ if($this->session->userdata['count'] == null){
         </ul>
     </div>
 
-  <h1 class="text-center"><?= $card_info['name']; ?></h1>
-  <div id="image">
-    <img class="card-desc-main-img"src="<?= $card_info['img']; ?>">
-  </div>
 
-  <div id="card_description">
+  <div id="card_description" class = "col-md-8 row">
+  <div id="image" class = "col-md-2">
+    <img class="card-desc-main-img"src="<?= $card_info['imgGold']; ?>">
+  </div>
+  <h1 class="text-center"><?= $card_info['name']; ?></h1>
+  <div class="col-md-6 col-md-offset-2">
     <h3>Detailed Card Information</h3>
     <ul>
     <li><strong>Set:</strong> <?= $card_info['cardSet']; ?></li>
@@ -58,12 +59,14 @@ if($this->session->userdata['count'] == null){
   </ul>
 
   <form action="/add_card_to_cart/<?=$card_info['api_id']?>" method="post">
-    <select name="card_count">
+    <div class="col-md-5">
+    <select name="card_count" class="form-control">
       <option value = "1">1 ($<?= $card_info['price']; ?>)</option>
       <option value = "2">2 ($<?= $card_info['price'] * 2 ?>)</option>
       <option value = "3">3 ($<?= $card_info['price'] * 3 ?>)</option>
     </select>
-    <input type="submit" name="add_cart" value="Add to Cart">
+    </div>
+    <input class="btn btn-default" type="submit" name="add_cart" value="Add to Cart">
     <input type="hidden" name="card_id" value="<?=$card_info['id']?>">
   </form>
   <?php
@@ -71,12 +74,13 @@ if($this->session->userdata['count'] == null){
   echo $this->session->flashdata('added'); ?>
   </div>
   <hr>
-  <div id="bottom_row" class="col-md-10 col-md-offset-2">
-    <h4 class="col-md-10 col-md-offset-1">Related Cards</h4>
+  </div>
+  <div id="bottom_row" class="col-md-9 col-md-offset-2 ">
+    <h3>Related Cards</h3>
 <?php for($i = 0; $i < count($related_cards); $i++){
     echo '<a href="/product_description/'.$related_cards[$i]['api_id'].'"><img id="mini" src="'. $related_cards[$i]['img'] .'"></a>';
    } ?>
-  </div>
+    </div>
 </div>
 
 </body>
