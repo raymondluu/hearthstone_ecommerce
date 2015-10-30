@@ -73,18 +73,18 @@ display: inline-block;
 }
 .green {
 	background-color: #4DFA90;
-	border-radius: 10px;
+	border-radius: 5px;
 	text-align: center;
 }
 .yellow {
 	background-color: #FABE4D;
-	border-radius: 10px;
+	border-radius: 5px;
 	text-align: center;
 }
 .red {
 	background-color: #FF5468;
-	border-radius: 10px;
-    text-align: center;
+	border-radius: 5px;
+	text-align: center;
 }
 #trashGlyph {
   float: right;
