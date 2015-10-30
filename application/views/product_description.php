@@ -32,6 +32,7 @@ if($this->session->userdata['count'] == null){
   <div id="image">
     <img class="card-desc-main-img"src="<?= $card_info['img']; ?>">
   </div>
+
   <div id="card_description">
     <h3>Detailed Card Information</h3>
     <ul>
@@ -55,6 +56,7 @@ if($this->session->userdata['count'] == null){
     </li>
     <li><strong>Locale:</strong> <?= $card_info['locale']; ?></li>
   </ul>
+
   <form action="/add_card_to_cart/<?=$card_info['api_id']?>" method="post">
     <select name="card_count">
       <option value = "1">1 ($<?= $card_info['price']; ?>)</option>
@@ -66,7 +68,9 @@ if($this->session->userdata['count'] == null){
   </form>
   <?php echo $this->session->flashdata('added'); ?>
   </div>
+  <hr>
   <div id="bottom_row" class="col-md-10 col-md-offset-2">
+    <h4 class="col-md-10 col-md-offset-1">Related Cards</h4>
 <?php for($i = 0; $i < count($related_cards); $i++){
     echo '<a href="/product_description/'.$related_cards[$i]['api_id'].'"><img id="mini" src="'. $related_cards[$i]['img'] .'"></a>';
    } ?>

@@ -36,7 +36,7 @@
         </div>
 
         <!-- Pagination -->
-        <div class="text-center">
+        <div class="col-md-10 text-center">
           <nav>
             <ul class="pagination">
             </ul>
