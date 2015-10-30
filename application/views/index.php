@@ -1,3 +1,11 @@
+<?php
+// $this->session->sess_destroy();
+// $userdata = array('user_data' => 'admin');
+// $this->session->set_userdata($userdata);
+// var_dump($this->session->userdata);
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -19,7 +27,7 @@
           <li class="list-group-item text-center side-nav"><a id="catminions" href="#"></a></li>
           <li class="list-group-item text-center side-nav"><a id="showall" href="#">Show all</a></li>
         </ul>
-  
+
       </div>
       <div class="col-md-10">
         <h1 id="title" class="col-md-offset-4">All Available Cards</h1>
@@ -32,7 +40,7 @@
             <ul class="pagination">
             </ul>
           </nav>
-        </div>  
+        </div>
 
       </div>
     </div>
