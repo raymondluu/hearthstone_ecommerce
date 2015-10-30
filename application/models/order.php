@@ -26,21 +26,21 @@ class Order extends CI_Model {
 	// 	return $this->db->query($query, $values)->row_array();
 	// }
 
-	public function set_status_shipped($order_id){
-  		$query  = "UPDATE orders SET status='Shipped' WHERE id=?";
-  		$values = $order_id;
+	public function set_status_shipped($session_id){
+  		$query  = "UPDATE orders SET status='Shipped' WHERE session_id=?";
+  		$values = $session_id;
   		return $this->db->query($query, $values);
   	}
 
-  	public function set_status_in_process($order_id){
-  		$query  = "UPDATE orders SET status='In Process' WHERE id=?";
-  		$values = $order_id;
+  	public function set_status_in_process($session_id){
+  		$query  = "UPDATE orders SET status='In Process' WHERE session_id=?";
+  		$values = $session_id;
   		return $this->db->query($query, $values);
   	}
 
-  	public function set_status_cancelled($order_id){
-  		$query  = "UPDATE orders SET status='Cancelled' WHERE id=?";
-  		$values = $order_id;
+  	public function set_status_cancelled($session_id){
+  		$query  = "UPDATE orders SET status='Cancelled' WHERE session_id=?";
+  		$values = $session_id;
   		return $this->db->query($query, $values);
   	}
 

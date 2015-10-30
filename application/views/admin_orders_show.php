@@ -1,5 +1,5 @@
-<!-- <?php var_dump($order_info); ?> -->
 
+<!-- <?php var_dump($order_info); ?> -->
 
 <!DOCTYPE html>
 <html lang="en">
@@ -68,8 +68,7 @@
                 </tbody>
             </table>
     </div>
-
-    <div class="col-lg-3 col-lg-offset-1 <?php if ($order_info[0]['status'] == 'Shipped'){
+    <div class="col-lg-3 col-lg-offset-1 text-center <?php if ($order_info[0]['status'] == 'Shipped'){
                                     echo 'green';
                                     } elseif ($order_info[0]['status'] == 'In Process') {
                                      echo 'yellow';
@@ -77,7 +76,7 @@
 
                                     ?>">
         <h3>Status: <?= $order_info[0]['status']?></h3>
-        <div class="col-lg-4">
+        <div class="col-lg-4 text-center">
             <p>Subtotal: <?="$".$Subtotal?></p>
             <p>Shipping: FREE!</p>
             <p>Total: $<?=$Subtotal?></p>

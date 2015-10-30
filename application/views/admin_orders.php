@@ -14,13 +14,6 @@
 <body>
     <?php $this->load->view("/partials/admin_partial.php"); ?>
 
-    <!-- <form class="navbar-form navbar-left" role="search">
-        <div class="form-group">
-            <input type="text" class="form-control" placeholder="Search">
-        </div>
-        <button type="submit" class="btn btn-default">Submit</button>
-    </form>
-​ -->
 ​
     <div class="col-lg-10 col-lg-offset-1">
         <h1 class="text-center">Orders</h1>
@@ -47,9 +40,9 @@
                             <span class="caret"></span>
                             </button>
                             <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-                                <li><a href="orders/set_status_shipped/<?=$order['id']?>">Shipped</a></li>
-                                <li><a href="orders/set_status_in_process/<?=$order['id']?>">In Process</a></li>
-                                <li><a href="orders/set_status_cancelled/<?=$order['id']?>">Cancelled</a></li>
+    <li><a href="/set_status_shipped/<?=$order['session_id']?>">Shipped</a></li>
+<li><a href="/set_status_in_process/<?=$order['session_id']?>">In Process</a></li>
+    <li><a href="/set_status_cancelled/<?=$order['session_id']?>">Cancelled</a></li>
                             </ul>
                         </div>
                     </td>
@@ -59,28 +52,6 @@
         </table>
     </div>
 
-    <!-- Page Navigation -->
-<!-- <div class="col-lg-11 col-lg-offset-1">
-    <nav>
-        <ul class="pagination">
-            <li>
-            <a href="#" aria-label="Previous">
-            <span aria-hidden="true">&laquo;</span>
-            </a>
-            </li>
-            <li><a href="#">1</a></li>
-            <li><a href="#">2</a></li>
-            <li><a href="#">3</a></li>
-            <li><a href="#">4</a></li>
-            <li><a href="#">5</a></li>
-            <li>
-            <a href="#" aria-label="Next">
-            <span aria-hidden="true">&raquo;</span>
-            </a>
-            </li>
-        </ul>
-    </nav>
-</div> -->
 
 <script src="assets/js/jquery.min.js" type="text/javascript">
 </script>
