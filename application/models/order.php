@@ -76,15 +76,25 @@ class Order extends CI_Model {
         VALUES(?, ?, NOW(), NOW() )";
         $values4 = array($customer_id, $order_id);
         $this->db->query($query4, $values4);
+
+        $query6 = "UPDATE cards SET cards.inventory_count = cards.inventory_count - ? WHERE cards.id = ?";
+        $values6 = array($cust_cart['card_quantity'], $cust_cart['Card_ID']);
+        $this->db->query($query6, $values6);
+
+        $query7 = "UPDATE cards SET cards.quantity_sold = cards.quantity_sold + ? WHERE cards.id = ?";
+        $values7 = array($cust_cart['card_quantity'], $cust_cart['Card_ID']);
+        $this->db->query($query7, $values7);
       }
 
       $this->session->set_flashdata('order_good', "Your order has been sucessfully placed");
+
 
       $query5 = "DELETE FROM cart WHERE session_id = ?";
       $values5 = array( $this->session->userdata['session_id'] );
       $this->db->query($query5, $values5);
       $array = array('count' => 0);
       $this->session->set_userdata($array);
+
 
       redirect('/carts');
     }

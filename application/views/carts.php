@@ -11,12 +11,11 @@
     <meta charset="utf-8">
     <title>Hearthstone Ecommerce Site</title>
     <?php $this->load->view("/partials/head.php"); ?>
-    <link rel="stylesheet" type="text/css" href="/assets/bootstrap-3.3.5-dist/css/bootstrap.css">
     <script src="/assets/js/carts.js"></script>
 </head>
 <body>
     <?php $this->load->view("/partials/nav.php"); ?>
-    <div class="col-lg-9 col-lg-offset-1">
+    <div class="col-lg-9 col-lg-offset-1 index_margin_top">
         <?= $this->session->flashdata('order_good'); ?>
         <h1>Checkout:</h1>
         <table class="table table-striped table-bordered table-condensed">

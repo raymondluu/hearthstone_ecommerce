@@ -9,13 +9,12 @@
     <meta charset="utf-8">
     <title>Hearthstone Ecommerce Site</title>
     <?php $this->load->view("/partials/head.php"); ?>
-    <link rel="stylesheet" type="text/css" href="/assets/bootstrap-3.3.5-dist/css/bootstrap.css">
 </head>
 <body>
     <?php $this->load->view("/partials/admin_partial.php"); ?>
 
 ​
-    <div class="col-lg-10 col-lg-offset-1">
+    <div class="col-lg-10 col-lg-offset-1 index_margin_top">
         <h1 class="text-center">Orders</h1>
         <table class="table table-striped table-bordered table-condensed text-center">
             <thead>

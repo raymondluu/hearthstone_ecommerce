@@ -47,15 +47,54 @@ class Product extends CI_Model {
 	}
 
 	public function add_cart($post, $session_id) {
+		$query3 = "SELECT cards.inventory_count FROM cards WHERE cards.id = ?";
+		$values3 = array($post['card_id']);
+		$card_inv = $this->db->query($query3, $values3)->result_array();
+		$query4 = "SELECT SUM(cart.card_quantity) AS cart_card_total FROM cart WHERE cart.card_id = ? AND cart.session_id = ? GROUP BY card_id";
+		$values4 = array(intval($post['card_id']), $session_id);
+		$cart_card_total = $this->db->query($query4, $values4)->row_array();
+		// var_dump( intval($card_inv[0]['inventory_count']) );
+		// die();
+		if($cart_card_total != null){
+			if(intval($card_inv[0]['inventory_count']) < $post['card_count'] + $cart_card_total['cart_card_total']){
+				$this->session->set_flashdata('no_stock', 'Cannot add to cart, quantity requested not availiable.');
+				$array = array('count' => $cart_card_total['cart_card_total']);
+	 	 		$this->session->set_userdata($array);
+			}
+			else
+			{
+				$query = "INSERT INTO cart (session_id, card_id, card_quantity)
+				VALUES(?, ?, ?)";
+
+				$values = array($session_id, $post['card_id'], $post['card_count']);
+				$this->db->query($query, $values);
+
+				$query2 = "SELECT SUM(cart.card_quantity) AS Cart_Total from cart
+									WHERE session_id = ?";
+				$values = $session_id;
+				$this->session->set_flashdata('added', 'Item added to cart.');
+				$array = array('count' => $post['card_count'] + $cart_card_total['cart_card_total']);
+	 	 		$this->session->set_userdata($array);
+				$this->db->query($query2, $values)->row_array();
+
+			}
+		}
+		else
+		{
 		$query = "INSERT INTO cart (session_id, card_id, card_quantity)
 		VALUES(?, ?, ?)";
+
 		$values = array($session_id, $post['card_id'], $post['card_count']);
 		$this->db->query($query, $values);
 
 		$query2 = "SELECT SUM(cart.card_quantity) AS Cart_Total from cart
 							WHERE session_id = ?";
 		$values = $session_id;
-		return $this->db->query($query2, $values)->row_array();
+		$this->session->set_flashdata('added', 'Item added to cart.');
+		$array = array('count' => $post['card_count']);
+	 	$this->session->set_userdata($array);
+		$this->db->query($query2, $values)->row_array();
+		}
 	}
 
 	public function get_cart($session_id) {

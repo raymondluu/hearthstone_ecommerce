@@ -2,7 +2,7 @@
 // $this->session->sess_destroy();
 // $userdata = array('user_data' => 'admin');
 // $this->session->set_userdata($userdata);
-// var_dump($this->session->userdata);
+// var_dump($this->session->userdata);r
 ?>
 
 
@@ -16,12 +16,12 @@
 </head>
 <body>
   <?php $this->load->view("/partials/nav.php") ?>
-  <div class="container-fluid">
+  <div class="container-fluid index_margin_top" id="wrapper">
     <?= $this->session->flashdata('admin'); ?>
     <div class="row">
-      <div class="col-md-2">
+      <div class="col-md-2" id="sidebar-wrapper">
         <h4 class="text-center">Categories</h4>
-        <ul class="list-group page_links">
+        <ul class="list-group page_links" class="sidebar-nav">
           <li class="list-group-item text-center side-nav"><a id="catheros" href="#"></a></li>
           <li class="list-group-item text-center side-nav"><a id="catspells" href="#"></a></li>
           <li class="list-group-item text-center side-nav"><a id="catweapons" href="#"></a></li>
@@ -30,7 +30,7 @@
         </ul>
 
       </div>
-      <div class="col-md-10">
+      <div class="col-md-10" id="page-content-wrapper">
         <h1 id="title" class="col-md-offset-4">All Available Cards</h1>
         <div id="pictureFrame">
         </div>
